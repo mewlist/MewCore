@@ -118,7 +118,7 @@ namespace Mew.Core.Tasks
             awaiter = null;
         }
 
-        private void Update()
+        private async void Update()
         {
             if (disposeCt is { IsCancellationRequested: true })
             {
@@ -141,7 +141,9 @@ namespace Mew.Core.Tasks
             cts = disposeCt.HasValue
                 ? CancellationTokenSource.CreateLinkedTokenSource(taskCts.Token, disposeCt.Value)
                 : taskCts;
-            awaiter = task.Func?.Invoke(cts.Token).GetAwaiter();
+            var invokedTask = task.Func.Invoke(cts.Token); 
+            awaiter = invokedTask.GetAwaiter();
+            await invokedTask;
         }
 
         public async Task WaitForEmptyAsync()

@@ -138,7 +138,14 @@ namespace Mew.Core.Tasks.Tests
         {
             taskQueue.Enqueue(async ct =>
             {
-                await Task.Delay(TimeSpan.FromSeconds(0.1f), ct);
+                try
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(0.1f), ct);
+                }
+                catch (TaskCanceledException e)
+                {
+                    return;
+                }
                 resultList.Add(result);
             }, priority);
         }

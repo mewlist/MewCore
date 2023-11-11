@@ -187,7 +187,7 @@ namespace Mew.Core.Tasks
             Invoke();
         }
 
-        private void Invoke()
+        private async void Invoke()
         {
             if (SyncAction is not null)
             {
@@ -200,8 +200,9 @@ namespace Mew.Core.Tasks
                 cts = disposeCt.HasValue
                     ? CancellationTokenSource.CreateLinkedTokenSource(taskCts.Token, disposeCt.Value)
                     : taskCts;
-                var task = AsyncAction.Invoke(cts.Token);
+                var task = AsyncAction(cts.Token);
                 awaiter = task.GetAwaiter();
+                await task;
             }
         }
 
