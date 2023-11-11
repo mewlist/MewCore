@@ -1,0 +1,1558 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Mew.Core
+  name: Mew.Core
+  href: api/Mew.Core.html
+  commentId: N:Mew.Core
+  fullName: Mew.Core
+  nameWithType: Mew.Core
+- uid: Mew.Core.IntervalTimerType
+  name: IntervalTimerType
+  href: api/Mew.Core.IntervalTimerType.html
+  commentId: T:Mew.Core.IntervalTimerType
+  fullName: Mew.Core.IntervalTimerType
+  nameWithType: IntervalTimerType
+- uid: Mew.Core.IntervalTimerType.ManualUpdate
+  name: ManualUpdate
+  href: api/Mew.Core.IntervalTimerType.html#Mew_Core_IntervalTimerType_ManualUpdate
+  commentId: F:Mew.Core.IntervalTimerType.ManualUpdate
+  fullName: Mew.Core.IntervalTimerType.ManualUpdate
+  nameWithType: IntervalTimerType.ManualUpdate
+- uid: Mew.Core.IntervalTimerType.SystemTime
+  name: SystemTime
+  href: api/Mew.Core.IntervalTimerType.html#Mew_Core_IntervalTimerType_SystemTime
+  commentId: F:Mew.Core.IntervalTimerType.SystemTime
+  fullName: Mew.Core.IntervalTimerType.SystemTime
+  nameWithType: IntervalTimerType.SystemTime
+- uid: Mew.Core.IntervalTimerType.UnityTime
+  name: UnityTime
+  href: api/Mew.Core.IntervalTimerType.html#Mew_Core_IntervalTimerType_UnityTime
+  commentId: F:Mew.Core.IntervalTimerType.UnityTime
+  fullName: Mew.Core.IntervalTimerType.UnityTime
+  nameWithType: IntervalTimerType.UnityTime
+- uid: Mew.Core.IntervalTimerType.UnityUnscaledTime
+  name: UnityUnscaledTime
+  href: api/Mew.Core.IntervalTimerType.html#Mew_Core_IntervalTimerType_UnityUnscaledTime
+  commentId: F:Mew.Core.IntervalTimerType.UnityUnscaledTime
+  fullName: Mew.Core.IntervalTimerType.UnityUnscaledTime
+  nameWithType: IntervalTimerType.UnityUnscaledTime
+- uid: Mew.Core.LagProcessType
+  name: LagProcessType
+  href: api/Mew.Core.LagProcessType.html
+  commentId: T:Mew.Core.LagProcessType
+  fullName: Mew.Core.LagProcessType
+  nameWithType: LagProcessType
+- uid: Mew.Core.LagProcessType.Flood
+  name: Flood
+  href: api/Mew.Core.LagProcessType.html#Mew_Core_LagProcessType_Flood
+  commentId: F:Mew.Core.LagProcessType.Flood
+  fullName: Mew.Core.LagProcessType.Flood
+  nameWithType: LagProcessType.Flood
+- uid: Mew.Core.LagProcessType.Skip
+  name: Skip
+  href: api/Mew.Core.LagProcessType.html#Mew_Core_LagProcessType_Skip
+  commentId: F:Mew.Core.LagProcessType.Skip
+  fullName: Mew.Core.LagProcessType.Skip
+  nameWithType: LagProcessType.Skip
+- uid: Mew.Core.MewLoop
+  name: MewLoop
+  href: api/Mew.Core.MewLoop.html
+  commentId: T:Mew.Core.MewLoop
+  fullName: Mew.Core.MewLoop
+  nameWithType: MewLoop
+- uid: Mew.Core.MewLoop.Add(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name: Add(UpdateFunction)
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Add_Mew_Core_MewLoopDelegateCollection_UpdateFunction_
+  commentId: M:Mew.Core.MewLoop.Add(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  fullName: Mew.Core.MewLoop.Add(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  nameWithType: MewLoop.Add(MewLoopDelegateCollection.UpdateFunction)
+- uid: Mew.Core.MewLoop.Add(System.String,Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name: Add(string, UpdateFunction)
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Add_System_String_Mew_Core_MewLoopDelegateCollection_UpdateFunction_
+  commentId: M:Mew.Core.MewLoop.Add(System.String,Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name.vb: Add(String, UpdateFunction)
+  fullName: Mew.Core.MewLoop.Add(string, Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  fullName.vb: Mew.Core.MewLoop.Add(String, Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  nameWithType: MewLoop.Add(string, MewLoopDelegateCollection.UpdateFunction)
+  nameWithType.vb: MewLoop.Add(String, MewLoopDelegateCollection.UpdateFunction)
+- uid: Mew.Core.MewLoop.Add*
+  name: Add
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Add_
+  commentId: Overload:Mew.Core.MewLoop.Add
+  isSpec: "True"
+  fullName: Mew.Core.MewLoop.Add
+  nameWithType: MewLoop.Add
+- uid: Mew.Core.MewLoop.Add``1(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name: Add<T>(UpdateFunction)
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Add__1_Mew_Core_MewLoopDelegateCollection_UpdateFunction_
+  commentId: M:Mew.Core.MewLoop.Add``1(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name.vb: Add(Of T)(UpdateFunction)
+  fullName: Mew.Core.MewLoop.Add<T>(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  fullName.vb: Mew.Core.MewLoop.Add(Of T)(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  nameWithType: MewLoop.Add<T>(MewLoopDelegateCollection.UpdateFunction)
+  nameWithType.vb: MewLoop.Add(Of T)(MewLoopDelegateCollection.UpdateFunction)
+- uid: Mew.Core.MewLoop.LoopId*
+  name: LoopId
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_LoopId_
+  commentId: Overload:Mew.Core.MewLoop.LoopId
+  isSpec: "True"
+  fullName: Mew.Core.MewLoop.LoopId
+  nameWithType: MewLoop.LoopId
+- uid: Mew.Core.MewLoop.LoopId``1
+  name: LoopId<T>()
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_LoopId__1
+  commentId: M:Mew.Core.MewLoop.LoopId``1
+  name.vb: LoopId(Of T)()
+  fullName: Mew.Core.MewLoop.LoopId<T>()
+  fullName.vb: Mew.Core.MewLoop.LoopId(Of T)()
+  nameWithType: MewLoop.LoopId<T>()
+  nameWithType.vb: MewLoop.LoopId(Of T)()
+- uid: Mew.Core.MewLoop.Register(System.String,Mew.Core.MewLoopDelegateCollection)
+  name: Register(string, MewLoopDelegateCollection)
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Register_System_String_Mew_Core_MewLoopDelegateCollection_
+  commentId: M:Mew.Core.MewLoop.Register(System.String,Mew.Core.MewLoopDelegateCollection)
+  name.vb: Register(String, MewLoopDelegateCollection)
+  fullName: Mew.Core.MewLoop.Register(string, Mew.Core.MewLoopDelegateCollection)
+  fullName.vb: Mew.Core.MewLoop.Register(String, Mew.Core.MewLoopDelegateCollection)
+  nameWithType: MewLoop.Register(string, MewLoopDelegateCollection)
+  nameWithType.vb: MewLoop.Register(String, MewLoopDelegateCollection)
+- uid: Mew.Core.MewLoop.Register*
+  name: Register
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Register_
+  commentId: Overload:Mew.Core.MewLoop.Register
+  isSpec: "True"
+  fullName: Mew.Core.MewLoop.Register
+  nameWithType: MewLoop.Register
+- uid: Mew.Core.MewLoop.Register``1(Mew.Core.MewLoopDelegateCollection)
+  name: Register<T>(MewLoopDelegateCollection)
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Register__1_Mew_Core_MewLoopDelegateCollection_
+  commentId: M:Mew.Core.MewLoop.Register``1(Mew.Core.MewLoopDelegateCollection)
+  name.vb: Register(Of T)(MewLoopDelegateCollection)
+  fullName: Mew.Core.MewLoop.Register<T>(Mew.Core.MewLoopDelegateCollection)
+  fullName.vb: Mew.Core.MewLoop.Register(Of T)(Mew.Core.MewLoopDelegateCollection)
+  nameWithType: MewLoop.Register<T>(MewLoopDelegateCollection)
+  nameWithType.vb: MewLoop.Register(Of T)(MewLoopDelegateCollection)
+- uid: Mew.Core.MewLoop.Remove(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name: Remove(UpdateFunction)
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Remove_Mew_Core_MewLoopDelegateCollection_UpdateFunction_
+  commentId: M:Mew.Core.MewLoop.Remove(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  fullName: Mew.Core.MewLoop.Remove(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  nameWithType: MewLoop.Remove(MewLoopDelegateCollection.UpdateFunction)
+- uid: Mew.Core.MewLoop.Remove(System.String,Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name: Remove(string, UpdateFunction)
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Remove_System_String_Mew_Core_MewLoopDelegateCollection_UpdateFunction_
+  commentId: M:Mew.Core.MewLoop.Remove(System.String,Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name.vb: Remove(String, UpdateFunction)
+  fullName: Mew.Core.MewLoop.Remove(string, Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  fullName.vb: Mew.Core.MewLoop.Remove(String, Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  nameWithType: MewLoop.Remove(string, MewLoopDelegateCollection.UpdateFunction)
+  nameWithType.vb: MewLoop.Remove(String, MewLoopDelegateCollection.UpdateFunction)
+- uid: Mew.Core.MewLoop.Remove*
+  name: Remove
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Remove_
+  commentId: Overload:Mew.Core.MewLoop.Remove
+  isSpec: "True"
+  fullName: Mew.Core.MewLoop.Remove
+  nameWithType: MewLoop.Remove
+- uid: Mew.Core.MewLoop.Remove``1(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name: Remove<T>(UpdateFunction)
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Remove__1_Mew_Core_MewLoopDelegateCollection_UpdateFunction_
+  commentId: M:Mew.Core.MewLoop.Remove``1(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name.vb: Remove(Of T)(UpdateFunction)
+  fullName: Mew.Core.MewLoop.Remove<T>(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  fullName.vb: Mew.Core.MewLoop.Remove(Of T)(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  nameWithType: MewLoop.Remove<T>(MewLoopDelegateCollection.UpdateFunction)
+  nameWithType.vb: MewLoop.Remove(Of T)(MewLoopDelegateCollection.UpdateFunction)
+- uid: Mew.Core.MewLoop.SetDefaultCollection(System.String)
+  name: SetDefaultCollection(string?)
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_SetDefaultCollection_System_String_
+  commentId: M:Mew.Core.MewLoop.SetDefaultCollection(System.String)
+  name.vb: SetDefaultCollection(String)
+  fullName: Mew.Core.MewLoop.SetDefaultCollection(string?)
+  fullName.vb: Mew.Core.MewLoop.SetDefaultCollection(String)
+  nameWithType: MewLoop.SetDefaultCollection(string?)
+  nameWithType.vb: MewLoop.SetDefaultCollection(String)
+- uid: Mew.Core.MewLoop.SetDefaultCollection*
+  name: SetDefaultCollection
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_SetDefaultCollection_
+  commentId: Overload:Mew.Core.MewLoop.SetDefaultCollection
+  isSpec: "True"
+  fullName: Mew.Core.MewLoop.SetDefaultCollection
+  nameWithType: MewLoop.SetDefaultCollection
+- uid: Mew.Core.MewLoop.SetDefaultCollection``1
+  name: SetDefaultCollection<T>()
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_SetDefaultCollection__1
+  commentId: M:Mew.Core.MewLoop.SetDefaultCollection``1
+  name.vb: SetDefaultCollection(Of T)()
+  fullName: Mew.Core.MewLoop.SetDefaultCollection<T>()
+  fullName.vb: Mew.Core.MewLoop.SetDefaultCollection(Of T)()
+  nameWithType: MewLoop.SetDefaultCollection<T>()
+  nameWithType.vb: MewLoop.SetDefaultCollection(Of T)()
+- uid: Mew.Core.MewLoop.Update
+  name: Update()
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Update
+  commentId: M:Mew.Core.MewLoop.Update
+  fullName: Mew.Core.MewLoop.Update()
+  nameWithType: MewLoop.Update()
+- uid: Mew.Core.MewLoop.Update(System.String)
+  name: Update(string)
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Update_System_String_
+  commentId: M:Mew.Core.MewLoop.Update(System.String)
+  name.vb: Update(String)
+  fullName: Mew.Core.MewLoop.Update(string)
+  fullName.vb: Mew.Core.MewLoop.Update(String)
+  nameWithType: MewLoop.Update(string)
+  nameWithType.vb: MewLoop.Update(String)
+- uid: Mew.Core.MewLoop.Update*
+  name: Update
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Update_
+  commentId: Overload:Mew.Core.MewLoop.Update
+  isSpec: "True"
+  fullName: Mew.Core.MewLoop.Update
+  nameWithType: MewLoop.Update
+- uid: Mew.Core.MewLoop.Update``1
+  name: Update<T>()
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Update__1
+  commentId: M:Mew.Core.MewLoop.Update``1
+  name.vb: Update(Of T)()
+  fullName: Mew.Core.MewLoop.Update<T>()
+  fullName.vb: Mew.Core.MewLoop.Update(Of T)()
+  nameWithType: MewLoop.Update<T>()
+  nameWithType.vb: MewLoop.Update(Of T)()
+- uid: Mew.Core.MewLoopDelegateCollection
+  name: MewLoopDelegateCollection
+  href: api/Mew.Core.MewLoopDelegateCollection.html
+  commentId: T:Mew.Core.MewLoopDelegateCollection
+  fullName: Mew.Core.MewLoopDelegateCollection
+  nameWithType: MewLoopDelegateCollection
+- uid: Mew.Core.MewLoopDelegateCollection.Add(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name: Add(UpdateFunction)
+  href: api/Mew.Core.MewLoopDelegateCollection.html#Mew_Core_MewLoopDelegateCollection_Add_Mew_Core_MewLoopDelegateCollection_UpdateFunction_
+  commentId: M:Mew.Core.MewLoopDelegateCollection.Add(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  fullName: Mew.Core.MewLoopDelegateCollection.Add(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  nameWithType: MewLoopDelegateCollection.Add(MewLoopDelegateCollection.UpdateFunction)
+- uid: Mew.Core.MewLoopDelegateCollection.Add*
+  name: Add
+  href: api/Mew.Core.MewLoopDelegateCollection.html#Mew_Core_MewLoopDelegateCollection_Add_
+  commentId: Overload:Mew.Core.MewLoopDelegateCollection.Add
+  isSpec: "True"
+  fullName: Mew.Core.MewLoopDelegateCollection.Add
+  nameWithType: MewLoopDelegateCollection.Add
+- uid: Mew.Core.MewLoopDelegateCollection.Invoke
+  name: Invoke()
+  href: api/Mew.Core.MewLoopDelegateCollection.html#Mew_Core_MewLoopDelegateCollection_Invoke
+  commentId: M:Mew.Core.MewLoopDelegateCollection.Invoke
+  fullName: Mew.Core.MewLoopDelegateCollection.Invoke()
+  nameWithType: MewLoopDelegateCollection.Invoke()
+- uid: Mew.Core.MewLoopDelegateCollection.Invoke*
+  name: Invoke
+  href: api/Mew.Core.MewLoopDelegateCollection.html#Mew_Core_MewLoopDelegateCollection_Invoke_
+  commentId: Overload:Mew.Core.MewLoopDelegateCollection.Invoke
+  isSpec: "True"
+  fullName: Mew.Core.MewLoopDelegateCollection.Invoke
+  nameWithType: MewLoopDelegateCollection.Invoke
+- uid: Mew.Core.MewLoopDelegateCollection.Remove(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name: Remove(UpdateFunction)
+  href: api/Mew.Core.MewLoopDelegateCollection.html#Mew_Core_MewLoopDelegateCollection_Remove_Mew_Core_MewLoopDelegateCollection_UpdateFunction_
+  commentId: M:Mew.Core.MewLoopDelegateCollection.Remove(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  fullName: Mew.Core.MewLoopDelegateCollection.Remove(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  nameWithType: MewLoopDelegateCollection.Remove(MewLoopDelegateCollection.UpdateFunction)
+- uid: Mew.Core.MewLoopDelegateCollection.Remove*
+  name: Remove
+  href: api/Mew.Core.MewLoopDelegateCollection.html#Mew_Core_MewLoopDelegateCollection_Remove_
+  commentId: Overload:Mew.Core.MewLoopDelegateCollection.Remove
+  isSpec: "True"
+  fullName: Mew.Core.MewLoopDelegateCollection.Remove
+  nameWithType: MewLoopDelegateCollection.Remove
+- uid: Mew.Core.MewLoopDelegateCollection.UpdateFunction
+  name: MewLoopDelegateCollection.UpdateFunction
+  href: api/Mew.Core.MewLoopDelegateCollection.UpdateFunction.html
+  commentId: T:Mew.Core.MewLoopDelegateCollection.UpdateFunction
+  fullName: Mew.Core.MewLoopDelegateCollection.UpdateFunction
+  nameWithType: MewLoopDelegateCollection.UpdateFunction
+- uid: Mew.Core.MewLoopDelegateCollection.op_Addition(Mew.Core.MewLoopDelegateCollection,Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name: operator +(MewLoopDelegateCollection, UpdateFunction)
+  href: api/Mew.Core.MewLoopDelegateCollection.html#Mew_Core_MewLoopDelegateCollection_op_Addition_Mew_Core_MewLoopDelegateCollection_Mew_Core_MewLoopDelegateCollection_UpdateFunction_
+  commentId: M:Mew.Core.MewLoopDelegateCollection.op_Addition(Mew.Core.MewLoopDelegateCollection,Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name.vb: +(MewLoopDelegateCollection, UpdateFunction)
+  fullName: Mew.Core.MewLoopDelegateCollection.operator +(Mew.Core.MewLoopDelegateCollection, Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  fullName.vb: Mew.Core.MewLoopDelegateCollection.+(Mew.Core.MewLoopDelegateCollection, Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  nameWithType: MewLoopDelegateCollection.operator +(MewLoopDelegateCollection, MewLoopDelegateCollection.UpdateFunction)
+  nameWithType.vb: MewLoopDelegateCollection.+(MewLoopDelegateCollection, MewLoopDelegateCollection.UpdateFunction)
+- uid: Mew.Core.MewLoopDelegateCollection.op_Addition*
+  name: operator +
+  href: api/Mew.Core.MewLoopDelegateCollection.html#Mew_Core_MewLoopDelegateCollection_op_Addition_
+  commentId: Overload:Mew.Core.MewLoopDelegateCollection.op_Addition
+  isSpec: "True"
+  name.vb: +
+  fullName: Mew.Core.MewLoopDelegateCollection.operator +
+  fullName.vb: Mew.Core.MewLoopDelegateCollection.+
+  nameWithType: MewLoopDelegateCollection.operator +
+  nameWithType.vb: MewLoopDelegateCollection.+
+- uid: Mew.Core.MewLoopDelegateCollection.op_Subtraction(Mew.Core.MewLoopDelegateCollection,Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name: operator -(MewLoopDelegateCollection, UpdateFunction)
+  href: api/Mew.Core.MewLoopDelegateCollection.html#Mew_Core_MewLoopDelegateCollection_op_Subtraction_Mew_Core_MewLoopDelegateCollection_Mew_Core_MewLoopDelegateCollection_UpdateFunction_
+  commentId: M:Mew.Core.MewLoopDelegateCollection.op_Subtraction(Mew.Core.MewLoopDelegateCollection,Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  name.vb: -(MewLoopDelegateCollection, UpdateFunction)
+  fullName: Mew.Core.MewLoopDelegateCollection.operator -(Mew.Core.MewLoopDelegateCollection, Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  fullName.vb: Mew.Core.MewLoopDelegateCollection.-(Mew.Core.MewLoopDelegateCollection, Mew.Core.MewLoopDelegateCollection.UpdateFunction)
+  nameWithType: MewLoopDelegateCollection.operator -(MewLoopDelegateCollection, MewLoopDelegateCollection.UpdateFunction)
+  nameWithType.vb: MewLoopDelegateCollection.-(MewLoopDelegateCollection, MewLoopDelegateCollection.UpdateFunction)
+- uid: Mew.Core.MewLoopDelegateCollection.op_Subtraction*
+  name: operator -
+  href: api/Mew.Core.MewLoopDelegateCollection.html#Mew_Core_MewLoopDelegateCollection_op_Subtraction_
+  commentId: Overload:Mew.Core.MewLoopDelegateCollection.op_Subtraction
+  isSpec: "True"
+  name.vb: '-'
+  fullName: Mew.Core.MewLoopDelegateCollection.operator -
+  fullName.vb: Mew.Core.MewLoopDelegateCollection.-
+  nameWithType: MewLoopDelegateCollection.operator -
+  nameWithType.vb: MewLoopDelegateCollection.-
+- uid: Mew.Core.MewLoopUnityInitializer
+  name: MewLoopUnityInitializer
+  href: api/Mew.Core.MewLoopUnityInitializer.html
+  commentId: T:Mew.Core.MewLoopUnityInitializer
+  fullName: Mew.Core.MewLoopUnityInitializer
+  nameWithType: MewLoopUnityInitializer
+- uid: Mew.Core.MewManualUpdate
+  name: MewManualUpdate
+  href: api/Mew.Core.MewManualUpdate.html
+  commentId: T:Mew.Core.MewManualUpdate
+  fullName: Mew.Core.MewManualUpdate
+  nameWithType: MewManualUpdate
+- uid: Mew.Core.MewUnityEarlyUpdate
+  name: MewUnityEarlyUpdate
+  href: api/Mew.Core.MewUnityEarlyUpdate.html
+  commentId: T:Mew.Core.MewUnityEarlyUpdate
+  fullName: Mew.Core.MewUnityEarlyUpdate
+  nameWithType: MewUnityEarlyUpdate
+- uid: Mew.Core.MewUnityFixedUpdate
+  name: MewUnityFixedUpdate
+  href: api/Mew.Core.MewUnityFixedUpdate.html
+  commentId: T:Mew.Core.MewUnityFixedUpdate
+  fullName: Mew.Core.MewUnityFixedUpdate
+  nameWithType: MewUnityFixedUpdate
+- uid: Mew.Core.MewUnityPostLateUpdate
+  name: MewUnityPostLateUpdate
+  href: api/Mew.Core.MewUnityPostLateUpdate.html
+  commentId: T:Mew.Core.MewUnityPostLateUpdate
+  fullName: Mew.Core.MewUnityPostLateUpdate
+  nameWithType: MewUnityPostLateUpdate
+- uid: Mew.Core.MewUnityPreLateUpdate
+  name: MewUnityPreLateUpdate
+  href: api/Mew.Core.MewUnityPreLateUpdate.html
+  commentId: T:Mew.Core.MewUnityPreLateUpdate
+  fullName: Mew.Core.MewUnityPreLateUpdate
+  nameWithType: MewUnityPreLateUpdate
+- uid: Mew.Core.MewUnityPreUpdate
+  name: MewUnityPreUpdate
+  href: api/Mew.Core.MewUnityPreUpdate.html
+  commentId: T:Mew.Core.MewUnityPreUpdate
+  fullName: Mew.Core.MewUnityPreUpdate
+  nameWithType: MewUnityPreUpdate
+- uid: Mew.Core.MewUnityUpdate
+  name: MewUnityUpdate
+  href: api/Mew.Core.MewUnityUpdate.html
+  commentId: T:Mew.Core.MewUnityUpdate
+  fullName: Mew.Core.MewUnityUpdate
+  nameWithType: MewUnityUpdate
+- uid: Mew.Core.TaskAction
+  name: TaskAction
+  href: api/Mew.Core.TaskAction.html
+  commentId: T:Mew.Core.TaskAction
+  fullName: Mew.Core.TaskAction
+  nameWithType: TaskAction
+- uid: Mew.Core.TaskInterval
+  name: TaskInterval
+  href: api/Mew.Core.TaskInterval.html
+  commentId: T:Mew.Core.TaskInterval
+  fullName: Mew.Core.TaskInterval
+  nameWithType: TaskInterval
+- uid: Mew.Core.TaskInterval.#ctor(System.TimeSpan,Mew.Core.TaskAction,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType,System.String)
+  name: TaskInterval(TimeSpan, TaskAction, IntervalTimerType, LagProcessType, string)
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval__ctor_System_TimeSpan_Mew_Core_TaskAction_Mew_Core_IntervalTimerType_Mew_Core_LagProcessType_System_String_
+  commentId: M:Mew.Core.TaskInterval.#ctor(System.TimeSpan,Mew.Core.TaskAction,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType,System.String)
+  name.vb: New(TimeSpan, TaskAction, IntervalTimerType, LagProcessType, String)
+  fullName: Mew.Core.TaskInterval.TaskInterval(System.TimeSpan, Mew.Core.TaskAction, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType, string)
+  fullName.vb: Mew.Core.TaskInterval.New(System.TimeSpan, Mew.Core.TaskAction, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType, String)
+  nameWithType: TaskInterval.TaskInterval(TimeSpan, TaskAction, IntervalTimerType, LagProcessType, string)
+  nameWithType.vb: TaskInterval.New(TimeSpan, TaskAction, IntervalTimerType, LagProcessType, String)
+- uid: Mew.Core.TaskInterval.#ctor(System.TimeSpan,System.Action,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType,System.String)
+  name: TaskInterval(TimeSpan, Action, IntervalTimerType, LagProcessType, string)
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval__ctor_System_TimeSpan_System_Action_Mew_Core_IntervalTimerType_Mew_Core_LagProcessType_System_String_
+  commentId: M:Mew.Core.TaskInterval.#ctor(System.TimeSpan,System.Action,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType,System.String)
+  name.vb: New(TimeSpan, Action, IntervalTimerType, LagProcessType, String)
+  fullName: Mew.Core.TaskInterval.TaskInterval(System.TimeSpan, System.Action, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType, string)
+  fullName.vb: Mew.Core.TaskInterval.New(System.TimeSpan, System.Action, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType, String)
+  nameWithType: TaskInterval.TaskInterval(TimeSpan, Action, IntervalTimerType, LagProcessType, string)
+  nameWithType.vb: TaskInterval.New(TimeSpan, Action, IntervalTimerType, LagProcessType, String)
+- uid: Mew.Core.TaskInterval.#ctor*
+  name: TaskInterval
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval__ctor_
+  commentId: Overload:Mew.Core.TaskInterval.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mew.Core.TaskInterval.TaskInterval
+  fullName.vb: Mew.Core.TaskInterval.New
+  nameWithType: TaskInterval.TaskInterval
+  nameWithType.vb: TaskInterval.New
+- uid: Mew.Core.TaskInterval.Create(System.Double,Mew.Core.TaskAction,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name: Create(double, TaskAction, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Create_System_Double_Mew_Core_TaskAction_Mew_Core_IntervalTimerType_Mew_Core_LagProcessType_
+  commentId: M:Mew.Core.TaskInterval.Create(System.Double,Mew.Core.TaskAction,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name.vb: Create(Double, TaskAction, IntervalTimerType, LagProcessType)
+  fullName: Mew.Core.TaskInterval.Create(double, Mew.Core.TaskAction, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  fullName.vb: Mew.Core.TaskInterval.Create(Double, Mew.Core.TaskAction, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  nameWithType: TaskInterval.Create(double, TaskAction, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval.Create(Double, TaskAction, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.TaskInterval.Create(System.Double,System.Action,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name: Create(double, Action, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Create_System_Double_System_Action_Mew_Core_IntervalTimerType_Mew_Core_LagProcessType_
+  commentId: M:Mew.Core.TaskInterval.Create(System.Double,System.Action,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name.vb: Create(Double, Action, IntervalTimerType, LagProcessType)
+  fullName: Mew.Core.TaskInterval.Create(double, System.Action, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  fullName.vb: Mew.Core.TaskInterval.Create(Double, System.Action, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  nameWithType: TaskInterval.Create(double, Action, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval.Create(Double, Action, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.TaskInterval.Create(System.TimeSpan,Mew.Core.TaskAction,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name: Create(TimeSpan, TaskAction, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Create_System_TimeSpan_Mew_Core_TaskAction_Mew_Core_IntervalTimerType_Mew_Core_LagProcessType_
+  commentId: M:Mew.Core.TaskInterval.Create(System.TimeSpan,Mew.Core.TaskAction,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  fullName: Mew.Core.TaskInterval.Create(System.TimeSpan, Mew.Core.TaskAction, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  nameWithType: TaskInterval.Create(TimeSpan, TaskAction, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.TaskInterval.Create(System.TimeSpan,System.Action,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name: Create(TimeSpan, Action, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Create_System_TimeSpan_System_Action_Mew_Core_IntervalTimerType_Mew_Core_LagProcessType_
+  commentId: M:Mew.Core.TaskInterval.Create(System.TimeSpan,System.Action,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  fullName: Mew.Core.TaskInterval.Create(System.TimeSpan, System.Action, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  nameWithType: TaskInterval.Create(TimeSpan, Action, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.TaskInterval.Create*
+  name: Create
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Create_
+  commentId: Overload:Mew.Core.TaskInterval.Create
+  isSpec: "True"
+  fullName: Mew.Core.TaskInterval.Create
+  nameWithType: TaskInterval.Create
+- uid: Mew.Core.TaskInterval.Dispose
+  name: Dispose()
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Dispose
+  commentId: M:Mew.Core.TaskInterval.Dispose
+  fullName: Mew.Core.TaskInterval.Dispose()
+  nameWithType: TaskInterval.Dispose()
+- uid: Mew.Core.TaskInterval.Dispose*
+  name: Dispose
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Dispose_
+  commentId: Overload:Mew.Core.TaskInterval.Dispose
+  isSpec: "True"
+  fullName: Mew.Core.TaskInterval.Dispose
+  nameWithType: TaskInterval.Dispose
+- uid: Mew.Core.TaskInterval.Interval
+  name: Interval
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Interval
+  commentId: P:Mew.Core.TaskInterval.Interval
+  fullName: Mew.Core.TaskInterval.Interval
+  nameWithType: TaskInterval.Interval
+- uid: Mew.Core.TaskInterval.Interval*
+  name: Interval
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Interval_
+  commentId: Overload:Mew.Core.TaskInterval.Interval
+  isSpec: "True"
+  fullName: Mew.Core.TaskInterval.Interval
+  nameWithType: TaskInterval.Interval
+- uid: Mew.Core.TaskInterval.IntervalTimerType
+  name: IntervalTimerType
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_IntervalTimerType
+  commentId: P:Mew.Core.TaskInterval.IntervalTimerType
+  fullName: Mew.Core.TaskInterval.IntervalTimerType
+  nameWithType: TaskInterval.IntervalTimerType
+- uid: Mew.Core.TaskInterval.IntervalTimerType*
+  name: IntervalTimerType
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_IntervalTimerType_
+  commentId: Overload:Mew.Core.TaskInterval.IntervalTimerType
+  isSpec: "True"
+  fullName: Mew.Core.TaskInterval.IntervalTimerType
+  nameWithType: TaskInterval.IntervalTimerType
+- uid: Mew.Core.TaskInterval.LagProcessType
+  name: LagProcessType
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_LagProcessType
+  commentId: P:Mew.Core.TaskInterval.LagProcessType
+  fullName: Mew.Core.TaskInterval.LagProcessType
+  nameWithType: TaskInterval.LagProcessType
+- uid: Mew.Core.TaskInterval.LagProcessType*
+  name: LagProcessType
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_LagProcessType_
+  commentId: Overload:Mew.Core.TaskInterval.LagProcessType
+  isSpec: "True"
+  fullName: Mew.Core.TaskInterval.LagProcessType
+  nameWithType: TaskInterval.LagProcessType
+- uid: Mew.Core.TaskInterval.LoopId
+  name: LoopId
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_LoopId
+  commentId: P:Mew.Core.TaskInterval.LoopId
+  fullName: Mew.Core.TaskInterval.LoopId
+  nameWithType: TaskInterval.LoopId
+- uid: Mew.Core.TaskInterval.LoopId*
+  name: LoopId
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_LoopId_
+  commentId: Overload:Mew.Core.TaskInterval.LoopId
+  isSpec: "True"
+  fullName: Mew.Core.TaskInterval.LoopId
+  nameWithType: TaskInterval.LoopId
+- uid: Mew.Core.TaskInterval.Start(System.Nullable{System.Threading.CancellationToken})
+  name: Start(CancellationToken?)
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Start_System_Nullable_System_Threading_CancellationToken__
+  commentId: M:Mew.Core.TaskInterval.Start(System.Nullable{System.Threading.CancellationToken})
+  fullName: Mew.Core.TaskInterval.Start(System.Threading.CancellationToken?)
+  nameWithType: TaskInterval.Start(CancellationToken?)
+- uid: Mew.Core.TaskInterval.Start*
+  name: Start
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Start_
+  commentId: Overload:Mew.Core.TaskInterval.Start
+  isSpec: "True"
+  fullName: Mew.Core.TaskInterval.Start
+  nameWithType: TaskInterval.Start
+- uid: Mew.Core.TaskInterval.Tick(System.Single)
+  name: Tick(float)
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Tick_System_Single_
+  commentId: M:Mew.Core.TaskInterval.Tick(System.Single)
+  name.vb: Tick(Single)
+  fullName: Mew.Core.TaskInterval.Tick(float)
+  fullName.vb: Mew.Core.TaskInterval.Tick(Single)
+  nameWithType: TaskInterval.Tick(float)
+  nameWithType.vb: TaskInterval.Tick(Single)
+- uid: Mew.Core.TaskInterval.Tick*
+  name: Tick
+  href: api/Mew.Core.TaskInterval.html#Mew_Core_TaskInterval_Tick_
+  commentId: Overload:Mew.Core.TaskInterval.Tick
+  isSpec: "True"
+  fullName: Mew.Core.TaskInterval.Tick
+  nameWithType: TaskInterval.Tick
+- uid: Mew.Core.TaskInterval`1
+  name: TaskInterval<T>
+  href: api/Mew.Core.TaskInterval-1.html
+  commentId: T:Mew.Core.TaskInterval`1
+  name.vb: TaskInterval(Of T)
+  fullName: Mew.Core.TaskInterval<T>
+  fullName.vb: Mew.Core.TaskInterval(Of T)
+  nameWithType: TaskInterval<T>
+  nameWithType.vb: TaskInterval(Of T)
+- uid: Mew.Core.TaskInterval`1.Create(System.Double,Mew.Core.TaskAction,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name: Create(double, TaskAction, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.TaskInterval-1.html#Mew_Core_TaskInterval_1_Create_System_Double_Mew_Core_TaskAction_Mew_Core_IntervalTimerType_Mew_Core_LagProcessType_
+  commentId: M:Mew.Core.TaskInterval`1.Create(System.Double,Mew.Core.TaskAction,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name.vb: Create(Double, TaskAction, IntervalTimerType, LagProcessType)
+  fullName: Mew.Core.TaskInterval<T>.Create(double, Mew.Core.TaskAction, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  fullName.vb: Mew.Core.TaskInterval(Of T).Create(Double, Mew.Core.TaskAction, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  nameWithType: TaskInterval<T>.Create(double, TaskAction, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval(Of T).Create(Double, TaskAction, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.TaskInterval`1.Create(System.Double,System.Action,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name: Create(double, Action, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.TaskInterval-1.html#Mew_Core_TaskInterval_1_Create_System_Double_System_Action_Mew_Core_IntervalTimerType_Mew_Core_LagProcessType_
+  commentId: M:Mew.Core.TaskInterval`1.Create(System.Double,System.Action,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name.vb: Create(Double, Action, IntervalTimerType, LagProcessType)
+  fullName: Mew.Core.TaskInterval<T>.Create(double, System.Action, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  fullName.vb: Mew.Core.TaskInterval(Of T).Create(Double, System.Action, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  nameWithType: TaskInterval<T>.Create(double, Action, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval(Of T).Create(Double, Action, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.TaskInterval`1.Create(System.TimeSpan,Mew.Core.TaskAction,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name: Create(TimeSpan, TaskAction, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.TaskInterval-1.html#Mew_Core_TaskInterval_1_Create_System_TimeSpan_Mew_Core_TaskAction_Mew_Core_IntervalTimerType_Mew_Core_LagProcessType_
+  commentId: M:Mew.Core.TaskInterval`1.Create(System.TimeSpan,Mew.Core.TaskAction,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  fullName: Mew.Core.TaskInterval<T>.Create(System.TimeSpan, Mew.Core.TaskAction, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  fullName.vb: Mew.Core.TaskInterval(Of T).Create(System.TimeSpan, Mew.Core.TaskAction, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  nameWithType: TaskInterval<T>.Create(TimeSpan, TaskAction, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval(Of T).Create(TimeSpan, TaskAction, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.TaskInterval`1.Create(System.TimeSpan,System.Action,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  name: Create(TimeSpan, Action, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.TaskInterval-1.html#Mew_Core_TaskInterval_1_Create_System_TimeSpan_System_Action_Mew_Core_IntervalTimerType_Mew_Core_LagProcessType_
+  commentId: M:Mew.Core.TaskInterval`1.Create(System.TimeSpan,System.Action,Mew.Core.IntervalTimerType,Mew.Core.LagProcessType)
+  fullName: Mew.Core.TaskInterval<T>.Create(System.TimeSpan, System.Action, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  fullName.vb: Mew.Core.TaskInterval(Of T).Create(System.TimeSpan, System.Action, Mew.Core.IntervalTimerType, Mew.Core.LagProcessType)
+  nameWithType: TaskInterval<T>.Create(TimeSpan, Action, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval(Of T).Create(TimeSpan, Action, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.TaskInterval`1.Create*
+  name: Create
+  href: api/Mew.Core.TaskInterval-1.html#Mew_Core_TaskInterval_1_Create_
+  commentId: Overload:Mew.Core.TaskInterval`1.Create
+  isSpec: "True"
+  fullName: Mew.Core.TaskInterval<T>.Create
+  fullName.vb: Mew.Core.TaskInterval(Of T).Create
+  nameWithType: TaskInterval<T>.Create
+  nameWithType.vb: TaskInterval(Of T).Create
+- uid: Mew.Core.TaskQueue
+  name: TaskQueue
+  href: api/Mew.Core.TaskQueue.html
+  commentId: T:Mew.Core.TaskQueue
+  fullName: Mew.Core.TaskQueue
+  nameWithType: TaskQueue
+- uid: Mew.Core.TaskQueue.#ctor(Mew.Core.TaskQueueLimitType,System.Int32)
+  name: TaskQueue(TaskQueueLimitType, int)
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue__ctor_Mew_Core_TaskQueueLimitType_System_Int32_
+  commentId: M:Mew.Core.TaskQueue.#ctor(Mew.Core.TaskQueueLimitType,System.Int32)
+  name.vb: New(TaskQueueLimitType, Integer)
+  fullName: Mew.Core.TaskQueue.TaskQueue(Mew.Core.TaskQueueLimitType, int)
+  fullName.vb: Mew.Core.TaskQueue.New(Mew.Core.TaskQueueLimitType, Integer)
+  nameWithType: TaskQueue.TaskQueue(TaskQueueLimitType, int)
+  nameWithType.vb: TaskQueue.New(TaskQueueLimitType, Integer)
+- uid: Mew.Core.TaskQueue.#ctor*
+  name: TaskQueue
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue__ctor_
+  commentId: Overload:Mew.Core.TaskQueue.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mew.Core.TaskQueue.TaskQueue
+  fullName.vb: Mew.Core.TaskQueue.New
+  nameWithType: TaskQueue.TaskQueue
+  nameWithType.vb: TaskQueue.New
+- uid: Mew.Core.TaskQueue.Any
+  name: Any()
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Any
+  commentId: M:Mew.Core.TaskQueue.Any
+  fullName: Mew.Core.TaskQueue.Any()
+  nameWithType: TaskQueue.Any()
+- uid: Mew.Core.TaskQueue.Any*
+  name: Any
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Any_
+  commentId: Overload:Mew.Core.TaskQueue.Any
+  isSpec: "True"
+  fullName: Mew.Core.TaskQueue.Any
+  nameWithType: TaskQueue.Any
+- uid: Mew.Core.TaskQueue.Count
+  name: Count
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Count
+  commentId: P:Mew.Core.TaskQueue.Count
+  fullName: Mew.Core.TaskQueue.Count
+  nameWithType: TaskQueue.Count
+- uid: Mew.Core.TaskQueue.Count*
+  name: Count
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Count_
+  commentId: Overload:Mew.Core.TaskQueue.Count
+  isSpec: "True"
+  fullName: Mew.Core.TaskQueue.Count
+  nameWithType: TaskQueue.Count
+- uid: Mew.Core.TaskQueue.Dispose
+  name: Dispose()
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Dispose
+  commentId: M:Mew.Core.TaskQueue.Dispose
+  fullName: Mew.Core.TaskQueue.Dispose()
+  nameWithType: TaskQueue.Dispose()
+- uid: Mew.Core.TaskQueue.Dispose*
+  name: Dispose
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Dispose_
+  commentId: Overload:Mew.Core.TaskQueue.Dispose
+  isSpec: "True"
+  fullName: Mew.Core.TaskQueue.Dispose
+  nameWithType: TaskQueue.Dispose
+- uid: Mew.Core.TaskQueue.Disposed
+  name: Disposed
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Disposed
+  commentId: P:Mew.Core.TaskQueue.Disposed
+  fullName: Mew.Core.TaskQueue.Disposed
+  nameWithType: TaskQueue.Disposed
+- uid: Mew.Core.TaskQueue.Disposed*
+  name: Disposed
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Disposed_
+  commentId: Overload:Mew.Core.TaskQueue.Disposed
+  isSpec: "True"
+  fullName: Mew.Core.TaskQueue.Disposed
+  nameWithType: TaskQueue.Disposed
+- uid: Mew.Core.TaskQueue.Enqueue(Mew.Core.TaskAction,System.Int32)
+  name: Enqueue(TaskAction, int)
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Enqueue_Mew_Core_TaskAction_System_Int32_
+  commentId: M:Mew.Core.TaskQueue.Enqueue(Mew.Core.TaskAction,System.Int32)
+  name.vb: Enqueue(TaskAction, Integer)
+  fullName: Mew.Core.TaskQueue.Enqueue(Mew.Core.TaskAction, int)
+  fullName.vb: Mew.Core.TaskQueue.Enqueue(Mew.Core.TaskAction, Integer)
+  nameWithType: TaskQueue.Enqueue(TaskAction, int)
+  nameWithType.vb: TaskQueue.Enqueue(TaskAction, Integer)
+- uid: Mew.Core.TaskQueue.Enqueue*
+  name: Enqueue
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Enqueue_
+  commentId: Overload:Mew.Core.TaskQueue.Enqueue
+  isSpec: "True"
+  fullName: Mew.Core.TaskQueue.Enqueue
+  nameWithType: TaskQueue.Enqueue
+- uid: Mew.Core.TaskQueue.LimitType
+  name: LimitType
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_LimitType
+  commentId: P:Mew.Core.TaskQueue.LimitType
+  fullName: Mew.Core.TaskQueue.LimitType
+  nameWithType: TaskQueue.LimitType
+- uid: Mew.Core.TaskQueue.LimitType*
+  name: LimitType
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_LimitType_
+  commentId: Overload:Mew.Core.TaskQueue.LimitType
+  isSpec: "True"
+  fullName: Mew.Core.TaskQueue.LimitType
+  nameWithType: TaskQueue.LimitType
+- uid: Mew.Core.TaskQueue.MaxSize
+  name: MaxSize
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_MaxSize
+  commentId: P:Mew.Core.TaskQueue.MaxSize
+  fullName: Mew.Core.TaskQueue.MaxSize
+  nameWithType: TaskQueue.MaxSize
+- uid: Mew.Core.TaskQueue.MaxSize*
+  name: MaxSize
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_MaxSize_
+  commentId: Overload:Mew.Core.TaskQueue.MaxSize
+  isSpec: "True"
+  fullName: Mew.Core.TaskQueue.MaxSize
+  nameWithType: TaskQueue.MaxSize
+- uid: Mew.Core.TaskQueue.Start(System.Nullable{System.Threading.CancellationToken})
+  name: Start(CancellationToken?)
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Start_System_Nullable_System_Threading_CancellationToken__
+  commentId: M:Mew.Core.TaskQueue.Start(System.Nullable{System.Threading.CancellationToken})
+  fullName: Mew.Core.TaskQueue.Start(System.Threading.CancellationToken?)
+  nameWithType: TaskQueue.Start(CancellationToken?)
+- uid: Mew.Core.TaskQueue.Start*
+  name: Start
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_Start_
+  commentId: Overload:Mew.Core.TaskQueue.Start
+  isSpec: "True"
+  fullName: Mew.Core.TaskQueue.Start
+  nameWithType: TaskQueue.Start
+- uid: Mew.Core.TaskQueue.WaitForEmptyAsync
+  name: WaitForEmptyAsync()
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_WaitForEmptyAsync
+  commentId: M:Mew.Core.TaskQueue.WaitForEmptyAsync
+  fullName: Mew.Core.TaskQueue.WaitForEmptyAsync()
+  nameWithType: TaskQueue.WaitForEmptyAsync()
+- uid: Mew.Core.TaskQueue.WaitForEmptyAsync*
+  name: WaitForEmptyAsync
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_WaitForEmptyAsync_
+  commentId: Overload:Mew.Core.TaskQueue.WaitForEmptyAsync
+  isSpec: "True"
+  fullName: Mew.Core.TaskQueue.WaitForEmptyAsync
+  nameWithType: TaskQueue.WaitForEmptyAsync
+- uid: Mew.Core.TaskQueue.loopId
+  name: loopId
+  href: api/Mew.Core.TaskQueue.html#Mew_Core_TaskQueue_loopId
+  commentId: F:Mew.Core.TaskQueue.loopId
+  fullName: Mew.Core.TaskQueue.loopId
+  nameWithType: TaskQueue.loopId
+- uid: Mew.Core.TaskQueueLimitType
+  name: TaskQueueLimitType
+  href: api/Mew.Core.TaskQueueLimitType.html
+  commentId: T:Mew.Core.TaskQueueLimitType
+  fullName: Mew.Core.TaskQueueLimitType
+  nameWithType: TaskQueueLimitType
+- uid: Mew.Core.TaskQueueLimitType.Discard
+  name: Discard
+  href: api/Mew.Core.TaskQueueLimitType.html#Mew_Core_TaskQueueLimitType_Discard
+  commentId: F:Mew.Core.TaskQueueLimitType.Discard
+  fullName: Mew.Core.TaskQueueLimitType.Discard
+  nameWithType: TaskQueueLimitType.Discard
+- uid: Mew.Core.TaskQueueLimitType.None
+  name: None
+  href: api/Mew.Core.TaskQueueLimitType.html#Mew_Core_TaskQueueLimitType_None
+  commentId: F:Mew.Core.TaskQueueLimitType.None
+  fullName: Mew.Core.TaskQueueLimitType.None
+  nameWithType: TaskQueueLimitType.None
+- uid: Mew.Core.TaskQueueLimitType.SwapLast
+  name: SwapLast
+  href: api/Mew.Core.TaskQueueLimitType.html#Mew_Core_TaskQueueLimitType_SwapLast
+  commentId: F:Mew.Core.TaskQueueLimitType.SwapLast
+  fullName: Mew.Core.TaskQueueLimitType.SwapLast
+  nameWithType: TaskQueueLimitType.SwapLast
+- uid: Mew.Core.TaskQueue`1
+  name: TaskQueue<T>
+  href: api/Mew.Core.TaskQueue-1.html
+  commentId: T:Mew.Core.TaskQueue`1
+  name.vb: TaskQueue(Of T)
+  fullName: Mew.Core.TaskQueue<T>
+  fullName.vb: Mew.Core.TaskQueue(Of T)
+  nameWithType: TaskQueue<T>
+  nameWithType.vb: TaskQueue(Of T)
+- uid: Mew.Core.TaskQueue`1.#ctor
+  name: TaskQueue()
+  href: api/Mew.Core.TaskQueue-1.html#Mew_Core_TaskQueue_1__ctor
+  commentId: M:Mew.Core.TaskQueue`1.#ctor
+  name.vb: New()
+  fullName: Mew.Core.TaskQueue<T>.TaskQueue()
+  fullName.vb: Mew.Core.TaskQueue(Of T).New()
+  nameWithType: TaskQueue<T>.TaskQueue()
+  nameWithType.vb: TaskQueue(Of T).New()
+- uid: Mew.Core.TaskQueue`1.#ctor(Mew.Core.TaskQueueLimitType,System.Int32)
+  name: TaskQueue(TaskQueueLimitType, int)
+  href: api/Mew.Core.TaskQueue-1.html#Mew_Core_TaskQueue_1__ctor_Mew_Core_TaskQueueLimitType_System_Int32_
+  commentId: M:Mew.Core.TaskQueue`1.#ctor(Mew.Core.TaskQueueLimitType,System.Int32)
+  name.vb: New(TaskQueueLimitType, Integer)
+  fullName: Mew.Core.TaskQueue<T>.TaskQueue(Mew.Core.TaskQueueLimitType, int)
+  fullName.vb: Mew.Core.TaskQueue(Of T).New(Mew.Core.TaskQueueLimitType, Integer)
+  nameWithType: TaskQueue<T>.TaskQueue(TaskQueueLimitType, int)
+  nameWithType.vb: TaskQueue(Of T).New(TaskQueueLimitType, Integer)
+- uid: Mew.Core.TaskQueue`1.#ctor*
+  name: TaskQueue
+  href: api/Mew.Core.TaskQueue-1.html#Mew_Core_TaskQueue_1__ctor_
+  commentId: Overload:Mew.Core.TaskQueue`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mew.Core.TaskQueue<T>.TaskQueue
+  fullName.vb: Mew.Core.TaskQueue(Of T).New
+  nameWithType: TaskQueue<T>.TaskQueue
+  nameWithType.vb: TaskQueue(Of T).New
+- uid: Mew.Core.TaskWithPriority
+  name: TaskWithPriority
+  href: api/Mew.Core.TaskWithPriority.html
+  commentId: T:Mew.Core.TaskWithPriority
+  fullName: Mew.Core.TaskWithPriority
+  nameWithType: TaskWithPriority
+- uid: Mew.Core.TaskWithPriority.#ctor(Mew.Core.TaskAction,System.Int32)
+  name: TaskWithPriority(TaskAction, int)
+  href: api/Mew.Core.TaskWithPriority.html#Mew_Core_TaskWithPriority__ctor_Mew_Core_TaskAction_System_Int32_
+  commentId: M:Mew.Core.TaskWithPriority.#ctor(Mew.Core.TaskAction,System.Int32)
+  name.vb: New(TaskAction, Integer)
+  fullName: Mew.Core.TaskWithPriority.TaskWithPriority(Mew.Core.TaskAction, int)
+  fullName.vb: Mew.Core.TaskWithPriority.New(Mew.Core.TaskAction, Integer)
+  nameWithType: TaskWithPriority.TaskWithPriority(TaskAction, int)
+  nameWithType.vb: TaskWithPriority.New(TaskAction, Integer)
+- uid: Mew.Core.TaskWithPriority.#ctor*
+  name: TaskWithPriority
+  href: api/Mew.Core.TaskWithPriority.html#Mew_Core_TaskWithPriority__ctor_
+  commentId: Overload:Mew.Core.TaskWithPriority.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mew.Core.TaskWithPriority.TaskWithPriority
+  fullName.vb: Mew.Core.TaskWithPriority.New
+  nameWithType: TaskWithPriority.TaskWithPriority
+  nameWithType.vb: TaskWithPriority.New
+- uid: Mew.Core.TaskWithPriority.Func
+  name: Func
+  href: api/Mew.Core.TaskWithPriority.html#Mew_Core_TaskWithPriority_Func
+  commentId: P:Mew.Core.TaskWithPriority.Func
+  fullName: Mew.Core.TaskWithPriority.Func
+  nameWithType: TaskWithPriority.Func
+- uid: Mew.Core.TaskWithPriority.Func*
+  name: Func
+  href: api/Mew.Core.TaskWithPriority.html#Mew_Core_TaskWithPriority_Func_
+  commentId: Overload:Mew.Core.TaskWithPriority.Func
+  isSpec: "True"
+  fullName: Mew.Core.TaskWithPriority.Func
+  nameWithType: TaskWithPriority.Func
+- uid: Mew.Core.TaskWithPriority.Priority
+  name: Priority
+  href: api/Mew.Core.TaskWithPriority.html#Mew_Core_TaskWithPriority_Priority
+  commentId: P:Mew.Core.TaskWithPriority.Priority
+  fullName: Mew.Core.TaskWithPriority.Priority
+  nameWithType: TaskWithPriority.Priority
+- uid: Mew.Core.TaskWithPriority.Priority*
+  name: Priority
+  href: api/Mew.Core.TaskWithPriority.html#Mew_Core_TaskWithPriority_Priority_
+  commentId: Overload:Mew.Core.TaskWithPriority.Priority
+  isSpec: "True"
+  fullName: Mew.Core.TaskWithPriority.Priority
+  nameWithType: TaskWithPriority.Priority
+- uid: Mew.Core.Tasks
+  name: Mew.Core.Tasks
+  href: api/Mew.Core.Tasks.html
+  commentId: N:Mew.Core.Tasks
+  fullName: Mew.Core.Tasks
+  nameWithType: Mew.Core.Tasks
+- uid: Mew.Core.Tasks.IntervalTimerType
+  name: IntervalTimerType
+  href: api/Mew.Core.Tasks.IntervalTimerType.html
+  commentId: T:Mew.Core.Tasks.IntervalTimerType
+  fullName: Mew.Core.Tasks.IntervalTimerType
+  nameWithType: IntervalTimerType
+- uid: Mew.Core.Tasks.IntervalTimerType.ManualUpdate
+  name: ManualUpdate
+  href: api/Mew.Core.Tasks.IntervalTimerType.html#Mew_Core_Tasks_IntervalTimerType_ManualUpdate
+  commentId: F:Mew.Core.Tasks.IntervalTimerType.ManualUpdate
+  fullName: Mew.Core.Tasks.IntervalTimerType.ManualUpdate
+  nameWithType: IntervalTimerType.ManualUpdate
+- uid: Mew.Core.Tasks.IntervalTimerType.SystemTime
+  name: SystemTime
+  href: api/Mew.Core.Tasks.IntervalTimerType.html#Mew_Core_Tasks_IntervalTimerType_SystemTime
+  commentId: F:Mew.Core.Tasks.IntervalTimerType.SystemTime
+  fullName: Mew.Core.Tasks.IntervalTimerType.SystemTime
+  nameWithType: IntervalTimerType.SystemTime
+- uid: Mew.Core.Tasks.IntervalTimerType.UnityTime
+  name: UnityTime
+  href: api/Mew.Core.Tasks.IntervalTimerType.html#Mew_Core_Tasks_IntervalTimerType_UnityTime
+  commentId: F:Mew.Core.Tasks.IntervalTimerType.UnityTime
+  fullName: Mew.Core.Tasks.IntervalTimerType.UnityTime
+  nameWithType: IntervalTimerType.UnityTime
+- uid: Mew.Core.Tasks.IntervalTimerType.UnityUnscaledTime
+  name: UnityUnscaledTime
+  href: api/Mew.Core.Tasks.IntervalTimerType.html#Mew_Core_Tasks_IntervalTimerType_UnityUnscaledTime
+  commentId: F:Mew.Core.Tasks.IntervalTimerType.UnityUnscaledTime
+  fullName: Mew.Core.Tasks.IntervalTimerType.UnityUnscaledTime
+  nameWithType: IntervalTimerType.UnityUnscaledTime
+- uid: Mew.Core.Tasks.LagProcessType
+  name: LagProcessType
+  href: api/Mew.Core.Tasks.LagProcessType.html
+  commentId: T:Mew.Core.Tasks.LagProcessType
+  fullName: Mew.Core.Tasks.LagProcessType
+  nameWithType: LagProcessType
+- uid: Mew.Core.Tasks.LagProcessType.Flood
+  name: Flood
+  href: api/Mew.Core.Tasks.LagProcessType.html#Mew_Core_Tasks_LagProcessType_Flood
+  commentId: F:Mew.Core.Tasks.LagProcessType.Flood
+  fullName: Mew.Core.Tasks.LagProcessType.Flood
+  nameWithType: LagProcessType.Flood
+- uid: Mew.Core.Tasks.LagProcessType.Skip
+  name: Skip
+  href: api/Mew.Core.Tasks.LagProcessType.html#Mew_Core_Tasks_LagProcessType_Skip
+  commentId: F:Mew.Core.Tasks.LagProcessType.Skip
+  fullName: Mew.Core.Tasks.LagProcessType.Skip
+  nameWithType: LagProcessType.Skip
+- uid: Mew.Core.Tasks.TaskAction
+  name: TaskAction
+  href: api/Mew.Core.Tasks.TaskAction.html
+  commentId: T:Mew.Core.Tasks.TaskAction
+  fullName: Mew.Core.Tasks.TaskAction
+  nameWithType: TaskAction
+- uid: Mew.Core.Tasks.TaskInterval
+  name: TaskInterval
+  href: api/Mew.Core.Tasks.TaskInterval.html
+  commentId: T:Mew.Core.Tasks.TaskInterval
+  fullName: Mew.Core.Tasks.TaskInterval
+  nameWithType: TaskInterval
+- uid: Mew.Core.Tasks.TaskInterval.#ctor(System.TimeSpan,Mew.Core.Tasks.TaskAction,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType,System.String)
+  name: TaskInterval(TimeSpan, TaskAction, IntervalTimerType, LagProcessType, string)
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval__ctor_System_TimeSpan_Mew_Core_Tasks_TaskAction_Mew_Core_Tasks_IntervalTimerType_Mew_Core_Tasks_LagProcessType_System_String_
+  commentId: M:Mew.Core.Tasks.TaskInterval.#ctor(System.TimeSpan,Mew.Core.Tasks.TaskAction,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType,System.String)
+  name.vb: New(TimeSpan, TaskAction, IntervalTimerType, LagProcessType, String)
+  fullName: Mew.Core.Tasks.TaskInterval.TaskInterval(System.TimeSpan, Mew.Core.Tasks.TaskAction, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType, string)
+  fullName.vb: Mew.Core.Tasks.TaskInterval.New(System.TimeSpan, Mew.Core.Tasks.TaskAction, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType, String)
+  nameWithType: TaskInterval.TaskInterval(TimeSpan, TaskAction, IntervalTimerType, LagProcessType, string)
+  nameWithType.vb: TaskInterval.New(TimeSpan, TaskAction, IntervalTimerType, LagProcessType, String)
+- uid: Mew.Core.Tasks.TaskInterval.#ctor(System.TimeSpan,System.Action,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType,System.String)
+  name: TaskInterval(TimeSpan, Action, IntervalTimerType, LagProcessType, string)
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval__ctor_System_TimeSpan_System_Action_Mew_Core_Tasks_IntervalTimerType_Mew_Core_Tasks_LagProcessType_System_String_
+  commentId: M:Mew.Core.Tasks.TaskInterval.#ctor(System.TimeSpan,System.Action,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType,System.String)
+  name.vb: New(TimeSpan, Action, IntervalTimerType, LagProcessType, String)
+  fullName: Mew.Core.Tasks.TaskInterval.TaskInterval(System.TimeSpan, System.Action, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType, string)
+  fullName.vb: Mew.Core.Tasks.TaskInterval.New(System.TimeSpan, System.Action, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType, String)
+  nameWithType: TaskInterval.TaskInterval(TimeSpan, Action, IntervalTimerType, LagProcessType, string)
+  nameWithType.vb: TaskInterval.New(TimeSpan, Action, IntervalTimerType, LagProcessType, String)
+- uid: Mew.Core.Tasks.TaskInterval.#ctor*
+  name: TaskInterval
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval__ctor_
+  commentId: Overload:Mew.Core.Tasks.TaskInterval.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mew.Core.Tasks.TaskInterval.TaskInterval
+  fullName.vb: Mew.Core.Tasks.TaskInterval.New
+  nameWithType: TaskInterval.TaskInterval
+  nameWithType.vb: TaskInterval.New
+- uid: Mew.Core.Tasks.TaskInterval.Create(System.Double,Mew.Core.Tasks.TaskAction,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name: Create(double, TaskAction, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Create_System_Double_Mew_Core_Tasks_TaskAction_Mew_Core_Tasks_IntervalTimerType_Mew_Core_Tasks_LagProcessType_
+  commentId: M:Mew.Core.Tasks.TaskInterval.Create(System.Double,Mew.Core.Tasks.TaskAction,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name.vb: Create(Double, TaskAction, IntervalTimerType, LagProcessType)
+  fullName: Mew.Core.Tasks.TaskInterval.Create(double, Mew.Core.Tasks.TaskAction, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  fullName.vb: Mew.Core.Tasks.TaskInterval.Create(Double, Mew.Core.Tasks.TaskAction, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  nameWithType: TaskInterval.Create(double, TaskAction, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval.Create(Double, TaskAction, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.Tasks.TaskInterval.Create(System.Double,System.Action,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name: Create(double, Action, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Create_System_Double_System_Action_Mew_Core_Tasks_IntervalTimerType_Mew_Core_Tasks_LagProcessType_
+  commentId: M:Mew.Core.Tasks.TaskInterval.Create(System.Double,System.Action,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name.vb: Create(Double, Action, IntervalTimerType, LagProcessType)
+  fullName: Mew.Core.Tasks.TaskInterval.Create(double, System.Action, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  fullName.vb: Mew.Core.Tasks.TaskInterval.Create(Double, System.Action, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  nameWithType: TaskInterval.Create(double, Action, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval.Create(Double, Action, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.Tasks.TaskInterval.Create(System.TimeSpan,Mew.Core.Tasks.TaskAction,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name: Create(TimeSpan, TaskAction, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Create_System_TimeSpan_Mew_Core_Tasks_TaskAction_Mew_Core_Tasks_IntervalTimerType_Mew_Core_Tasks_LagProcessType_
+  commentId: M:Mew.Core.Tasks.TaskInterval.Create(System.TimeSpan,Mew.Core.Tasks.TaskAction,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  fullName: Mew.Core.Tasks.TaskInterval.Create(System.TimeSpan, Mew.Core.Tasks.TaskAction, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  nameWithType: TaskInterval.Create(TimeSpan, TaskAction, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.Tasks.TaskInterval.Create(System.TimeSpan,System.Action,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name: Create(TimeSpan, Action, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Create_System_TimeSpan_System_Action_Mew_Core_Tasks_IntervalTimerType_Mew_Core_Tasks_LagProcessType_
+  commentId: M:Mew.Core.Tasks.TaskInterval.Create(System.TimeSpan,System.Action,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  fullName: Mew.Core.Tasks.TaskInterval.Create(System.TimeSpan, System.Action, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  nameWithType: TaskInterval.Create(TimeSpan, Action, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.Tasks.TaskInterval.Create*
+  name: Create
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Create_
+  commentId: Overload:Mew.Core.Tasks.TaskInterval.Create
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskInterval.Create
+  nameWithType: TaskInterval.Create
+- uid: Mew.Core.Tasks.TaskInterval.Dispose
+  name: Dispose()
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Dispose
+  commentId: M:Mew.Core.Tasks.TaskInterval.Dispose
+  fullName: Mew.Core.Tasks.TaskInterval.Dispose()
+  nameWithType: TaskInterval.Dispose()
+- uid: Mew.Core.Tasks.TaskInterval.Dispose*
+  name: Dispose
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Dispose_
+  commentId: Overload:Mew.Core.Tasks.TaskInterval.Dispose
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskInterval.Dispose
+  nameWithType: TaskInterval.Dispose
+- uid: Mew.Core.Tasks.TaskInterval.Interval
+  name: Interval
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Interval
+  commentId: P:Mew.Core.Tasks.TaskInterval.Interval
+  fullName: Mew.Core.Tasks.TaskInterval.Interval
+  nameWithType: TaskInterval.Interval
+- uid: Mew.Core.Tasks.TaskInterval.Interval*
+  name: Interval
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Interval_
+  commentId: Overload:Mew.Core.Tasks.TaskInterval.Interval
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskInterval.Interval
+  nameWithType: TaskInterval.Interval
+- uid: Mew.Core.Tasks.TaskInterval.IntervalTimerType
+  name: IntervalTimerType
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_IntervalTimerType
+  commentId: P:Mew.Core.Tasks.TaskInterval.IntervalTimerType
+  fullName: Mew.Core.Tasks.TaskInterval.IntervalTimerType
+  nameWithType: TaskInterval.IntervalTimerType
+- uid: Mew.Core.Tasks.TaskInterval.IntervalTimerType*
+  name: IntervalTimerType
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_IntervalTimerType_
+  commentId: Overload:Mew.Core.Tasks.TaskInterval.IntervalTimerType
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskInterval.IntervalTimerType
+  nameWithType: TaskInterval.IntervalTimerType
+- uid: Mew.Core.Tasks.TaskInterval.LagProcessType
+  name: LagProcessType
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_LagProcessType
+  commentId: P:Mew.Core.Tasks.TaskInterval.LagProcessType
+  fullName: Mew.Core.Tasks.TaskInterval.LagProcessType
+  nameWithType: TaskInterval.LagProcessType
+- uid: Mew.Core.Tasks.TaskInterval.LagProcessType*
+  name: LagProcessType
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_LagProcessType_
+  commentId: Overload:Mew.Core.Tasks.TaskInterval.LagProcessType
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskInterval.LagProcessType
+  nameWithType: TaskInterval.LagProcessType
+- uid: Mew.Core.Tasks.TaskInterval.LoopId
+  name: LoopId
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_LoopId
+  commentId: P:Mew.Core.Tasks.TaskInterval.LoopId
+  fullName: Mew.Core.Tasks.TaskInterval.LoopId
+  nameWithType: TaskInterval.LoopId
+- uid: Mew.Core.Tasks.TaskInterval.LoopId*
+  name: LoopId
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_LoopId_
+  commentId: Overload:Mew.Core.Tasks.TaskInterval.LoopId
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskInterval.LoopId
+  nameWithType: TaskInterval.LoopId
+- uid: Mew.Core.Tasks.TaskInterval.Start(System.Nullable{System.Threading.CancellationToken})
+  name: Start(CancellationToken?)
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Start_System_Nullable_System_Threading_CancellationToken__
+  commentId: M:Mew.Core.Tasks.TaskInterval.Start(System.Nullable{System.Threading.CancellationToken})
+  fullName: Mew.Core.Tasks.TaskInterval.Start(System.Threading.CancellationToken?)
+  nameWithType: TaskInterval.Start(CancellationToken?)
+- uid: Mew.Core.Tasks.TaskInterval.Start*
+  name: Start
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Start_
+  commentId: Overload:Mew.Core.Tasks.TaskInterval.Start
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskInterval.Start
+  nameWithType: TaskInterval.Start
+- uid: Mew.Core.Tasks.TaskInterval.Tick(System.Single)
+  name: Tick(float)
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Tick_System_Single_
+  commentId: M:Mew.Core.Tasks.TaskInterval.Tick(System.Single)
+  name.vb: Tick(Single)
+  fullName: Mew.Core.Tasks.TaskInterval.Tick(float)
+  fullName.vb: Mew.Core.Tasks.TaskInterval.Tick(Single)
+  nameWithType: TaskInterval.Tick(float)
+  nameWithType.vb: TaskInterval.Tick(Single)
+- uid: Mew.Core.Tasks.TaskInterval.Tick*
+  name: Tick
+  href: api/Mew.Core.Tasks.TaskInterval.html#Mew_Core_Tasks_TaskInterval_Tick_
+  commentId: Overload:Mew.Core.Tasks.TaskInterval.Tick
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskInterval.Tick
+  nameWithType: TaskInterval.Tick
+- uid: Mew.Core.Tasks.TaskInterval`1
+  name: TaskInterval<T>
+  href: api/Mew.Core.Tasks.TaskInterval-1.html
+  commentId: T:Mew.Core.Tasks.TaskInterval`1
+  name.vb: TaskInterval(Of T)
+  fullName: Mew.Core.Tasks.TaskInterval<T>
+  fullName.vb: Mew.Core.Tasks.TaskInterval(Of T)
+  nameWithType: TaskInterval<T>
+  nameWithType.vb: TaskInterval(Of T)
+- uid: Mew.Core.Tasks.TaskInterval`1.Create(System.Double,Mew.Core.Tasks.TaskAction,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name: Create(double, TaskAction, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.Tasks.TaskInterval-1.html#Mew_Core_Tasks_TaskInterval_1_Create_System_Double_Mew_Core_Tasks_TaskAction_Mew_Core_Tasks_IntervalTimerType_Mew_Core_Tasks_LagProcessType_
+  commentId: M:Mew.Core.Tasks.TaskInterval`1.Create(System.Double,Mew.Core.Tasks.TaskAction,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name.vb: Create(Double, TaskAction, IntervalTimerType, LagProcessType)
+  fullName: Mew.Core.Tasks.TaskInterval<T>.Create(double, Mew.Core.Tasks.TaskAction, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  fullName.vb: Mew.Core.Tasks.TaskInterval(Of T).Create(Double, Mew.Core.Tasks.TaskAction, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  nameWithType: TaskInterval<T>.Create(double, TaskAction, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval(Of T).Create(Double, TaskAction, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.Tasks.TaskInterval`1.Create(System.Double,System.Action,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name: Create(double, Action, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.Tasks.TaskInterval-1.html#Mew_Core_Tasks_TaskInterval_1_Create_System_Double_System_Action_Mew_Core_Tasks_IntervalTimerType_Mew_Core_Tasks_LagProcessType_
+  commentId: M:Mew.Core.Tasks.TaskInterval`1.Create(System.Double,System.Action,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name.vb: Create(Double, Action, IntervalTimerType, LagProcessType)
+  fullName: Mew.Core.Tasks.TaskInterval<T>.Create(double, System.Action, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  fullName.vb: Mew.Core.Tasks.TaskInterval(Of T).Create(Double, System.Action, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  nameWithType: TaskInterval<T>.Create(double, Action, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval(Of T).Create(Double, Action, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.Tasks.TaskInterval`1.Create(System.TimeSpan,Mew.Core.Tasks.TaskAction,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name: Create(TimeSpan, TaskAction, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.Tasks.TaskInterval-1.html#Mew_Core_Tasks_TaskInterval_1_Create_System_TimeSpan_Mew_Core_Tasks_TaskAction_Mew_Core_Tasks_IntervalTimerType_Mew_Core_Tasks_LagProcessType_
+  commentId: M:Mew.Core.Tasks.TaskInterval`1.Create(System.TimeSpan,Mew.Core.Tasks.TaskAction,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  fullName: Mew.Core.Tasks.TaskInterval<T>.Create(System.TimeSpan, Mew.Core.Tasks.TaskAction, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  fullName.vb: Mew.Core.Tasks.TaskInterval(Of T).Create(System.TimeSpan, Mew.Core.Tasks.TaskAction, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  nameWithType: TaskInterval<T>.Create(TimeSpan, TaskAction, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval(Of T).Create(TimeSpan, TaskAction, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.Tasks.TaskInterval`1.Create(System.TimeSpan,System.Action,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  name: Create(TimeSpan, Action, IntervalTimerType, LagProcessType)
+  href: api/Mew.Core.Tasks.TaskInterval-1.html#Mew_Core_Tasks_TaskInterval_1_Create_System_TimeSpan_System_Action_Mew_Core_Tasks_IntervalTimerType_Mew_Core_Tasks_LagProcessType_
+  commentId: M:Mew.Core.Tasks.TaskInterval`1.Create(System.TimeSpan,System.Action,Mew.Core.Tasks.IntervalTimerType,Mew.Core.Tasks.LagProcessType)
+  fullName: Mew.Core.Tasks.TaskInterval<T>.Create(System.TimeSpan, System.Action, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  fullName.vb: Mew.Core.Tasks.TaskInterval(Of T).Create(System.TimeSpan, System.Action, Mew.Core.Tasks.IntervalTimerType, Mew.Core.Tasks.LagProcessType)
+  nameWithType: TaskInterval<T>.Create(TimeSpan, Action, IntervalTimerType, LagProcessType)
+  nameWithType.vb: TaskInterval(Of T).Create(TimeSpan, Action, IntervalTimerType, LagProcessType)
+- uid: Mew.Core.Tasks.TaskInterval`1.Create*
+  name: Create
+  href: api/Mew.Core.Tasks.TaskInterval-1.html#Mew_Core_Tasks_TaskInterval_1_Create_
+  commentId: Overload:Mew.Core.Tasks.TaskInterval`1.Create
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskInterval<T>.Create
+  fullName.vb: Mew.Core.Tasks.TaskInterval(Of T).Create
+  nameWithType: TaskInterval<T>.Create
+  nameWithType.vb: TaskInterval(Of T).Create
+- uid: Mew.Core.Tasks.TaskQueue
+  name: TaskQueue
+  href: api/Mew.Core.Tasks.TaskQueue.html
+  commentId: T:Mew.Core.Tasks.TaskQueue
+  fullName: Mew.Core.Tasks.TaskQueue
+  nameWithType: TaskQueue
+- uid: Mew.Core.Tasks.TaskQueue.#ctor(Mew.Core.Tasks.TaskQueueLimitType,System.Int32)
+  name: TaskQueue(TaskQueueLimitType, int)
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue__ctor_Mew_Core_Tasks_TaskQueueLimitType_System_Int32_
+  commentId: M:Mew.Core.Tasks.TaskQueue.#ctor(Mew.Core.Tasks.TaskQueueLimitType,System.Int32)
+  name.vb: New(TaskQueueLimitType, Integer)
+  fullName: Mew.Core.Tasks.TaskQueue.TaskQueue(Mew.Core.Tasks.TaskQueueLimitType, int)
+  fullName.vb: Mew.Core.Tasks.TaskQueue.New(Mew.Core.Tasks.TaskQueueLimitType, Integer)
+  nameWithType: TaskQueue.TaskQueue(TaskQueueLimitType, int)
+  nameWithType.vb: TaskQueue.New(TaskQueueLimitType, Integer)
+- uid: Mew.Core.Tasks.TaskQueue.#ctor*
+  name: TaskQueue
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue__ctor_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mew.Core.Tasks.TaskQueue.TaskQueue
+  fullName.vb: Mew.Core.Tasks.TaskQueue.New
+  nameWithType: TaskQueue.TaskQueue
+  nameWithType.vb: TaskQueue.New
+- uid: Mew.Core.Tasks.TaskQueue.Any
+  name: Any()
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Any
+  commentId: M:Mew.Core.Tasks.TaskQueue.Any
+  fullName: Mew.Core.Tasks.TaskQueue.Any()
+  nameWithType: TaskQueue.Any()
+- uid: Mew.Core.Tasks.TaskQueue.Any*
+  name: Any
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Any_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue.Any
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskQueue.Any
+  nameWithType: TaskQueue.Any
+- uid: Mew.Core.Tasks.TaskQueue.Count
+  name: Count
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Count
+  commentId: P:Mew.Core.Tasks.TaskQueue.Count
+  fullName: Mew.Core.Tasks.TaskQueue.Count
+  nameWithType: TaskQueue.Count
+- uid: Mew.Core.Tasks.TaskQueue.Count*
+  name: Count
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Count_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue.Count
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskQueue.Count
+  nameWithType: TaskQueue.Count
+- uid: Mew.Core.Tasks.TaskQueue.Dispose
+  name: Dispose()
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Dispose
+  commentId: M:Mew.Core.Tasks.TaskQueue.Dispose
+  fullName: Mew.Core.Tasks.TaskQueue.Dispose()
+  nameWithType: TaskQueue.Dispose()
+- uid: Mew.Core.Tasks.TaskQueue.Dispose*
+  name: Dispose
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Dispose_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue.Dispose
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskQueue.Dispose
+  nameWithType: TaskQueue.Dispose
+- uid: Mew.Core.Tasks.TaskQueue.Disposed
+  name: Disposed
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Disposed
+  commentId: P:Mew.Core.Tasks.TaskQueue.Disposed
+  fullName: Mew.Core.Tasks.TaskQueue.Disposed
+  nameWithType: TaskQueue.Disposed
+- uid: Mew.Core.Tasks.TaskQueue.Disposed*
+  name: Disposed
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Disposed_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue.Disposed
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskQueue.Disposed
+  nameWithType: TaskQueue.Disposed
+- uid: Mew.Core.Tasks.TaskQueue.Enqueue(Mew.Core.Tasks.TaskAction,System.Int32)
+  name: Enqueue(TaskAction, int)
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Enqueue_Mew_Core_Tasks_TaskAction_System_Int32_
+  commentId: M:Mew.Core.Tasks.TaskQueue.Enqueue(Mew.Core.Tasks.TaskAction,System.Int32)
+  name.vb: Enqueue(TaskAction, Integer)
+  fullName: Mew.Core.Tasks.TaskQueue.Enqueue(Mew.Core.Tasks.TaskAction, int)
+  fullName.vb: Mew.Core.Tasks.TaskQueue.Enqueue(Mew.Core.Tasks.TaskAction, Integer)
+  nameWithType: TaskQueue.Enqueue(TaskAction, int)
+  nameWithType.vb: TaskQueue.Enqueue(TaskAction, Integer)
+- uid: Mew.Core.Tasks.TaskQueue.Enqueue*
+  name: Enqueue
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Enqueue_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue.Enqueue
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskQueue.Enqueue
+  nameWithType: TaskQueue.Enqueue
+- uid: Mew.Core.Tasks.TaskQueue.LimitType
+  name: LimitType
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_LimitType
+  commentId: P:Mew.Core.Tasks.TaskQueue.LimitType
+  fullName: Mew.Core.Tasks.TaskQueue.LimitType
+  nameWithType: TaskQueue.LimitType
+- uid: Mew.Core.Tasks.TaskQueue.LimitType*
+  name: LimitType
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_LimitType_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue.LimitType
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskQueue.LimitType
+  nameWithType: TaskQueue.LimitType
+- uid: Mew.Core.Tasks.TaskQueue.MaxSize
+  name: MaxSize
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_MaxSize
+  commentId: P:Mew.Core.Tasks.TaskQueue.MaxSize
+  fullName: Mew.Core.Tasks.TaskQueue.MaxSize
+  nameWithType: TaskQueue.MaxSize
+- uid: Mew.Core.Tasks.TaskQueue.MaxSize*
+  name: MaxSize
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_MaxSize_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue.MaxSize
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskQueue.MaxSize
+  nameWithType: TaskQueue.MaxSize
+- uid: Mew.Core.Tasks.TaskQueue.Start(System.Nullable{System.Threading.CancellationToken})
+  name: Start(CancellationToken?)
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Start_System_Nullable_System_Threading_CancellationToken__
+  commentId: M:Mew.Core.Tasks.TaskQueue.Start(System.Nullable{System.Threading.CancellationToken})
+  fullName: Mew.Core.Tasks.TaskQueue.Start(System.Threading.CancellationToken?)
+  nameWithType: TaskQueue.Start(CancellationToken?)
+- uid: Mew.Core.Tasks.TaskQueue.Start*
+  name: Start
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Start_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue.Start
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskQueue.Start
+  nameWithType: TaskQueue.Start
+- uid: Mew.Core.Tasks.TaskQueue.WaitForEmptyAsync
+  name: WaitForEmptyAsync()
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_WaitForEmptyAsync
+  commentId: M:Mew.Core.Tasks.TaskQueue.WaitForEmptyAsync
+  fullName: Mew.Core.Tasks.TaskQueue.WaitForEmptyAsync()
+  nameWithType: TaskQueue.WaitForEmptyAsync()
+- uid: Mew.Core.Tasks.TaskQueue.WaitForEmptyAsync*
+  name: WaitForEmptyAsync
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_WaitForEmptyAsync_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue.WaitForEmptyAsync
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskQueue.WaitForEmptyAsync
+  nameWithType: TaskQueue.WaitForEmptyAsync
+- uid: Mew.Core.Tasks.TaskQueue.loopId
+  name: loopId
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_loopId
+  commentId: F:Mew.Core.Tasks.TaskQueue.loopId
+  fullName: Mew.Core.Tasks.TaskQueue.loopId
+  nameWithType: TaskQueue.loopId
+- uid: Mew.Core.Tasks.TaskQueueLimitType
+  name: TaskQueueLimitType
+  href: api/Mew.Core.Tasks.TaskQueueLimitType.html
+  commentId: T:Mew.Core.Tasks.TaskQueueLimitType
+  fullName: Mew.Core.Tasks.TaskQueueLimitType
+  nameWithType: TaskQueueLimitType
+- uid: Mew.Core.Tasks.TaskQueueLimitType.Discard
+  name: Discard
+  href: api/Mew.Core.Tasks.TaskQueueLimitType.html#Mew_Core_Tasks_TaskQueueLimitType_Discard
+  commentId: F:Mew.Core.Tasks.TaskQueueLimitType.Discard
+  fullName: Mew.Core.Tasks.TaskQueueLimitType.Discard
+  nameWithType: TaskQueueLimitType.Discard
+- uid: Mew.Core.Tasks.TaskQueueLimitType.None
+  name: None
+  href: api/Mew.Core.Tasks.TaskQueueLimitType.html#Mew_Core_Tasks_TaskQueueLimitType_None
+  commentId: F:Mew.Core.Tasks.TaskQueueLimitType.None
+  fullName: Mew.Core.Tasks.TaskQueueLimitType.None
+  nameWithType: TaskQueueLimitType.None
+- uid: Mew.Core.Tasks.TaskQueueLimitType.SwapLast
+  name: SwapLast
+  href: api/Mew.Core.Tasks.TaskQueueLimitType.html#Mew_Core_Tasks_TaskQueueLimitType_SwapLast
+  commentId: F:Mew.Core.Tasks.TaskQueueLimitType.SwapLast
+  fullName: Mew.Core.Tasks.TaskQueueLimitType.SwapLast
+  nameWithType: TaskQueueLimitType.SwapLast
+- uid: Mew.Core.Tasks.TaskQueue`1
+  name: TaskQueue<T>
+  href: api/Mew.Core.Tasks.TaskQueue-1.html
+  commentId: T:Mew.Core.Tasks.TaskQueue`1
+  name.vb: TaskQueue(Of T)
+  fullName: Mew.Core.Tasks.TaskQueue<T>
+  fullName.vb: Mew.Core.Tasks.TaskQueue(Of T)
+  nameWithType: TaskQueue<T>
+  nameWithType.vb: TaskQueue(Of T)
+- uid: Mew.Core.Tasks.TaskQueue`1.#ctor
+  name: TaskQueue()
+  href: api/Mew.Core.Tasks.TaskQueue-1.html#Mew_Core_Tasks_TaskQueue_1__ctor
+  commentId: M:Mew.Core.Tasks.TaskQueue`1.#ctor
+  name.vb: New()
+  fullName: Mew.Core.Tasks.TaskQueue<T>.TaskQueue()
+  fullName.vb: Mew.Core.Tasks.TaskQueue(Of T).New()
+  nameWithType: TaskQueue<T>.TaskQueue()
+  nameWithType.vb: TaskQueue(Of T).New()
+- uid: Mew.Core.Tasks.TaskQueue`1.#ctor(Mew.Core.Tasks.TaskQueueLimitType,System.Int32)
+  name: TaskQueue(TaskQueueLimitType, int)
+  href: api/Mew.Core.Tasks.TaskQueue-1.html#Mew_Core_Tasks_TaskQueue_1__ctor_Mew_Core_Tasks_TaskQueueLimitType_System_Int32_
+  commentId: M:Mew.Core.Tasks.TaskQueue`1.#ctor(Mew.Core.Tasks.TaskQueueLimitType,System.Int32)
+  name.vb: New(TaskQueueLimitType, Integer)
+  fullName: Mew.Core.Tasks.TaskQueue<T>.TaskQueue(Mew.Core.Tasks.TaskQueueLimitType, int)
+  fullName.vb: Mew.Core.Tasks.TaskQueue(Of T).New(Mew.Core.Tasks.TaskQueueLimitType, Integer)
+  nameWithType: TaskQueue<T>.TaskQueue(TaskQueueLimitType, int)
+  nameWithType.vb: TaskQueue(Of T).New(TaskQueueLimitType, Integer)
+- uid: Mew.Core.Tasks.TaskQueue`1.#ctor*
+  name: TaskQueue
+  href: api/Mew.Core.Tasks.TaskQueue-1.html#Mew_Core_Tasks_TaskQueue_1__ctor_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mew.Core.Tasks.TaskQueue<T>.TaskQueue
+  fullName.vb: Mew.Core.Tasks.TaskQueue(Of T).New
+  nameWithType: TaskQueue<T>.TaskQueue
+  nameWithType.vb: TaskQueue(Of T).New
+- uid: Mew.Core.Tasks.TaskWithPriority
+  name: TaskWithPriority
+  href: api/Mew.Core.Tasks.TaskWithPriority.html
+  commentId: T:Mew.Core.Tasks.TaskWithPriority
+  fullName: Mew.Core.Tasks.TaskWithPriority
+  nameWithType: TaskWithPriority
+- uid: Mew.Core.Tasks.TaskWithPriority.#ctor(Mew.Core.Tasks.TaskAction,System.Int32)
+  name: TaskWithPriority(TaskAction, int)
+  href: api/Mew.Core.Tasks.TaskWithPriority.html#Mew_Core_Tasks_TaskWithPriority__ctor_Mew_Core_Tasks_TaskAction_System_Int32_
+  commentId: M:Mew.Core.Tasks.TaskWithPriority.#ctor(Mew.Core.Tasks.TaskAction,System.Int32)
+  name.vb: New(TaskAction, Integer)
+  fullName: Mew.Core.Tasks.TaskWithPriority.TaskWithPriority(Mew.Core.Tasks.TaskAction, int)
+  fullName.vb: Mew.Core.Tasks.TaskWithPriority.New(Mew.Core.Tasks.TaskAction, Integer)
+  nameWithType: TaskWithPriority.TaskWithPriority(TaskAction, int)
+  nameWithType.vb: TaskWithPriority.New(TaskAction, Integer)
+- uid: Mew.Core.Tasks.TaskWithPriority.#ctor*
+  name: TaskWithPriority
+  href: api/Mew.Core.Tasks.TaskWithPriority.html#Mew_Core_Tasks_TaskWithPriority__ctor_
+  commentId: Overload:Mew.Core.Tasks.TaskWithPriority.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mew.Core.Tasks.TaskWithPriority.TaskWithPriority
+  fullName.vb: Mew.Core.Tasks.TaskWithPriority.New
+  nameWithType: TaskWithPriority.TaskWithPriority
+  nameWithType.vb: TaskWithPriority.New
+- uid: Mew.Core.Tasks.TaskWithPriority.Func
+  name: Func
+  href: api/Mew.Core.Tasks.TaskWithPriority.html#Mew_Core_Tasks_TaskWithPriority_Func
+  commentId: P:Mew.Core.Tasks.TaskWithPriority.Func
+  fullName: Mew.Core.Tasks.TaskWithPriority.Func
+  nameWithType: TaskWithPriority.Func
+- uid: Mew.Core.Tasks.TaskWithPriority.Func*
+  name: Func
+  href: api/Mew.Core.Tasks.TaskWithPriority.html#Mew_Core_Tasks_TaskWithPriority_Func_
+  commentId: Overload:Mew.Core.Tasks.TaskWithPriority.Func
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskWithPriority.Func
+  nameWithType: TaskWithPriority.Func
+- uid: Mew.Core.Tasks.TaskWithPriority.Priority
+  name: Priority
+  href: api/Mew.Core.Tasks.TaskWithPriority.html#Mew_Core_Tasks_TaskWithPriority_Priority
+  commentId: P:Mew.Core.Tasks.TaskWithPriority.Priority
+  fullName: Mew.Core.Tasks.TaskWithPriority.Priority
+  nameWithType: TaskWithPriority.Priority
+- uid: Mew.Core.Tasks.TaskWithPriority.Priority*
+  name: Priority
+  href: api/Mew.Core.Tasks.TaskWithPriority.html#Mew_Core_Tasks_TaskWithPriority_Priority_
+  commentId: Overload:Mew.Core.Tasks.TaskWithPriority.Priority
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskWithPriority.Priority
+  nameWithType: TaskWithPriority.Priority
+- uid: Mew.Core.Tests
+  name: Mew.Core.Tests
+  href: api/Mew.Core.Tests.html
+  commentId: N:Mew.Core.Tests
+  fullName: Mew.Core.Tests
+  nameWithType: Mew.Core.Tests
+- uid: Mew.Core.Tests.TaskIntervalBehaviourTest
+  name: TaskIntervalBehaviourTest
+  href: api/Mew.Core.Tests.TaskIntervalBehaviourTest.html
+  commentId: T:Mew.Core.Tests.TaskIntervalBehaviourTest
+  fullName: Mew.Core.Tests.TaskIntervalBehaviourTest
+  nameWithType: TaskIntervalBehaviourTest
+- uid: Mew.Core.Tests.TaskIntervalPlayModeTest
+  name: TaskIntervalPlayModeTest
+  href: api/Mew.Core.Tests.TaskIntervalPlayModeTest.html
+  commentId: T:Mew.Core.Tests.TaskIntervalPlayModeTest
+  fullName: Mew.Core.Tests.TaskIntervalPlayModeTest
+  nameWithType: TaskIntervalPlayModeTest
+- uid: Mew.Core.Tests.TaskIntervalPlayModeTest.BasicTest
+  name: BasicTest()
+  href: api/Mew.Core.Tests.TaskIntervalPlayModeTest.html#Mew_Core_Tests_TaskIntervalPlayModeTest_BasicTest
+  commentId: M:Mew.Core.Tests.TaskIntervalPlayModeTest.BasicTest
+  fullName: Mew.Core.Tests.TaskIntervalPlayModeTest.BasicTest()
+  nameWithType: TaskIntervalPlayModeTest.BasicTest()
+- uid: Mew.Core.Tests.TaskIntervalPlayModeTest.BasicTest*
+  name: BasicTest
+  href: api/Mew.Core.Tests.TaskIntervalPlayModeTest.html#Mew_Core_Tests_TaskIntervalPlayModeTest_BasicTest_
+  commentId: Overload:Mew.Core.Tests.TaskIntervalPlayModeTest.BasicTest
+  isSpec: "True"
+  fullName: Mew.Core.Tests.TaskIntervalPlayModeTest.BasicTest
+  nameWithType: TaskIntervalPlayModeTest.BasicTest
+- uid: Mew.Core.Tests.TaskIntervalPlayModeTest.FixedUpdateTest
+  name: FixedUpdateTest()
+  href: api/Mew.Core.Tests.TaskIntervalPlayModeTest.html#Mew_Core_Tests_TaskIntervalPlayModeTest_FixedUpdateTest
+  commentId: M:Mew.Core.Tests.TaskIntervalPlayModeTest.FixedUpdateTest
+  fullName: Mew.Core.Tests.TaskIntervalPlayModeTest.FixedUpdateTest()
+  nameWithType: TaskIntervalPlayModeTest.FixedUpdateTest()
+- uid: Mew.Core.Tests.TaskIntervalPlayModeTest.FixedUpdateTest*
+  name: FixedUpdateTest
+  href: api/Mew.Core.Tests.TaskIntervalPlayModeTest.html#Mew_Core_Tests_TaskIntervalPlayModeTest_FixedUpdateTest_
+  commentId: Overload:Mew.Core.Tests.TaskIntervalPlayModeTest.FixedUpdateTest
+  isSpec: "True"
+  fullName: Mew.Core.Tests.TaskIntervalPlayModeTest.FixedUpdateTest
+  nameWithType: TaskIntervalPlayModeTest.FixedUpdateTest
+- uid: Mew.Core.Tests.TaskIntervalPlayModeTest.SkipTaskWhenFloodTest
+  name: SkipTaskWhenFloodTest()
+  href: api/Mew.Core.Tests.TaskIntervalPlayModeTest.html#Mew_Core_Tests_TaskIntervalPlayModeTest_SkipTaskWhenFloodTest
+  commentId: M:Mew.Core.Tests.TaskIntervalPlayModeTest.SkipTaskWhenFloodTest
+  fullName: Mew.Core.Tests.TaskIntervalPlayModeTest.SkipTaskWhenFloodTest()
+  nameWithType: TaskIntervalPlayModeTest.SkipTaskWhenFloodTest()
+- uid: Mew.Core.Tests.TaskIntervalPlayModeTest.SkipTaskWhenFloodTest*
+  name: SkipTaskWhenFloodTest
+  href: api/Mew.Core.Tests.TaskIntervalPlayModeTest.html#Mew_Core_Tests_TaskIntervalPlayModeTest_SkipTaskWhenFloodTest_
+  commentId: Overload:Mew.Core.Tests.TaskIntervalPlayModeTest.SkipTaskWhenFloodTest
+  isSpec: "True"
+  fullName: Mew.Core.Tests.TaskIntervalPlayModeTest.SkipTaskWhenFloodTest
+  nameWithType: TaskIntervalPlayModeTest.SkipTaskWhenFloodTest
+- uid: Mew.Core.Tests.TaskQueueBehaviourTest
+  name: TaskQueueBehaviourTest
+  href: api/Mew.Core.Tests.TaskQueueBehaviourTest.html
+  commentId: T:Mew.Core.Tests.TaskQueueBehaviourTest
+  fullName: Mew.Core.Tests.TaskQueueBehaviourTest
+  nameWithType: TaskQueueBehaviourTest
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest
+  name: TaskQueuePlayModeTest
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html
+  commentId: T:Mew.Core.Tests.TaskQueuePlayModeTest
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest
+  nameWithType: TaskQueuePlayModeTest
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardHighPriorityTest
+  name: DiscardHighPriorityTest()
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_DiscardHighPriorityTest
+  commentId: M:Mew.Core.Tests.TaskQueuePlayModeTest.DiscardHighPriorityTest
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardHighPriorityTest()
+  nameWithType: TaskQueuePlayModeTest.DiscardHighPriorityTest()
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardHighPriorityTest*
+  name: DiscardHighPriorityTest
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_DiscardHighPriorityTest_
+  commentId: Overload:Mew.Core.Tests.TaskQueuePlayModeTest.DiscardHighPriorityTest
+  isSpec: "True"
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardHighPriorityTest
+  nameWithType: TaskQueuePlayModeTest.DiscardHighPriorityTest
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardLowPriorityTest
+  name: DiscardLowPriorityTest()
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_DiscardLowPriorityTest
+  commentId: M:Mew.Core.Tests.TaskQueuePlayModeTest.DiscardLowPriorityTest
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardLowPriorityTest()
+  nameWithType: TaskQueuePlayModeTest.DiscardLowPriorityTest()
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardLowPriorityTest*
+  name: DiscardLowPriorityTest
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_DiscardLowPriorityTest_
+  commentId: Overload:Mew.Core.Tests.TaskQueuePlayModeTest.DiscardLowPriorityTest
+  isSpec: "True"
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardLowPriorityTest
+  nameWithType: TaskQueuePlayModeTest.DiscardLowPriorityTest
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardTest
+  name: DiscardTest()
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_DiscardTest
+  commentId: M:Mew.Core.Tests.TaskQueuePlayModeTest.DiscardTest
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardTest()
+  nameWithType: TaskQueuePlayModeTest.DiscardTest()
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardTest*
+  name: DiscardTest
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_DiscardTest_
+  commentId: Overload:Mew.Core.Tests.TaskQueuePlayModeTest.DiscardTest
+  isSpec: "True"
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.DiscardTest
+  nameWithType: TaskQueuePlayModeTest.DiscardTest
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.DisposeByCancellationTokenTest
+  name: DisposeByCancellationTokenTest()
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_DisposeByCancellationTokenTest
+  commentId: M:Mew.Core.Tests.TaskQueuePlayModeTest.DisposeByCancellationTokenTest
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.DisposeByCancellationTokenTest()
+  nameWithType: TaskQueuePlayModeTest.DisposeByCancellationTokenTest()
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.DisposeByCancellationTokenTest*
+  name: DisposeByCancellationTokenTest
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_DisposeByCancellationTokenTest_
+  commentId: Overload:Mew.Core.Tests.TaskQueuePlayModeTest.DisposeByCancellationTokenTest
+  isSpec: "True"
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.DisposeByCancellationTokenTest
+  nameWithType: TaskQueuePlayModeTest.DisposeByCancellationTokenTest
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.DisposeTest
+  name: DisposeTest()
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_DisposeTest
+  commentId: M:Mew.Core.Tests.TaskQueuePlayModeTest.DisposeTest
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.DisposeTest()
+  nameWithType: TaskQueuePlayModeTest.DisposeTest()
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.DisposeTest*
+  name: DisposeTest
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_DisposeTest_
+  commentId: Overload:Mew.Core.Tests.TaskQueuePlayModeTest.DisposeTest
+  isSpec: "True"
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.DisposeTest
+  nameWithType: TaskQueuePlayModeTest.DisposeTest
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastHighPriorityTest
+  name: SwapLastHighPriorityTest()
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_SwapLastHighPriorityTest
+  commentId: M:Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastHighPriorityTest
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastHighPriorityTest()
+  nameWithType: TaskQueuePlayModeTest.SwapLastHighPriorityTest()
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastHighPriorityTest*
+  name: SwapLastHighPriorityTest
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_SwapLastHighPriorityTest_
+  commentId: Overload:Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastHighPriorityTest
+  isSpec: "True"
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastHighPriorityTest
+  nameWithType: TaskQueuePlayModeTest.SwapLastHighPriorityTest
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastLowPriorityTest
+  name: SwapLastLowPriorityTest()
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_SwapLastLowPriorityTest
+  commentId: M:Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastLowPriorityTest
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastLowPriorityTest()
+  nameWithType: TaskQueuePlayModeTest.SwapLastLowPriorityTest()
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastLowPriorityTest*
+  name: SwapLastLowPriorityTest
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_SwapLastLowPriorityTest_
+  commentId: Overload:Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastLowPriorityTest
+  isSpec: "True"
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastLowPriorityTest
+  nameWithType: TaskQueuePlayModeTest.SwapLastLowPriorityTest
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastTest
+  name: SwapLastTest()
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_SwapLastTest
+  commentId: M:Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastTest
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastTest()
+  nameWithType: TaskQueuePlayModeTest.SwapLastTest()
+- uid: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastTest*
+  name: SwapLastTest
+  href: api/Mew.Core.Tests.TaskQueuePlayModeTest.html#Mew_Core_Tests_TaskQueuePlayModeTest_SwapLastTest_
+  commentId: Overload:Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastTest
+  isSpec: "True"
+  fullName: Mew.Core.Tests.TaskQueuePlayModeTest.SwapLastTest
+  nameWithType: TaskQueuePlayModeTest.SwapLastTest

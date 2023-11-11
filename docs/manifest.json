@@ -1,0 +1,448 @@
+{
+  "source_base_path": "C:/Users/doi/Projects/MewDev/Documents",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.IntervalTimerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.IntervalTimerType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.LagProcessType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.LagProcessType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewLoop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewLoop.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewLoopDelegateCollection.UpdateFunction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewLoopDelegateCollection.UpdateFunction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewLoopDelegateCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewLoopDelegateCollection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewLoopUnityInitializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewLoopUnityInitializer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewManualUpdate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewManualUpdate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewUnityEarlyUpdate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewUnityEarlyUpdate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewUnityFixedUpdate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewUnityFixedUpdate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewUnityPostLateUpdate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewUnityPostLateUpdate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewUnityPreLateUpdate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewUnityPreLateUpdate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewUnityPreUpdate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewUnityPreUpdate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewUnityUpdate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewUnityUpdate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.TaskAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.TaskAction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.TaskInterval-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.TaskInterval-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.TaskInterval.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.TaskInterval.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.TaskQueue-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.TaskQueue-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.TaskQueue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.TaskQueue.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.TaskQueueLimitType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.TaskQueueLimitType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.TaskWithPriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.TaskWithPriority.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tasks.IntervalTimerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tasks.IntervalTimerType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tasks.LagProcessType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tasks.LagProcessType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tasks.TaskAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tasks.TaskAction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tasks.TaskInterval-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tasks.TaskInterval-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tasks.TaskInterval.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tasks.TaskInterval.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tasks.TaskQueue-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tasks.TaskQueue-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tasks.TaskQueue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tasks.TaskQueue.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tasks.TaskQueueLimitType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tasks.TaskQueueLimitType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tasks.TaskWithPriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tasks.TaskWithPriority.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tasks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tasks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tests.TaskIntervalBehaviourTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tests.TaskIntervalBehaviourTest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tests.TaskIntervalPlayModeTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tests.TaskIntervalPlayModeTest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tests.TaskQueueBehaviourTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tests.TaskQueueBehaviourTest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tests.TaskQueuePlayModeTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tests.TaskQueuePlayModeTest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Tests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Tests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/task-interval.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/task-interval.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/task-queue.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/task-queue.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

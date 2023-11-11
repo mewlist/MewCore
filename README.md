@@ -4,6 +4,14 @@ Core Game Libraries for Unity
 ![](https://img.shields.io/badge/unity-2022.3%20or%20later-green?logo=unity)
 [![](https://img.shields.io/badge/license-MIT-blue)](https://github.com/mewlist/MewCore/blob/main/LICENSE)
 
+## Documents
+
+https://mewlist.github.io/MewCore/
+
+## Readme (日本語)
+
+[Readme_ja.md](./README_ja.md)
+
 ## Installation
 
 It can be installed via UPM.
