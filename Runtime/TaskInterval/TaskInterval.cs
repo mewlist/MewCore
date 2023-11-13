@@ -14,6 +14,7 @@ namespace Mew.Core.Tasks
         private TaskAwaiter? awaiter;
         private CancellationTokenSource? cts;
         private CancellationToken? disposeCt;
+        private Action<Exception>? onException;
 
         private Stopwatch Stopwatch { get; } = new();
         private bool Disposed { get; set; }
@@ -65,7 +66,7 @@ namespace Mew.Core.Tasks
         {
             return new TaskInterval(interval, action, intervalTimerType, lagProcessType, string.Empty);
         }
-        
+
         /// <summary>
         /// Create TaskInterval.
         /// </summary>
@@ -131,6 +132,12 @@ namespace Mew.Core.Tasks
             elapsed += elapsedTime;
         }
 
+        public TaskInterval OnException(Action<Exception> action)
+        {
+            onException = action;
+            return this;
+        }
+
         public void Dispose()
         {
             Stop();
@@ -169,7 +176,7 @@ namespace Mew.Core.Tasks
                 awaiter = null;
             }
 
-            var interval = (float)Interval.TotalSeconds; 
+            var interval = (float)Interval.TotalSeconds;
             if (elapsed < interval) return;
             elapsed -= interval;
 
@@ -189,20 +196,29 @@ namespace Mew.Core.Tasks
 
         private async void Invoke()
         {
-            if (SyncAction is not null)
+            try
             {
-                SyncAction.Invoke();
-            }
+                if (SyncAction is not null)
+                {
+                    SyncAction.Invoke();
+                }
 
-            if (AsyncAction is not null)
+                if (AsyncAction is not null)
+                {
+                    var taskCts = new CancellationTokenSource();
+                    cts = disposeCt.HasValue
+                        ? CancellationTokenSource.CreateLinkedTokenSource(taskCts.Token, disposeCt.Value)
+                        : taskCts;
+                    var task = AsyncAction(cts.Token);
+                    awaiter = task.GetAwaiter();
+                    await task;
+                }
+            }
+            catch (Exception e)
             {
-                var taskCts = new CancellationTokenSource();
-                cts = disposeCt.HasValue
-                    ? CancellationTokenSource.CreateLinkedTokenSource(taskCts.Token, disposeCt.Value)
-                    : taskCts;
-                var task = AsyncAction(cts.Token);
-                awaiter = task.GetAwaiter();
-                await task;
+                if (onException is null)
+                    throw;
+                onException.Invoke(e);
             }
         }
 
@@ -220,7 +236,7 @@ namespace Mew.Core.Tasks
 
         private void ProcessBySystemTime()
         {
-            var currentTime = Stopwatch.ElapsedMilliseconds / 1000f; 
+            var currentTime = Stopwatch.ElapsedMilliseconds / 1000f;
             var elapsedTime = currentTime - lastTime;
             lastTime = currentTime;
             elapsed += elapsedTime;
@@ -300,6 +316,6 @@ namespace Mew.Core.Tasks
             var loopId = MewLoop.LoopId<T>();
             return new TaskInterval<T>(interval, action, intervalTimerType, lagProcessType, loopId);
         }
-        
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿#nullable enable
 using System.Collections;
 using System.Threading;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -28,7 +29,7 @@ namespace Mew.Core.Tasks.Tests
             Assert.AreEqual(10, result);
 
             yield return new WaitForSeconds(1f);
-            
+
             Assert.AreEqual(10, result);
         }
 
@@ -50,7 +51,7 @@ namespace Mew.Core.Tasks.Tests
             Assert.AreEqual(10, result);
 
             yield return new WaitForSeconds(1f);
-            
+
             Assert.AreEqual(10, result);
         }
 
@@ -71,12 +72,12 @@ namespace Mew.Core.Tasks.Tests
                 IntervalTimerType.ManualUpdate,
                 LagProcessType.Skip);
 
-            
+
             taskInterval.Start(cts.Token);
             taskInterval.Tick(0.11f);
             MewLoop.Update<MewManualUpdate>();
             Assert.AreEqual(1, result);
-            
+
             // task awaiting
             taskInterval.Tick(0.11f);
             MewLoop.Update<MewManualUpdate>();
@@ -91,13 +92,36 @@ namespace Mew.Core.Tasks.Tests
 
             MewLoop.Update<MewManualUpdate>();
             Assert.AreEqual(2, result);
-            
+
             cts.Cancel();
             cts.Dispose();
             yield return new WaitForSeconds(0.1f);
             taskInterval.Tick(1f);
             Assert.AreEqual(2, result);
             yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator ExceptionTest()
+        {
+            var result = 0;
+            var cts = new CancellationTokenSource();
+            var startTime = Time.time;
+            TaskInterval.Create(
+                100,
+                async ct =>
+                {
+                    await Task.Delay(1, ct);
+                    throw new System.Exception("Exception");
+                })
+                .OnException(_ => { result++; })
+                .Start(cts.Token);
+
+            while(Time.time - startTime < 1.05f)
+                yield return null;
+
+            // Continues to execute the task even if an exception occurs.
+            Assert.AreEqual(10, result);
         }
     }
 }

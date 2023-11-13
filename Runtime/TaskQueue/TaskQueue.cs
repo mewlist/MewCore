@@ -13,7 +13,7 @@ namespace Mew.Core.Tasks
         private TaskAwaiter? awaiter;
         private CancellationTokenSource? cts;
         private CancellationToken? disposeCt;
-        private List<TaskWithPriority>? queue = new();
+        private List<TaskQueueAwaitable>? queue = new();
 
         protected string loopId = string.Empty;
 
@@ -32,7 +32,7 @@ namespace Mew.Core.Tasks
         public bool Disposed => queue == null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="taskQueueLimitType"></param>
         /// <param name="maxSize"></param>
@@ -70,8 +70,13 @@ namespace Mew.Core.Tasks
 
         public void Enqueue(TaskAction func, int priority = 0)
         {
+            EnqueueAsync(func, priority);
+        }
+
+        public TaskQueueAwaitable EnqueueAsync(TaskAction func, int priority = 0)
+        {
             if (queue is null) throw new ObjectDisposedException("TaskQueue is disposed");
-            var newTask = new TaskWithPriority(func, priority);
+            var newTask = new TaskQueueAwaitable(func, priority);
             var flood = Count >= MaxSize;
 
             queue.Add(newTask);
@@ -85,16 +90,30 @@ namespace Mew.Core.Tasks
                     {
                         var index = queue.FindLastIndex(x =>
                             x.Priority <= priority && x != newTask);
-                        if (index >= 0) queue.RemoveAt(index);
-                        else queue.RemoveAt(queue.Count - 1);
+                        index = index >= 0 ? index : queue.Count - 1;
+                        Cancel(queue, index);
+                        queue.RemoveAt(index);
                     }
                     break;
                 case TaskQueueLimitType.Discard:
-                    if (flood) queue.RemoveAt(queue.Count - 1);
+                    if (flood)
+                    {
+                        var index = queue.Count - 1;
+                        Cancel(queue, index);
+                        queue.RemoveAt(index);
+                    }
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            return newTask;
+        }
+
+        private void Cancel(IReadOnlyList<TaskQueueAwaitable> awaitables, int index)
+        {
+            var task = awaitables[index];
+            task.Cancel();
         }
 
         public void Dispose()
@@ -126,12 +145,7 @@ namespace Mew.Core.Tasks
                 return;
             }
 
-            if (awaiter.HasValue)
-            {
-                if (awaiter.Value.IsCompleted) CancelCurrent();
-                else return;
-            }
-
+            if (awaiter.HasValue) return;
             if (queue is null) return;
             if (queue.Count == 0) return;
 
@@ -141,14 +155,9 @@ namespace Mew.Core.Tasks
             cts = disposeCt.HasValue
                 ? CancellationTokenSource.CreateLinkedTokenSource(taskCts.Token, disposeCt.Value)
                 : taskCts;
-            var invokedTask = task.Func.Invoke(cts.Token); 
+            var invokedTask = task.Invoke(cts.Token);
             awaiter = invokedTask.GetAwaiter();
-            await invokedTask;
-        }
-
-        public async Task WaitForEmptyAsync()
-        {
-            while (Count > 0) await Task.Yield();
+            await invokedTask.ContinueWith(_ => awaiter = null, taskCts.Token);
         }
     }
 
