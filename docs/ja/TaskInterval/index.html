@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>TaskInterval | MewCore </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="TaskInterval | MewCore ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/mewlist/MewDev/blob/main/Documents\ja\TaskInterval\index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="MewCore">
+            MewCore
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h2 id="taskinterval">TaskInterval</h2>
+
+<p>TaskInterval は、Unity 開発で一定間隔による特定の処理の実行を容易にするライブラリです。このライブラリは、非同期関数を定期的に実行し、複数の非同期処理が並行して実行されることを防ぎます。</p>
+<h3 id="主な特徴">主な特徴</h3>
+<ul>
+<li><p><strong>非同期関数の定期実行</strong>: 指定された間隔ごとに非同期関数を自動的に実行します。これにより、非同期処理を含むタスクの管理が容易になります。</p>
+</li>
+<li><p><strong>処理時間への柔軟な対応</strong>: 非同期関数の実行に時間がかかり、指定した間隔を超えた場合でも、処理をスキップするか、遅れても実行を継続することができます。これは一般的な定期実行処理とは異なり、よりリアルタイムの動作環境に適応します。</p>
+</li>
+<li><p><strong>並行実行の防止</strong>: 一度に一つの非同期処理のみが実行され、複数の処理が同時に実行されることはありません。これにより、タスクの実行が予測可能で安全になります。</p>
+</li>
+<li><p><strong>安定した間隔での実行</strong>: 同期関数を使用すれば、安定した間隔で関数を実行することも可能です。</p>
+</li>
+</ul>
+<h3 id="使用シナリオ">使用シナリオ</h3>
+<ul>
+<li><p><strong>ゲーム内の定期的な更新</strong>: ゲームの状態やオブジェクトの状態を一定間隔で更新する際に利用します。</p>
+</li>
+<li><p><strong>バックグラウンド処理</strong>: ネットワーク通信やデータの読み込みなど、バックグラウンドでの定期的な処理に適しています。</p>
+</li>
+<li><p><strong>UIの定期的な更新</strong>: ユーザーインターフェースの要素を定期的に更新する際にも利用できます。</p>
+</li>
+</ul>
+<p>TaskInterval を使用することで、Unity 開発における定期的な処理の実装がより柔軟かつ効率的になり、並行実行による問題を防ぎます。</p>
+<h3 id="サンプルコード">サンプルコード</h3>
+<pre><code class="lang-csharp">public class Sample : MonoBahaviour
+{
+    private void Awake()
+    {
+        // 一秒ごとに TestTaskAsync を実行する TaskInterval を生成します。
+        // destroyCancellationToken を渡すことで
+        // MonoBehaviour が破棄されたタイミングで自動的に処理を停止し Dispose されます。
+        TaskInterval
+            .Create(TimeSpan.FromSeconds(1), TestTaskAsync)
+            .Start(destroyCancellationToken);
+    }
+
+    private float time;
+    private async Task TestTaskAsync(CancellationToken ct)
+    {
+        var currentTime = Time.time;
+        Debug.Log($&quot;{currentTime - time}&quot;);            
+        time = currentTime;
+        await Task.Delay(100, ct);
+    }
+}
+</code></pre>
+<h4 id="実行結果">実行結果</h4>
+<pre><code>0.9996152
+1.000825
+1.000599
+0.9999266
+1.000448
+0.9925194
+...
+</code></pre>
+<h3 id="使用する-timer-の指定">使用する Timer の指定</h3>
+<p>Create の第３引数に Timer の種類を指定することで、使用する Timer を変更することができます。</p>
+<table>
+<thead>
+<tr>
+<th>Timer の種類</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IntervalTimerType.SystemTime</code></td>
+<td>システム時間を使用します。</td>
+</tr>
+<tr>
+<td><code>IntervalTimerType.UnityTime</code></td>
+<td>Unity の Time.time を使用します。</td>
+</tr>
+<tr>
+<td><code>IntervalTimerType.UnityUnscaledTime</code></td>
+<td>Time.unscaledTime を使用します。</td>
+</tr>
+</tbody>
+</table>
+<p>Time.timeScale の影響を受けずに処理を実行する例。</p>
+<pre><code class="lang-csharp">TaskInterval
+    .Create(1000 /* ms */, TestTaskAsync, IntervalTimerType.UnityUnscaledTime)
+    .Start(destroyCancellationToken);
+</code></pre>
+<h3 id="playerloop-の指定">PlayerLoop の指定</h3>
+<p>タスクを処理する PlayerLoop のタイミングを指定することができます。
+以下のタイミング型が定義されています。</p>
+<table>
+<thead>
+<tr>
+<th>タイミング</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MewUnityEarlyUpdate</code></td>
+<td>Unityのフレーム更新の最初の段階で呼ばれます。この時点で、最初のイベント処理や入力の更新が行われます。</td>
+</tr>
+<tr>
+<td><code>MewUnityFixedUpdate</code></td>
+<td>物理演算の更新が行われるタイミングです。Unityエンジンにおける固定フレームレートでの処理に対応します。</td>
+</tr>
+<tr>
+<td><code>MewUnityPreUpdate</code></td>
+<td><code>Update</code> メソッドの前に実行される処理です。シーンの状態更新やアニメーションの更新などが含まれます。</td>
+</tr>
+<tr>
+<td><code>MewUnityUpdate</code></td>
+<td>主にゲームロジックの更新に使用される、通常の <code>Update</code> メソッドのタイミングです。</td>
+</tr>
+<tr>
+<td><code>MewUnityPreLateUpdate</code></td>
+<td><code>LateUpdate</code> の前に実行される処理です。一部のカメラやアニメーションの後処理が行われる可能性があります。</td>
+</tr>
+<tr>
+<td><code>MewUnityPostLateUpdate</code></td>
+<td>フレームの最後に実行される処理で、レンダリングの前準備やカメラの最終更新が含まれます。</td>
+</tr>
+</tbody>
+</table>
+<p>PlayerLoop のタイミングを指定するには、TaskIntervalに対してタイミング型を指定します。
+例えば MewUnityFixedUpdate を指定ることで、フレームスキップが発生した場合にも安定したゲーム時間でのタスク実行を行い遅延することを防くことができます。</p>
+<pre><code class="lang-csharp">TaskInterval&lt;MewUnityFixedUpdate&gt;
+    .Create(1000 /* ms */, TestTaskAsync, IntervalTimerType.UnityUnscaledTime)
+    .Start(destroyCancellationToken);
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/mewlist/MewDev/blob/main/Documents\ja\TaskInterval\index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

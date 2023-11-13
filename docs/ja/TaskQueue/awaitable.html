@@ -2,22 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace Mew.Core.Tasks
- | MewCore </title>
+      <title>特定のタスクの完了を待機する | MewCore </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace Mew.Core.Tasks
- | MewCore ">
+      <meta name="title" content="特定のタスクの完了を待機する | MewCore ">
       
-      <link rel="icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
       
-      <meta name="docfx:rel" content="../">
-      
+      <meta name="docfx:rel" content="../../">
       
       
+      <meta name="docfx:docurl" content="https://github.com/mewlist/MewDev/blob/main/Documents\ja\TaskQueue\awaitable.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -32,7 +30,7 @@
       <meta name="loc:downloadPdf" content="Download PDF">
   </head>
 
-  <script type="module" src="./../public/docfx.min.js"></script>
+  <script type="module" src="./../../public/docfx.min.js"></script>
 
   <script>
     const theme = localStorage.getItem('theme') || 'auto'
@@ -40,12 +38,12 @@
   </script>
 
 
-  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="MewCore">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="MewCore">
             MewCore
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,67 +83,41 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Mew.Core.Tasks">
+        <article data-uid="">
+<h2 id="特定のタスクの完了を待機する">特定のタスクの完了を待機する</h2>
 
-  <h1 id="Mew_Core_Tasks" data-uid="Mew.Core.Tasks" class="text-break">Namespace Mew.Core.Tasks
-</h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
+<p><code>TaskQueue</code> では、<code>Enqueue</code> のかわりに <code>EnqueueAsync</code>メソッドを使用して追加されたタスクの完了を待機する機能が提供されています。
+この機能により、タスクが完了するまでの間、呼び出し側の処理を一時的に中断し、タスクの完了後に処理を再開することができます。</p>
+<pre><code class="lang-csharp">await taskQueue.EnqueueAsync(async ct =&gt;
+    await Task.Delay(TimeSpan.FromSeconds(0.1f), ct));
+</code></pre>
+<p>複数の処理をキューに積んでおき、特定のタスクが完了するまで待機することができます。
+特に、キューに対してタスクを積むコードが複数箇所に分散している場合、
+キューによる安全な実行処理を維持しつつ、関心のあるタスクだけを待つことが可能です。</p>
+<pre><code class="lang-csharp">taskQueue.Enqueue(async ct =&gt;
+    await Task.Delay(TimeSpan.FromSeconds(0.1f), ct));
 
-    <h3 id="classes">
-Classes
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Mew.Core.Tasks.TaskInterval.html">TaskInterval</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Mew.Core.Tasks.TaskInterval-1.html">TaskInterval&lt;T&gt;</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Mew.Core.Tasks.TaskQueue.html">TaskQueue</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Mew.Core.Tasks.TaskQueueAwaitable.html">TaskQueueAwaitable</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Mew.Core.Tasks.TaskQueue-1.html">TaskQueue&lt;T&gt;</a></dt>
-      <dd><p>TaskQueue for specific loop.</p>
-</dd>
-    </dl>
-    <h3 id="enums">
-Enums
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Mew.Core.Tasks.IntervalTimerType.html">IntervalTimerType</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Mew.Core.Tasks.LagProcessType.html">LagProcessType</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Mew.Core.Tasks.TaskQueueLimitType.html">TaskQueueLimitType</a></dt>
-      <dd></dd>
-    </dl>
-    <h3 id="delegates">
-Delegates
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Mew.Core.Tasks.TaskAction.html">TaskAction</a></dt>
-      <dd></dd>
-    </dl>
+taskQueue.Enqueue(async ct =&gt;
+    await Task.Delay(TimeSpan.FromSeconds(0.1f), ct));
 
+var awaiter = taskQueue.EnqueueAsync(async ct =&gt;
+    await Task.Delay(TimeSpan.FromSeconds(0.1f), ct));
+
+taskQueue.Enqueue(async ct =&gt;
+    await Task.Delay(TimeSpan.FromSeconds(1f), ct));
+
+// キューにはタスクがまだ残っているが３番めのタスクが完了し次第、処理が再開される
+await awaiter;
+
+</code></pre>
 
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/mewlist/MewDev/blob/main/Documents\ja\TaskQueue\awaitable.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
 
       </div>
 
