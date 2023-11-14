@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Mew.Core.Tasks
 {
@@ -25,6 +24,11 @@ namespace Mew.Core.Tasks
         /// Count of running or waiting tasks.
         /// </summary>
         public int Count => (queue?.Count ?? 0) + (awaiter.HasValue ? 1 : 0);
+
+        /// <summary>
+        /// true if started.
+        /// </summary>
+        public bool Started { get; private set; }
 
         /// <summary>
         /// true if disposed.
@@ -53,10 +57,11 @@ namespace Mew.Core.Tasks
         public void Start(CancellationToken? ct = null)
         {
             if (Disposed) throw new ObjectDisposedException($"TaskQueue[{loopId}] is disposed");
-            Stop();
+            if (Started) Stop();
             disposeCt = ct;
             if (string.IsNullOrEmpty(loopId)) MewLoop.Add(Update);
             else MewLoop.Add(loopId, Update);
+            Started = true;
         }
 
         private void Stop()
@@ -66,6 +71,7 @@ namespace Mew.Core.Tasks
             queue.Clear();
             if (string.IsNullOrEmpty(loopId)) MewLoop.Remove(Update);
             else MewLoop.Remove(loopId, Update);
+            Started = false;
         }
 
         public void Enqueue(TaskAction func, int priority = 0)
@@ -76,6 +82,7 @@ namespace Mew.Core.Tasks
         public TaskQueueAwaitable EnqueueAsync(TaskAction func, int priority = 0)
         {
             if (queue is null) throw new ObjectDisposedException("TaskQueue is disposed");
+            if (!Started) throw new InvalidOperationException("TaskQueue is not started. Call Start() before enqueue.");
             var newTask = new TaskQueueAwaitable(func, priority);
             var flood = Count >= MaxSize;
 
