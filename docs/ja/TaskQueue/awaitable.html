@@ -100,14 +100,15 @@
 taskQueue.Enqueue(async ct =&gt;
     await Task.Delay(TimeSpan.FromSeconds(0.1f), ct));
 
-var awaiter = taskQueue.EnqueueAsync(async ct =&gt;
+// このタスクの完了を待ちたい
+var awaitable = taskQueue.EnqueueAsync(async ct =&gt;
     await Task.Delay(TimeSpan.FromSeconds(0.1f), ct));
 
 taskQueue.Enqueue(async ct =&gt;
     await Task.Delay(TimeSpan.FromSeconds(1f), ct));
 
 // キューにはタスクがまだ残っているが３番めのタスクが完了し次第、処理が再開される
-await awaiter;
+await awaitable;
 
 </code></pre>
 

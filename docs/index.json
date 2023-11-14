@@ -122,7 +122,7 @@
   "en/TaskQueue/awaitable.html": {
     "href": "en/TaskQueue/awaitable.html",
     "title": "Waiting for the Completion of a Specific Task | MewCore",
-    "keywords": "Waiting for the Completion of a Specific Task In TaskQueue, the EnqueueAsync method is provided to wait for the completion of tasks added as an alternative to the Enqueue method. This feature allows the calling process to be temporarily suspended while the task is being completed and then resume processing after the task is completed. await taskQueue.EnqueueAsync(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); You can queue multiple processes and wait for the completion of a specific task. This is particularly useful when the code to queue tasks is dispersed across multiple locations. It allows you to wait only for the tasks of interest while maintaining safe execution processes via the queue. taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); var awaiter = taskQueue.EnqueueAsync(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(1f), ct)); // Although there are still tasks in the queue, // the processing will resume as soon as the third task is completed await awaiter;"
+    "keywords": "Waiting for the Completion of a Specific Task In TaskQueue, the EnqueueAsync method is provided to wait for the completion of tasks added as an alternative to the Enqueue method. This feature allows the calling process to be temporarily suspended while the task is being completed and then resume processing after the task is completed. await taskQueue.EnqueueAsync(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); You can queue multiple processes and wait for the completion of a specific task. This is particularly useful when the code to queue tasks is dispersed across multiple locations. It allows you to wait only for the tasks of interest while maintaining safe execution processes via the queue. taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); var awaitable = taskQueue.EnqueueAsync(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(1f), ct)); // Although there are still tasks in the queue, // the processing will resume as soon as the third task is completed await awaitable;"
   },
   "en/TaskQueue/exception.html": {
     "href": "en/TaskQueue/exception.html",
@@ -142,7 +142,7 @@
   "index.html": {
     "href": "index.html",
     "title": "MewCore | MewCore",
-    "keywords": "MewCore Core Game Libraries for Unity"
+    "keywords": "MewCore Core Game Libraries for Unity Document 日本語 English"
   },
   "ja/TaskInterval/exception.html": {
     "href": "ja/TaskInterval/exception.html",
@@ -157,7 +157,7 @@
   "ja/TaskQueue/awaitable.html": {
     "href": "ja/TaskQueue/awaitable.html",
     "title": "特定のタスクの完了を待機する | MewCore",
-    "keywords": "特定のタスクの完了を待機する TaskQueue では、Enqueue のかわりに EnqueueAsyncメソッドを使用して追加されたタスクの完了を待機する機能が提供されています。 この機能により、タスクが完了するまでの間、呼び出し側の処理を一時的に中断し、タスクの完了後に処理を再開することができます。 await taskQueue.EnqueueAsync(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); 複数の処理をキューに積んでおき、特定のタスクが完了するまで待機することができます。 特に、キューに対してタスクを積むコードが複数箇所に分散している場合、 キューによる安全な実行処理を維持しつつ、関心のあるタスクだけを待つことが可能です。 taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); var awaiter = taskQueue.EnqueueAsync(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(1f), ct)); // キューにはタスクがまだ残っているが３番めのタスクが完了し次第、処理が再開される await awaiter;"
+    "keywords": "特定のタスクの完了を待機する TaskQueue では、Enqueue のかわりに EnqueueAsyncメソッドを使用して追加されたタスクの完了を待機する機能が提供されています。 この機能により、タスクが完了するまでの間、呼び出し側の処理を一時的に中断し、タスクの完了後に処理を再開することができます。 await taskQueue.EnqueueAsync(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); 複数の処理をキューに積んでおき、特定のタスクが完了するまで待機することができます。 特に、キューに対してタスクを積むコードが複数箇所に分散している場合、 キューによる安全な実行処理を維持しつつ、関心のあるタスクだけを待つことが可能です。 taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); // このタスクの完了を待ちたい var awaitable = taskQueue.EnqueueAsync(async ct => await Task.Delay(TimeSpan.FromSeconds(0.1f), ct)); taskQueue.Enqueue(async ct => await Task.Delay(TimeSpan.FromSeconds(1f), ct)); // キューにはタスクがまだ残っているが３番めのタスクが完了し次第、処理が再開される await awaitable;"
   },
   "ja/TaskQueue/exception.html": {
     "href": "ja/TaskQueue/exception.html",

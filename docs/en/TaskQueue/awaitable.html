@@ -100,7 +100,7 @@ It allows you to wait only for the tasks of interest while maintaining safe exec
 taskQueue.Enqueue(async ct =&gt;
     await Task.Delay(TimeSpan.FromSeconds(0.1f), ct));
 
-var awaiter = taskQueue.EnqueueAsync(async ct =&gt;
+var awaitable = taskQueue.EnqueueAsync(async ct =&gt;
     await Task.Delay(TimeSpan.FromSeconds(0.1f), ct));
 
 taskQueue.Enqueue(async ct =&gt;
@@ -108,7 +108,7 @@ taskQueue.Enqueue(async ct =&gt;
 
 // Although there are still tasks in the queue,
 // the processing will resume as soon as the third task is completed
-await awaiter;
+await awaitable;
 
 </code></pre>
 
