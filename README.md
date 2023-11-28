@@ -82,7 +82,7 @@ Bye
 ### Executing Priority Tasks
 
 You can execute priority tasks by specifying the priority as the second argument in Enqueue.
-The higher the number, the more prioritized the processing. The default value is 0.
+The lower the number, the more prioritized the processing. The default value is 0.
 
 ```csharp
 taskQueue.Enqueue(async ct => { ... }, priority: 1);
