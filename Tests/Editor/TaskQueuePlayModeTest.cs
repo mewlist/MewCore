@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using Assert = NUnit.Framework.Assert;
@@ -36,7 +35,7 @@ namespace Mew.Core.Tasks.Tests
             taskQueue.Start();
             AddTestTask(taskQueue, result, result: 0, priority: 0);
             AddTestTask(taskQueue, result, result: 1, priority: 0);
-            AddTestTask(taskQueue, result, result: 2, priority: 1);
+            AddTestTask(taskQueue, result, result: 2, priority: -1);
             while (taskQueue.Any()) yield return null;
             Assert.IsTrue(result.SequenceEqual(new List<int>{ 2, 0 }));
             taskQueue.Dispose();
@@ -48,8 +47,8 @@ namespace Mew.Core.Tasks.Tests
             var taskQueue = new TaskQueue(TaskQueueLimitType.SwapLast, 2);
             var result = new List<int>();
             taskQueue.Start();
-            AddTestTask(taskQueue, result, result: 0, priority: 1);
-            AddTestTask(taskQueue, result, result: 1, priority: 1);
+            AddTestTask(taskQueue, result, result: 0, priority: -1);
+            AddTestTask(taskQueue, result, result: 1, priority: -1);
             AddTestTask(taskQueue, result, result: 2, priority: 0);
             while (taskQueue.Any()) yield return null;
             Assert.IsTrue(result.SequenceEqual(new List<int>{ 0, 1 }));
@@ -78,7 +77,7 @@ namespace Mew.Core.Tasks.Tests
             taskQueue.Start();
             AddTestTask(taskQueue, result, result: 0, priority: 0);
             AddTestTask(taskQueue, result, result: 1, priority: 0);
-            AddTestTask(taskQueue, result, result: 2, priority: 1);
+            AddTestTask(taskQueue, result, result: 2, priority: -1);
             while (taskQueue.Any()) yield return null;
             Assert.IsTrue(result.SequenceEqual(new List<int>{ 2, 0 }));
             taskQueue.Dispose();
@@ -90,8 +89,8 @@ namespace Mew.Core.Tasks.Tests
             var taskQueue = new TaskQueue(TaskQueueLimitType.Discard, 2);
             var result = new List<int>();
             taskQueue.Start();
-            AddTestTask(taskQueue, result, result: 0, priority: 1);
-            AddTestTask(taskQueue, result, result: 1, priority: 1);
+            AddTestTask(taskQueue, result, result: 0, priority: -1);
+            AddTestTask(taskQueue, result, result: 1, priority: -1);
             AddTestTask(taskQueue, result, result: 2, priority: 0);
             while (taskQueue.Any()) yield return null;
             Assert.IsTrue(result.SequenceEqual(new List<int>{ 0, 1 }));

@@ -1,12 +1,13 @@
 #nullable enable
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 namespace Mew.Core
 {
     public class MewLoop
     {
-        private static readonly Dictionary<string, MewLoopDelegateCollection> DelegateCollections = new();
+        private static readonly ConcurrentDictionary<string, MewLoopDelegateCollection> DelegateCollections = new();
 
         private static string? DefaultId { get; set; }
 
@@ -81,7 +82,7 @@ namespace Mew.Core
         {
             if (string.IsNullOrEmpty(DefaultId))
                 throw new NullReferenceException("DefaultId is null or empty.");
-            Remove(DefaultId, updateFunction);            
+            Remove(DefaultId, updateFunction);
         }
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace Mew.Core
                 throw new KeyNotFoundException($"DelegateCollection with id {DefaultId} is not found.");
             DelegateCollections[id].Remove(updateFunction);
         }
-        
+
         /// <summary>
         /// Invoke update callback functions in default delegate collection.
         /// </summary>

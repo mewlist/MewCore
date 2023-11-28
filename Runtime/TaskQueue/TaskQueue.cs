@@ -1,5 +1,6 @@
 #nullable enable
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -9,13 +10,14 @@ namespace Mew.Core.Tasks
 {
     public class TaskQueue : IDisposable
     {
+        private readonly List<TaskQueueAwaitable> queue = new();
         private TaskAwaiter? awaiter;
         private CancellationTokenSource? cts;
         private CancellationToken? disposeCt;
-        private List<TaskQueueAwaitable>? queue = new();
 
         protected string loopId = string.Empty;
 
+        private object SyncRoot => ((ICollection)queue).SyncRoot;
 
         public TaskQueueLimitType LimitType { get; }
         public int MaxSize { get; }
@@ -33,7 +35,7 @@ namespace Mew.Core.Tasks
         /// <summary>
         /// true if disposed.
         /// </summary>
-        public bool Disposed => queue == null;
+        public bool Disposed { get; private set; }
 
         /// <summary>
         ///
@@ -66,61 +68,82 @@ namespace Mew.Core.Tasks
 
         private void Stop()
         {
-            if (queue is null) throw new ObjectDisposedException($"TaskQueue[{loopId}] is disposed");
+            if (Disposed) throw new ObjectDisposedException($"TaskQueue[{loopId}] is disposed");
             CancelCurrent();
-            queue.Clear();
+            lock (SyncRoot)
+            {
+                queue.Clear();
+            }
             if (string.IsNullOrEmpty(loopId)) MewLoop.Remove(Update);
             else MewLoop.Remove(loopId, Update);
             Started = false;
         }
 
+        /// <summary>
+        /// Enqueue task.
+        /// </summary>
+        /// <param name="func"></param>
+        /// <param name="priority">Low number is prior. default is 0</param>
+        /// <exception cref="ObjectDisposedException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void Enqueue(TaskAction func, int priority = 0)
         {
             EnqueueAsync(func, priority);
         }
 
+        /// <summary>
+        /// Enqueue task.
+        /// </summary>
+        /// <param name="func"></param>
+        /// <param name="priority">Low number is prior. default is 0</param>
+        /// <returns></returns>
+        /// <exception cref="ObjectDisposedException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public TaskQueueAwaitable EnqueueAsync(TaskAction func, int priority = 0)
         {
-            if (queue is null) throw new ObjectDisposedException("TaskQueue is disposed");
+            if (Disposed) throw new ObjectDisposedException("TaskQueue is disposed");
             if (!Started) throw new InvalidOperationException("TaskQueue is not started. Call Start() before enqueue.");
             var newTask = new TaskQueueAwaitable(func, priority);
             var flood = Count >= MaxSize;
 
-            queue.Add(newTask);
-            queue = queue.OrderBy(x => -x.Priority).ToList();
-
-            switch (LimitType)
+            lock (SyncRoot)
             {
-                case TaskQueueLimitType.None: break;
-                case TaskQueueLimitType.SwapLast:
-                    if (flood)
-                    {
-                        var index = queue.FindLastIndex(x =>
-                            x.Priority <= priority && x != newTask);
-                        index = index >= 0 ? index : queue.Count - 1;
-                        Cancel(queue, index);
-                        queue.RemoveAt(index);
-                    }
-                    break;
-                case TaskQueueLimitType.Discard:
-                    if (flood)
-                    {
-                        var index = queue.Count - 1;
-                        Cancel(queue, index);
-                        queue.RemoveAt(index);
-                    }
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                var at = queue.FindIndex(x => x.Priority > newTask.Priority);
+                if (at == -1) queue.Add(newTask);
+                else queue.Insert(at, newTask);
+
+                switch (LimitType)
+                {
+                    case TaskQueueLimitType.None: break;
+                    case TaskQueueLimitType.SwapLast:
+                        if (flood)
+                        {
+                            var index = queue.FindLastIndex(x =>
+                                x.Priority >= priority && x != newTask);
+                            index = index >= 0 ? index : queue.Count - 1;
+                            var task = queue[index];
+                            task.Cancel();
+                            queue.RemoveAt(index);
+                        }
+
+                        break;
+                    case TaskQueueLimitType.Discard:
+                        if (flood)
+                        {
+                            var index = queue.Count - 1;
+                            var task = queue[index];
+                            task.Cancel();
+                            queue.RemoveAt(index);
+                        }
+
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+                return newTask;
             }
-
-            return newTask;
-        }
-
-        private void Cancel(IReadOnlyList<TaskQueueAwaitable> awaitables, int index)
-        {
-            var task = awaitables[index];
-            task.Cancel();
         }
 
         public void Dispose()
@@ -128,7 +151,11 @@ namespace Mew.Core.Tasks
             if (Disposed) return;
             Stop();
             disposeCt = null;
-            queue = null;
+            lock (SyncRoot)
+            {
+                queue.Clear();
+            }
+            Disposed = true;
         }
 
         public bool Any()
@@ -153,11 +180,17 @@ namespace Mew.Core.Tasks
             }
 
             if (awaiter.HasValue) return;
-            if (queue is null) return;
-            if (queue.Count == 0) return;
 
-            var task = queue.First();
-            queue.RemoveAt(0);
+            TaskQueueAwaitable task;
+
+            lock (SyncRoot)
+            {
+                if (!queue.Any()) return;
+
+                task = queue.First();
+                queue.RemoveAt(0);
+            }
+
             var taskCts = new CancellationTokenSource();
             cts = disposeCt.HasValue
                 ? CancellationTokenSource.CreateLinkedTokenSource(taskCts.Token, disposeCt.Value)

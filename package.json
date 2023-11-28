@@ -1,7 +1,7 @@
 {
   "name": "st.mewli.core",
   "displayName": "MewCore",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "unity": "2022.3",
   "description": "Core Game Library for Unity",
   "author": {
