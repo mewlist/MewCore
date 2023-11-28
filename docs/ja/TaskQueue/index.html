@@ -131,7 +131,7 @@ Bye
 </code></pre>
 <h3 id="優先度付きタスクの実行">優先度付きタスクの実行</h3>
 <p>Enqueue の第二引数に優先度を指定することで、優先度付きタスクを実行することができます。
-数値が高ければ高いほど処理が優先されます。既定値は 0 です。</p>
+<code>priority</code>値が低いほど処理が優先されます。既定値は 0 です。</p>
 <pre><code class="lang-csharp">taskQueue.Enqueue(async ct =&gt; { ... }, priority: 1);
 </code></pre>
 <h3 id="playerloop-の指定">PlayerLoop の指定</h3>

@@ -129,7 +129,7 @@ Bye
 </code></pre>
 <h3 id="executing-priority-tasks">Executing Priority Tasks</h3>
 <p>You can execute priority tasks by specifying the priority as the second argument in Enqueue.
-The higher the number, the more prioritized the processing. The default value is 0.</p>
+The lower <code>priority</code>, the more prioritized the processing. The default value is 0.</p>
 <pre><code class="lang-csharp">taskQueue.Enqueue(async ct =&gt; { ... }, priority: 1);
 </code></pre>
 <h3 id="specifying-playerloop">Specifying PlayerLoop</h3>
