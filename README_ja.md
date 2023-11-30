@@ -4,6 +4,15 @@ Core Game Libraries for Unity
 ![](https://img.shields.io/badge/unity-2022.3%20or%20later-green?logo=unity)
 [![](https://img.shields.io/badge/license-MIT-blue)](https://github.com/mewlist/MewCore/blob/main/LICENSE)
 
+## ドキュメント
+
+https://mewlist.github.io/MewCore/
+
+## 機能
+
+* TaskQueue: 非同期関数を直列実行するためのライブラリ
+* TaskInterval: 非同期関数を一定間隔で実行するためのライブラリ
+
 ## インストール
 
 UPM 経由でインストールすることができます。
@@ -14,29 +23,25 @@ git@github.com:mewlist/MewCore.git
 
 ## TaskQueue
 
-TaskQueue は、Unity 開発における非同期処理を簡素化し、効率的に扱うためのライブラリです。このライブラリは、動的に変化する非同期関数の管理と、優先度に基づいた実行順序の決定を可能にします。
+TaskQueue は Unity 開発における**非同期関数の直列処理**を行うためのライブラリです。
+キューに入力した順で非同期関数が実行されます。
+また、優先度付きキューの機能も備えており、重要なタスクを優先的に実行することができます。
 
 ### 主な特徴
 
-動的な関数追加: ランタイムで非同期関数をタスクキューに追加することができます。これにより、変化する要件や状況に柔軟に対応可能です。
-
-優先度に基づく実行管理: 各非同期関数に優先度を設定し、重要なタスクを優先的に処理します。これにより、重要な処理の遅延を防ぎます。
-
-直列処理と安全性: 複数の非同期関数を順序立てて実行し、一つの関数が完了するまで次の関数の実行を待機します。これにより、UI 更新やゲームシーケンスの安全性が向上します。
-
-シンプルな記述: TaskQueue は、非同期関数の実行を簡単に記述できるように設計されています。
+* ***動的な関数追加***: ランタイムで非同期関数をタスクキューに追加することができます。これにより、変化する要件や状況に柔軟に対応可能です。
+* ***優先度に基づく実行管理***: 各非同期関数に優先度を設定し、重要なタスクを優先的に処理します。これにより、重要な処理の遅延を防ぎます。
+* ***直列処理と安全性***: 複数の非同期関数を順序立てて実行し、一つの関数が完了するまで次の関数の実行を待機します。これにより、UI 更新やゲームシーケンスの安全性が向上します。
+* ***キューの最大サイズ***: キューに入力できるタスクの最大数を設定できます。これにより、キューにタスクが溜まりすぎることを防ぐことができます。
+* ***シンプルな記述***: シンプルに記述できるように設計されています。
 
 ### 使用シナリオ
 
-UIの動的更新: ゲーム内でのダイアログボックスやメニューの動的な表示・非表示をスムーズに制御する際に使用します。
-
-ゲームイベントのシーケンシング: 物語進行やチュートリアルなど、順序立てられたイベントの管理に適しています。
-
-TaskQueue を使用することで、Unity 開発における非同期処理の複雑さを軽減し、より効果的かつ効率的なコード記述を可能にします。
-
-コマンドパターンへの適応: 非同期処理を含めたコマンドパターンの実装に適しています。
-
-UI イベントのハンドリング: クリックなど UI の非同期イベントに対して並列実行を防ぐために使用します。
+* ***UIの動的更新***: ゲーム内でのダイアログボックスやメニューの動的な表示・非表示をスムーズに制御する際に使用します。
+* ***ゲームイベントのシーケンシング***: 物語進行やチュートリアルなど、順序立てられたイベントの管理に適しています。
+* ***TaskQueue*** を使用することで、Unity 開発における非同期処理の複雑さを軽減し、より効果的かつ効率的なコード記述を可能にします。
+* ***コマンドパターンへの適応***: 非同期処理を含めたコマンドパターンの実装に適しています。
+* ***UI*** イベントのハンドリング: クリックなど UI の非同期イベントに対して並列実行を防ぐために使用します。
 
 ### サンプルコード
 
@@ -45,9 +50,7 @@ class Sample : Monobehaviour
 {
     void Start()
     {
-        // TaskQueue のインスタンスを生成します。
         var taskQueue = new TaskQueue();
-        // TaskQueue の実行を開始します。
         // destroyCancellationToken を渡すことで
         // MonoBehaviour が破棄されたタイミングで自動的に処理を停止し Dispose されます。
         taskQueue.Start(destroyCancellationToken);
@@ -78,31 +81,36 @@ Bye
 ### 優先度付きタスクの実行
 
 Enqueue の第二引数に優先度を指定することで、優先度付きタスクを実行することができます。
-```priotiry'''値が小さい処理が優先されます。既定値は 0 です。
+```priotiry```値が小さい処理が優先されます。既定値は 0 です。
 
 ```csharp
 taskQueue.Enqueue(async ct => { ... }, priority: 1);
+taskQueue.Enqueue(async ct => { ... }, priority: 0); // このタスクが優先して処理される
 ```
 
-### PlayerLoop の指定
+### キュー最大サイズの設定
 
-Queue を処理する PlayerLoop のタイミングを指定することができます。
-以下のタイミング型が定義されています。
+#### TaskQueueLimitType.Discard
 
-| タイミング                   | 説明 |
-|-------------------------|------|
-| `MewUnityEarlyUpdate`   | Unityのフレーム更新の最初の段階で呼ばれます。この時点で、最初のイベント処理や入力の更新が行われます。 |
-| `MewUnityFixedUpdate`   | 物理演算の更新が行われるタイミングです。Unityエンジンにおける固定フレームレートでの処理に対応します。 |
-| `MewUnityPreUpdate`     | `Update` メソッドの前に実行される処理です。シーンの状態更新やアニメーションの更新などが含まれます。 |
-| `MewUnityUpdate`        | 主にゲームロジックの更新に使用される、通常の `Update` メソッドのタイミングです。 |
-| `MewUnityPreLateUpdate` | `LateUpdate` の前に実行される処理です。一部のカメラやアニメーションの後処理が行われる可能性があります。 |
-| `MewUnityPostLateUpdate` | フレームの最後に実行される処理で、レンダリングの前準備やカメラの最終更新が含まれます。 |
-
-PlayerLoop のタイミングを指定するには、コンストラクタにタイミング型を指定します。
-例えば MewUnityFixedUpdate を指定ることで、フレームスキップが発生した場合にキューの処理が遅延することを防くことができます。
+最大サイズ 2 のキューに対して以下のようにタスクを追加し、最大数を超えた場合、最後に追加されたタスクが破棄されます。
 
 ```csharp
-var fixedUpdateTaskQueue = new TaskQueue<MewUnityFixedUpdate>();
+taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
+taskQueue.Enqueue(async ct => { ... });
+taskQueue.Enqueue(async ct => { ... });
+taskQueue.Enqueue(async ct => { ... });　// このタスクが破棄される
+```
+
+#### TaskQueueLimitType.SwapLat
+
+最大サイズ 2 のキューに対して以下のようにタスクを追加し、最大数を超えた場合、最後のタスクを入れ替えます。
+追加されるタスクより優先度が高いタスクでキューが構成される場合は、入れ替えは行われません。
+
+```csharp
+taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
+taskQueue.Enqueue(async ct => { ... });
+taskQueue.Enqueue(async ct => { ... });　// このタスクが破棄される
+taskQueue.Enqueue(async ct => { ... });　
 ```
 
 ## TaskInterval
@@ -170,12 +178,13 @@ public class Sample : MonoBahaviour
 ### 使用する Timer の指定
 
 Create の第３引数に Timer の種類を指定することで、使用する Timer を変更することができます。
+Unity の Time.timeScale の影響を受けないようにしたい場合は、```IntervalTimerType.UnityTime``` 以外の値を指定するとよいでしょう。
 
-| Timer の種類 | 説明                        |
-|--------------|---------------------------|
-| `IntervalTimerType.SystemTime` | システム時間を使用します。             |
-| `IntervalTimerType.UnityTime` | Unity の Time.time を使用します。 |
-| `IntervalTimerType.UnityUnscaledTime` | Time.unscaledTime を使用します。|
+| Timer の種類 | 説明                          |
+|--------------|-----------------------------|
+| `IntervalTimerType.SystemTime` | システム時間を使用します。               |
+| `IntervalTimerType.UnityTime` | Unity の Time.time を使用します。(***規定値***) |
+| `IntervalTimerType.UnityUnscaledTime` | Time.unscaledTime を使用します。   |
 
 Time.timeScale の影響を受けずに処理を実行する例。
 
@@ -184,27 +193,3 @@ TaskInterval
     .Create(1000 /* ms */, TestTaskAsync, IntervalTimerType.UnityUnscaledTime)
     .Start(destroyCancellationToken);
 ```
-
-### PlayerLoop の指定
-
-タスクを処理する PlayerLoop のタイミングを指定することができます。
-以下のタイミング型が定義されています。
-
-| タイミング                   | 説明 |
-|-------------------------|------|
-| `MewUnityEarlyUpdate`   | Unityのフレーム更新の最初の段階で呼ばれます。この時点で、最初のイベント処理や入力の更新が行われます。 |
-| `MewUnityFixedUpdate`   | 物理演算の更新が行われるタイミングです。Unityエンジンにおける固定フレームレートでの処理に対応します。 |
-| `MewUnityPreUpdate`     | `Update` メソッドの前に実行される処理です。シーンの状態更新やアニメーションの更新などが含まれます。 |
-| `MewUnityUpdate`        | 主にゲームロジックの更新に使用される、通常の `Update` メソッドのタイミングです。 |
-| `MewUnityPreLateUpdate` | `LateUpdate` の前に実行される処理です。一部のカメラやアニメーションの後処理が行われる可能性があります。 |
-| `MewUnityPostLateUpdate` | フレームの最後に実行される処理で、レンダリングの前準備やカメラの最終更新が含まれます。 |
-
-PlayerLoop のタイミングを指定するには、TaskIntervalに対してタイミング型を指定します。
-例えば MewUnityFixedUpdate を指定ることで、フレームスキップが発生した場合にも安定したゲーム時間でのタスク実行を行い遅延することを防くことができます。
-
-```csharp
-TaskInterval<MewUnityFixedUpdate>
-    .Create(1000 /* ms */, TestTaskAsync, IntervalTimerType.UnityUnscaledTime)
-    .Start(destroyCancellationToken);
-```
-
