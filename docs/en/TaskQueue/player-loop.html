@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>TaskInterval | MewCore </title>
+      <title>Specifying PlayerLoop | MewCore </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="TaskInterval | MewCore ">
+      <meta name="title" content="Specifying PlayerLoop | MewCore ">
       
       <link rel="icon" href="../../favicon.ico">
       <link rel="stylesheet" href="../../public/docfx.min.css">
@@ -15,7 +15,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mewlist/MewDev/blob/main/Documents\en\TaskInterval\index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/mewlist/MewDev/blob/main/Documents\en\TaskQueue\player-loop.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,95 +84,53 @@
         </div>
 
         <article data-uid="">
-<h2 id="taskinterval">TaskInterval</h2>
+<h3 id="specifying-playerloop">Specifying PlayerLoop</h3>
 
-<p>TaskInterval is a library that facilitates the execution of specific processes at regular intervals in Unity development. This library allows for periodic execution of asynchronous functions and prevents multiple asynchronous processes from running concurrently.</p>
-<h3 id="main-features">Main Features</h3>
-<ul>
-<li><p><strong>Regular Execution of Asynchronous Functions</strong>: Automatically executes asynchronous functions at specified intervals, making it easier to manage tasks that include asynchronous processes.</p>
-</li>
-<li><p><strong>Flexible Response to Processing Time</strong>: If the execution of an asynchronous function takes longer than the specified interval, it can either skip the process or continue executing it delayed. This differs from typical periodic execution and adapts better to real-time operating environments.</p>
-</li>
-<li><p><strong>Prevention of Concurrent Execution</strong>: Only one asynchronous process is executed at a time, preventing multiple processes from running simultaneously. This makes task execution predictable and safe.</p>
-</li>
-<li><p><strong>Stable Interval Execution</strong>: If synchronous functions are used, it is also possible to execute functions at stable intervals.</p>
-</li>
-</ul>
-<h3 id="use-scenarios">Use Scenarios</h3>
-<ul>
-<li><p><strong>Regular Updates Within the Game</strong>: Used for regularly updating the state of the game or objects at set intervals.</p>
-</li>
-<li><p><strong>Background Processes</strong>: Suitable for regular background processes such as network communication and data loading.</p>
-</li>
-<li><p><strong>Regular UI Updates</strong>: Can also be used for regularly updating user interface elements.</p>
-</li>
-</ul>
-<p>Using TaskInterval makes the implementation of regular processes in Unity development more flexible and efficient, and prevents issues due to concurrent execution.</p>
-<h3 id="sample-code">Sample Code</h3>
-<pre><code class="lang-csharp">public class Sample : MonoBahaviour
-{
-    private void Awake()
-    {
-        // Create a TaskInterval that executes TestTaskAsync every second.
-        // Passing destroyCancellationToken will automatically stop the process and dispose of it when the MonoBehaviour is destroyed.
-        TaskInterval
-            .Create(TimeSpan.FromSeconds(1), TestTaskAsync)
-            .Start(destroyCancellationToken);
-    }
-
-    private float time;
-    private async Task TestTaskAsync(CancellationToken ct)
-    {
-        var currentTime = Time.time;
-        Debug.Log($&quot;{currentTime - time}&quot;);            
-        time = currentTime;
-        await Task.Delay(100, ct);
-    }
-}
-</code></pre>
-<h4 id="execution-result">Execution Result</h4>
-<pre><code>0.9996152
-1.000825
-1.000599
-0.9999266
-1.000448
-0.9925194
-...
-</code></pre>
-<h3 id="specifying-timer-type">Specifying Timer Type</h3>
-<p>You can change the timer used by specifying the type of timer as the third argument in Create.</p>
+<p>You can specify the PlayerLoop timing for processing the queue.
+The following timing types are defined.</p>
 <table>
 <thead>
 <tr>
-<th>Timer Type</th>
+<th>Timing</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>IntervalTimerType.SystemTime</code></td>
-<td>Uses system time.</td>
+<td><code>MewUnityEarlyUpdate</code></td>
+<td>Called at the beginning of Unity's frame update. At this stage, initial event processing and input updates occur.</td>
 </tr>
 <tr>
-<td><code>IntervalTimerType.UnityTime</code></td>
-<td>Uses Unity's Time.time.</td>
+<td><code>MewUnityFixedUpdate</code></td>
+<td>The timing for physics updates. Corresponds to fixed-frame-rate processing in Unity Engine.</td>
 </tr>
 <tr>
-<td><code>IntervalTimerType.UnityUnscaledTime</code></td>
-<td>Time.unscaledTime.</td>
+<td><code>MewUnityPreUpdate</code></td>
+<td>Processing executed before the Update method. Includes scene state updates and animation updates.</td>
+</tr>
+<tr>
+<td><code>MewUnityUpdate</code></td>
+<td>The normal Update method timing, mainly used for updating game logic.</td>
+</tr>
+<tr>
+<td><code>MewUnityPreLateUpdate</code></td>
+<td>Processing executed before LateUpdate. Some post-processing for cameras and animations may occur.</td>
+</tr>
+<tr>
+<td><code>MewUnityPostLateUpdate</code></td>
+<td>Processing at the end of the frame, including rendering preparation and final camera updates.</td>
 </tr>
 </tbody>
 </table>
-<p>Example of executing a process unaffected by Time.timeScale.</p>
-<pre><code class="lang-csharp">TaskInterval
-    .Create(1000 /* ms */, TestTaskAsync, IntervalTimerType.UnityUnscaledTime)
-    .Start(destroyCancellationToken);
+<p>To specify PlayerLoop timing, specify the timing type in the constructor.
+For example, specifying MewUnityFixedUpdate can prevent queue processing delays in case of frame skips.</p>
+<pre><code class="lang-csharp">var fixedUpdateTaskQueue = new TaskQueue&lt;MewUnityFixedUpdate&gt;();
 </code></pre>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/mewlist/MewDev/blob/main/Documents\en\TaskInterval\index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/mewlist/MewDev/blob/main/Documents\en\TaskQueue\player-loop.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

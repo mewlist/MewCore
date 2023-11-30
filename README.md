@@ -106,14 +106,14 @@ taskQueue.Enqueue(async ct => { ... });
 taskQueue.Enqueue(async ct => { ... }); // This task is discarded
 ```
 
-#### TaskQueueLimitType.SwapLat
+#### TaskQueueLimitType.SwapLast
 
 If you add tasks to a queue with a maximum size of 2 as follows,
 and exceed the maximum number, the last task is replaced.
 If the queue is made up of tasks that have a higher priority than the task to be added, no replacement will be made.
 
 ```csharp
-taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
+taskQueue = new TaskQueue(TaskQueueLimitType.SwapLast, maxSize: 2);
 taskQueue.Enqueue(async ct => { ... });
 taskQueue.Enqueue(async ct => { ... }); // This task is discarded
 taskQueue.Enqueue(async ct => { ... }); 

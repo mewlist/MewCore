@@ -148,54 +148,13 @@ taskQueue.Enqueue(async ct =&gt; { ... });
 taskQueue.Enqueue(async ct =&gt; { ... });
 taskQueue.Enqueue(async ct =&gt; { ... });　// このタスクが破棄される
 </code></pre>
-<h4 id="taskqueuelimittypeswaplat">TaskQueueLimitType.SwapLat</h4>
+<h4 id="taskqueuelimittypeswaplast">TaskQueueLimitType.SwapLast</h4>
 <p>最大サイズ 2 のキューに対して以下のようにタスクを追加し、最大数を超えた場合、最後のタスクを入れ替えます。
 追加されるタスクより優先度が高いタスクでキューが構成される場合は、入れ替えは行われません。</p>
-<pre><code class="lang-csharp">taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
+<pre><code class="lang-csharp">taskQueue = new TaskQueue(TaskQueueLimitType.SwapLast, maxSize: 2);
 taskQueue.Enqueue(async ct =&gt; { ... });
 taskQueue.Enqueue(async ct =&gt; { ... });　// このタスクが破棄される
 taskQueue.Enqueue(async ct =&gt; { ... });　
-</code></pre>
-<h3 id="playerloop-の指定">PlayerLoop の指定</h3>
-<p>Queue を処理する PlayerLoop のタイミングを指定することができます。
-以下のタイミング型が定義されています。</p>
-<table>
-<thead>
-<tr>
-<th>タイミング</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>MewUnityEarlyUpdate</code></td>
-<td>Unityのフレーム更新の最初の段階で呼ばれます。この時点で、最初のイベント処理や入力の更新が行われます。</td>
-</tr>
-<tr>
-<td><code>MewUnityFixedUpdate</code></td>
-<td>物理演算の更新が行われるタイミングです。Unityエンジンにおける固定フレームレートでの処理に対応します。</td>
-</tr>
-<tr>
-<td><code>MewUnityPreUpdate</code></td>
-<td><code>Update</code> メソッドの前に実行される処理です。シーンの状態更新やアニメーションの更新などが含まれます。</td>
-</tr>
-<tr>
-<td><code>MewUnityUpdate</code></td>
-<td>(既定値) 主にゲームロジックの更新に使用される、通常の <code>Update</code> メソッドのタイミングです。</td>
-</tr>
-<tr>
-<td><code>MewUnityPreLateUpdate</code></td>
-<td><code>LateUpdate</code> の前に実行される処理です。一部のカメラやアニメーションの後処理が行われる可能性があります。</td>
-</tr>
-<tr>
-<td><code>MewUnityPostLateUpdate</code></td>
-<td>フレームの最後に実行される処理で、レンダリングの前準備やカメラの最終更新が含まれます。</td>
-</tr>
-</tbody>
-</table>
-<p>PlayerLoop のタイミングを指定するには、コンストラクタにタイミング型を指定します。
-例えば MewUnityFixedUpdate を指定ることで、フレームスキップが発生した場合にキューの処理が遅延することを防くことができます。</p>
-<pre><code class="lang-csharp">var fixedUpdateTaskQueue = new TaskQueue&lt;MewUnityFixedUpdate&gt;();
 </code></pre>
 
 </article>

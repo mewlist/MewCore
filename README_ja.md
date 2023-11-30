@@ -101,13 +101,13 @@ taskQueue.Enqueue(async ct => { ... });
 taskQueue.Enqueue(async ct => { ... });　// このタスクが破棄される
 ```
 
-#### TaskQueueLimitType.SwapLat
+#### TaskQueueLimitType.SwapLast
 
 最大サイズ 2 のキューに対して以下のようにタスクを追加し、最大数を超えた場合、最後のタスクを入れ替えます。
 追加されるタスクより優先度が高いタスクでキューが構成される場合は、入れ替えは行われません。
 
 ```csharp
-taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
+taskQueue = new TaskQueue(TaskQueueLimitType.SwapLast, maxSize: 2);
 taskQueue.Enqueue(async ct => { ... });
 taskQueue.Enqueue(async ct => { ... });　// このタスクが破棄される
 taskQueue.Enqueue(async ct => { ... });　
