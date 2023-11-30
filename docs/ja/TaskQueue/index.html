@@ -86,26 +86,31 @@
         <article data-uid="">
 <h2 id="taskqueue">TaskQueue</h2>
 
-<p>TaskQueue は、Unity 開発における非同期処理を簡素化し、効率的に扱うためのライブラリです。このライブラリは、動的に変化する非同期関数の管理と、優先度に基づいた実行順序の決定を可能にします。</p>
+<p>TaskQueue は Unity 開発における<strong>非同期関数の直列処理</strong>を行うためのライブラリです。
+キューに入力した順で非同期関数が実行されます。
+また、優先度付きキューの機能も備えており、重要なタスクを優先的に実行することができます。</p>
 <h3 id="主な特徴">主な特徴</h3>
-<p>動的な関数追加: ランタイムで非同期関数をタスクキューに追加することができます。これにより、変化する要件や状況に柔軟に対応可能です。</p>
-<p>優先度に基づく実行管理: 各非同期関数に優先度を設定し、重要なタスクを優先的に処理します。これにより、重要な処理の遅延を防ぎます。</p>
-<p>直列処理と安全性: 複数の非同期関数を順序立てて実行し、一つの関数が完了するまで次の関数の実行を待機します。これにより、UI 更新やゲームシーケンスの安全性が向上します。</p>
-<p>シンプルな記述: TaskQueue は、非同期関数の実行を簡単に記述できるように設計されています。</p>
+<ul>
+<li><em><strong>動的な関数追加</strong></em>: ランタイムで非同期関数をタスクキューに追加することができます。これにより、変化する要件や状況に柔軟に対応可能です。</li>
+<li><em><strong>優先度に基づく実行管理</strong></em>: 各非同期関数に優先度を設定し、重要なタスクを優先的に処理します。これにより、重要な処理の遅延を防ぎます。</li>
+<li><em><strong>直列処理と安全性</strong></em>: 複数の非同期関数を順序立てて実行し、一つの関数が完了するまで次の関数の実行を待機します。これにより、UI 更新やゲームシーケンスの安全性が向上します。</li>
+<li><em><strong>キューの最大サイズ</strong></em>: キューに入力できるタスクの最大数を設定できます。これにより、キューにタスクが溜まりすぎることを防ぐことができます。</li>
+<li><em><strong>シンプルな記述</strong></em>: シンプルに記述できるように設計されています。</li>
+</ul>
 <h3 id="使用シナリオ">使用シナリオ</h3>
-<p>UIの動的更新: ゲーム内でのダイアログボックスやメニューの動的な表示・非表示をスムーズに制御する際に使用します。</p>
-<p>ゲームイベントのシーケンシング: 物語進行やチュートリアルなど、順序立てられたイベントの管理に適しています。</p>
-<p>TaskQueue を使用することで、Unity 開発における非同期処理の複雑さを軽減し、より効果的かつ効率的なコード記述を可能にします。</p>
-<p>コマンドパターンへの適応: 非同期処理を含めたコマンドパターンの実装に適しています。</p>
-<p>UI イベントのハンドリング: クリックなど UI の非同期イベントに対して並列実行を防ぐために使用します。</p>
+<ul>
+<li><em><strong>UIの動的更新</strong></em>: ゲーム内でのダイアログボックスやメニューの動的な表示・非表示をスムーズに制御する際に使用します。</li>
+<li><em><strong>ゲームイベントのシーケンシング</strong></em>: 物語進行やチュートリアルなど、順序立てられたイベントの管理に適しています。</li>
+<li><em><strong>TaskQueue</strong></em> を使用することで、Unity 開発における非同期処理の複雑さを軽減し、より効果的かつ効率的なコード記述を可能にします。</li>
+<li><em><strong>コマンドパターンへの適応</strong></em>: 非同期処理を含めたコマンドパターンの実装に適しています。</li>
+<li><em><strong>UI</strong></em> イベントのハンドリング: クリックなど UI の非同期イベントに対して並列実行を防ぐために使用します。</li>
+</ul>
 <h3 id="サンプルコード">サンプルコード</h3>
 <pre><code class="lang-csharp">class Sample : Monobehaviour
 {
     void Start()
     {
-        // TaskQueue のインスタンスを生成します。
         var taskQueue = new TaskQueue();
-        // TaskQueue の実行を開始します。
         // destroyCancellationToken を渡すことで
         // MonoBehaviour が破棄されたタイミングで自動的に処理を停止し Dispose されます。
         taskQueue.Start(destroyCancellationToken);
@@ -131,8 +136,25 @@ Bye
 </code></pre>
 <h3 id="優先度付きタスクの実行">優先度付きタスクの実行</h3>
 <p>Enqueue の第二引数に優先度を指定することで、優先度付きタスクを実行することができます。
-<code>priority</code>値が低いほど処理が優先されます。既定値は 0 です。</p>
+<code>priotiry</code>値が小さい処理が優先されます。既定値は 0 です。</p>
 <pre><code class="lang-csharp">taskQueue.Enqueue(async ct =&gt; { ... }, priority: 1);
+taskQueue.Enqueue(async ct =&gt; { ... }, priority: 0); // このタスクが優先して処理される
+</code></pre>
+<h3 id="キュー最大サイズの設定">キュー最大サイズの設定</h3>
+<h4 id="taskqueuelimittypediscard">TaskQueueLimitType.Discard</h4>
+<p>最大サイズ 2 のキューに対して以下のようにタスクを追加し、最大数を超えた場合、最後に追加されたタスクが破棄されます。</p>
+<pre><code class="lang-csharp">taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
+taskQueue.Enqueue(async ct =&gt; { ... });
+taskQueue.Enqueue(async ct =&gt; { ... });
+taskQueue.Enqueue(async ct =&gt; { ... });　// このタスクが破棄される
+</code></pre>
+<h4 id="taskqueuelimittypeswaplat">TaskQueueLimitType.SwapLat</h4>
+<p>最大サイズ 2 のキューに対して以下のようにタスクを追加し、最大数を超えた場合、最後のタスクを入れ替えます。
+追加されるタスクより優先度が高いタスクでキューが構成される場合は、入れ替えは行われません。</p>
+<pre><code class="lang-csharp">taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
+taskQueue.Enqueue(async ct =&gt; { ... });
+taskQueue.Enqueue(async ct =&gt; { ... });　// このタスクが破棄される
+taskQueue.Enqueue(async ct =&gt; { ... });　
 </code></pre>
 <h3 id="playerloop-の指定">PlayerLoop の指定</h3>
 <p>Queue を処理する PlayerLoop のタイミングを指定することができます。

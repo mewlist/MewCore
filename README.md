@@ -4,13 +4,18 @@ Core Game Libraries for Unity
 ![](https://img.shields.io/badge/unity-2022.3%20or%20later-green?logo=unity)
 [![](https://img.shields.io/badge/license-MIT-blue)](https://github.com/mewlist/MewCore/blob/main/LICENSE)
 
+## Readme (日本語)
+
+[Readme_ja.md](./README_ja.md)
+
 ## Documents
 
 https://mewlist.github.io/MewCore/
 
-## Readme (日本語)
+## Features
 
-[Readme_ja.md](./README_ja.md)
+* TaskQueue: a library for executing asynchronous functions in series
+* TaskInterval: a library for running asynchronous functions at regular intervals
 
 ## Installation
 
@@ -22,16 +27,16 @@ git@github.com:mewlist/MewCore.git
 
 ## TaskQueue
 
-TaskQueue is a library that simplifies and efficiently handles asynchronous processes in Unity development. This library enables the management of dynamically changing asynchronous functions and the determination of execution order based on priority.
+TaskQueue is a library for handling serial processing of asynchronous functions in Unity development.
+Asynchronous functions are executed in the order they are input into the queue.
+It also has the feature of a priority queue, which allows you to prioritize important tasks.
 
 ### Main Features
-Dynamic Function Addition: Allows adding asynchronous functions to the task queue at runtime. This enables flexible response to changing requirements and situations.
 
-Priority-Based Execution Management: Sets priorities for each asynchronous function and processes important tasks preferentially. This prevents delays in critical processes.
-
-Serial Processing and Safety: Executes multiple asynchronous functions in order, waiting for one function to complete before starting the next. This improves safety in UI updates and game sequencing.
-
-Simple Description: TaskQueue is designed to simplify the description of executing asynchronous functions.
+* ***Dynamic Function Addition***: You can add asynchronous functions to the task queue at runtime. This allows you to flexibly respond to changing requirements and situations.
+* ***Execution management based on priority***: You can set a priority for each asynchronous function and process important tasks preferentially. This prevents delays in important processing.
+* ***Serial processing and safety***: Multiple asynchronous functions are executed in order and wait for the completion of one function before starting the execution of the next. This improves the safety of UI updates and game sequences.
+* ***Maximum size of the queue***: You can set the maximum number of tasks that can be input into the queue. This allows you to prevent tasks from building up in the queue.
 
 ### Use Scenarios
 
@@ -50,13 +55,11 @@ class Sample : Monobehaviour
 {
     void Start()
     {
-        // Create an instance of TaskQueue.
         var taskQueue = new TaskQueue();
-        // Start executing TaskQueue.
-        // Passing destroyCancellationToken will automatically stop the process and dispose of it when the MonoBehaviour is destroyed.
+        // By passing the destroyCancellationToken, processing is automatically stoppped and disposed when MonoBehaviour is destroyed.
         taskQueue.Start(destroyCancellationToken);
 
-        // Add asynchronous functions to TaskQueue.
+        // Add an asynchronous function to TaskQueue.
         taskQueue.Enqueue(async cancellationToken =>
         {
             Debug.Log("Hello");
@@ -81,34 +84,40 @@ Bye
 
 ### Executing Priority Tasks
 
-You can execute priority tasks by specifying the priority as the second argument in Enqueue.
-The lower the number, the more prioritized the processing. The default value is 0.
+You can execute priority tasks by specifying the priority as the second argument to Enqueue.
+The processing with a smaller ```priority``` value is prioritized. The default value is 0.
 
 ```csharp
 taskQueue.Enqueue(async ct => { ... }, priority: 1);
+taskQueue.Enqueue(async ct => { ... }, priority: 0); // This task is processed first
 ```
 
-### Specifying PlayerLoop
+### Setting the Maximum Queue Size
 
-You can specify the PlayerLoop timing for processing the queue.
-The following timing types are defined.
+#### TaskQueueLimitType.Discard
 
-| Timing                   | Description |
-|-------------------------|------|
-| `MewUnityEarlyUpdate`   | Called at the beginning of Unity's frame update. At this stage, initial event processing and input updates occur. |
-| `MewUnityFixedUpdate`   | The timing for physics updates. Corresponds to fixed-frame-rate processing in Unity Engine. |
-| `MewUnityPreUpdate`     | Processing executed before the Update method. Includes scene state updates and animation updates. |
-| `MewUnityUpdate`        | The normal Update method timing, mainly used for updating game logic. |
-| `MewUnityPreLateUpdate` | Processing executed before LateUpdate. Some post-processing for cameras and animations may occur. |
-| `MewUnityPostLateUpdate` | Processing at the end of the frame, including rendering preparation and final camera updates. |
-
-To specify PlayerLoop timing, specify the timing type in the constructor.
-For example, specifying MewUnityFixedUpdate can prevent queue processing delays in case of frame skips.
+If you add tasks to a queue with a maximum size of 2 as follows,
+and exceed the maximum number, the last added task is discarded.
 
 ```csharp
-var fixedUpdateTaskQueue = new TaskQueue<MewUnityFixedUpdate>();
+taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
+taskQueue.Enqueue(async ct => { ... });
+taskQueue.Enqueue(async ct => { ... });
+taskQueue.Enqueue(async ct => { ... }); // This task is discarded
 ```
 
+#### TaskQueueLimitType.SwapLat
+
+If you add tasks to a queue with a maximum size of 2 as follows,
+and exceed the maximum number, the last task is replaced.
+If the queue is made up of tasks that have a higher priority than the task to be added, no replacement will be made.
+
+```csharp
+taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
+taskQueue.Enqueue(async ct => { ... });
+taskQueue.Enqueue(async ct => { ... }); // This task is discarded
+taskQueue.Enqueue(async ct => { ... }); 
+```
 
 ## TaskInterval
 
