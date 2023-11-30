@@ -265,6 +265,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "en/TaskInterval/player-loop.md",
+      "output": {
+        ".html": {
+          "relative_path": "en/TaskInterval/player-loop.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "en/TaskQueue/awaitable.md",
       "output": {
         ".html": {
@@ -289,6 +299,16 @@
       "output": {
         ".html": {
           "relative_path": "en/TaskQueue/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "en/TaskQueue/player-loop.md",
+      "output": {
+        ".html": {
+          "relative_path": "en/TaskQueue/player-loop.html"
         }
       },
       "version": ""

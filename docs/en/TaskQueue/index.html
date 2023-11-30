@@ -86,12 +86,16 @@
         <article data-uid="">
 <h2 id="taskqueue">TaskQueue</h2>
 
-<p>TaskQueue is a library that simplifies and efficiently handles asynchronous processes in Unity development. This library enables the management of dynamically changing asynchronous functions and the determination of execution order based on priority.</p>
+<p>TaskQueue is a library for handling serial processing of asynchronous functions in Unity development.
+Asynchronous functions are executed in the order they are input into the queue.
+It also has the feature of a priority queue, which allows you to prioritize important tasks.</p>
 <h3 id="main-features">Main Features</h3>
-<p>Dynamic Function Addition: Allows adding asynchronous functions to the task queue at runtime. This enables flexible response to changing requirements and situations.</p>
-<p>Priority-Based Execution Management: Sets priorities for each asynchronous function and processes important tasks preferentially. This prevents delays in critical processes.</p>
-<p>Serial Processing and Safety: Executes multiple asynchronous functions in order, waiting for one function to complete before starting the next. This improves safety in UI updates and game sequencing.</p>
-<p>Simple Description: TaskQueue is designed to simplify the description of executing asynchronous functions.</p>
+<ul>
+<li><em><strong>Dynamic Function Addition</strong></em>: You can add asynchronous functions to the task queue at runtime. This allows you to flexibly respond to changing requirements and situations.</li>
+<li><em><strong>Execution management based on priority</strong></em>: You can set a priority for each asynchronous function and process important tasks preferentially. This prevents delays in important processing.</li>
+<li><em><strong>Serial processing and safety</strong></em>: Multiple asynchronous functions are executed in order and wait for the completion of one function before starting the execution of the next. This improves the safety of UI updates and game sequences.</li>
+<li><em><strong>Maximum size of the queue</strong></em>: You can set the maximum number of tasks that can be input into the queue. This allows you to prevent tasks from building up in the queue.</li>
+</ul>
 <h3 id="use-scenarios">Use Scenarios</h3>
 <p>Dynamic UI Updates: Used for smooth control of dynamic display and hiding of dialog boxes and menus in the game.</p>
 <p>Game Event Sequencing: Suitable for managing ordered events such as story progression and tutorials.</p>
@@ -102,13 +106,11 @@
 {
     void Start()
     {
-        // Create an instance of TaskQueue.
         var taskQueue = new TaskQueue();
-        // Start executing TaskQueue.
-        // Passing destroyCancellationToken will automatically stop the process and dispose of it when the MonoBehaviour is destroyed.
+        // By passing the destroyCancellationToken, processing is automatically stoppped and disposed when MonoBehaviour is destroyed.
         taskQueue.Start(destroyCancellationToken);
 
-        // Add asynchronous functions to TaskQueue.
+        // Add an asynchronous function to TaskQueue.
         taskQueue.Enqueue(async cancellationToken =&gt;
         {
             Debug.Log(&quot;Hello&quot;);
@@ -128,50 +130,28 @@
 Bye
 </code></pre>
 <h3 id="executing-priority-tasks">Executing Priority Tasks</h3>
-<p>You can execute priority tasks by specifying the priority as the second argument in Enqueue.
-The lower <code>priority</code>, the more prioritized the processing. The default value is 0.</p>
+<p>You can execute priority tasks by specifying the priority as the second argument to Enqueue.
+The processing with a smaller <code>priority</code> value is prioritized. The default value is 0.</p>
 <pre><code class="lang-csharp">taskQueue.Enqueue(async ct =&gt; { ... }, priority: 1);
+taskQueue.Enqueue(async ct =&gt; { ... }, priority: 0); // This task is processed first
 </code></pre>
-<h3 id="specifying-playerloop">Specifying PlayerLoop</h3>
-<p>You can specify the PlayerLoop timing for processing the queue.
-The following timing types are defined.</p>
-<table>
-<thead>
-<tr>
-<th>Timing</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>MewUnityEarlyUpdate</code></td>
-<td>Called at the beginning of Unity's frame update. At this stage, initial event processing and input updates occur.</td>
-</tr>
-<tr>
-<td><code>MewUnityFixedUpdate</code></td>
-<td>The timing for physics updates. Corresponds to fixed-frame-rate processing in Unity Engine.</td>
-</tr>
-<tr>
-<td><code>MewUnityPreUpdate</code></td>
-<td>Processing executed before the Update method. Includes scene state updates and animation updates.</td>
-</tr>
-<tr>
-<td><code>MewUnityUpdate</code></td>
-<td>The normal Update method timing, mainly used for updating game logic.</td>
-</tr>
-<tr>
-<td><code>MewUnityPreLateUpdate</code></td>
-<td>Processing executed before LateUpdate. Some post-processing for cameras and animations may occur.</td>
-</tr>
-<tr>
-<td><code>MewUnityPostLateUpdate</code></td>
-<td>Processing at the end of the frame, including rendering preparation and final camera updates.</td>
-</tr>
-</tbody>
-</table>
-<p>To specify PlayerLoop timing, specify the timing type in the constructor.
-For example, specifying MewUnityFixedUpdate can prevent queue processing delays in case of frame skips.</p>
-<pre><code class="lang-csharp">var fixedUpdateTaskQueue = new TaskQueue&lt;MewUnityFixedUpdate&gt;();
+<h3 id="setting-the-maximum-queue-size">Setting the Maximum Queue Size</h3>
+<h4 id="taskqueuelimittypediscard">TaskQueueLimitType.Discard</h4>
+<p>If you add tasks to a queue with a maximum size of 2 as follows,
+and exceed the maximum number, the last added task is discarded.</p>
+<pre><code class="lang-csharp">taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
+taskQueue.Enqueue(async ct =&gt; { ... });
+taskQueue.Enqueue(async ct =&gt; { ... });
+taskQueue.Enqueue(async ct =&gt; { ... }); // This task is discarded
+</code></pre>
+<h4 id="taskqueuelimittypeswaplast">TaskQueueLimitType.SwapLast</h4>
+<p>If you add tasks to a queue with a maximum size of 2 as follows,
+and exceed the maximum number, the last task is replaced.
+If the queue is made up of tasks that have a higher priority than the task to be added, no replacement will be made.</p>
+<pre><code class="lang-csharp">taskQueue = new TaskQueue(TaskQueueLimitType.SwapLast, maxSize: 2);
+taskQueue.Enqueue(async ct =&gt; { ... });
+taskQueue.Enqueue(async ct =&gt; { ... }); // This task is discarded
+taskQueue.Enqueue(async ct =&gt; { ... }); 
 </code></pre>
 
 </article>
