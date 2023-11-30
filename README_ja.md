@@ -93,6 +93,7 @@ taskQueue.Enqueue(async ct => { ... }, priority: 0); // このタスクが優先
 #### TaskQueueLimitType.Discard
 
 最大サイズ 2 のキューに対して以下のようにタスクを追加し、最大数を超えた場合、最後に追加されたタスクが破棄されます。
+追加されるタスクの優先度が高い場合は、より低い優先度のタスクが破棄されキューイングが行われます。
 
 ```csharp
 taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);

@@ -138,7 +138,8 @@ taskQueue.Enqueue(async ct =&gt; { ... }, priority: 0); // This task is processe
 <h3 id="setting-the-maximum-queue-size">Setting the Maximum Queue Size</h3>
 <h4 id="taskqueuelimittypediscard">TaskQueueLimitType.Discard</h4>
 <p>If you add tasks to a queue with a maximum size of 2 as follows,
-and exceed the maximum number, the last added task is discarded.</p>
+and exceed the maximum number, the last added task is discarded.
+If the priority of the task to be added is higher, the task with a lower priority is discarded and queued.</p>
 <pre><code class="lang-csharp">taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
 taskQueue.Enqueue(async ct =&gt; { ... });
 taskQueue.Enqueue(async ct =&gt; { ... });
