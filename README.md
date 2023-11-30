@@ -98,6 +98,7 @@ taskQueue.Enqueue(async ct => { ... }, priority: 0); // This task is processed f
 
 If you add tasks to a queue with a maximum size of 2 as follows,
 and exceed the maximum number, the last added task is discarded.
+If the priority of the task to be added is higher, the task with a lower priority is discarded and queued.
 
 ```csharp
 taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
@@ -198,28 +199,3 @@ TaskInterval
     .Create(1000 /* ms */, TestTaskAsync, IntervalTimerType.UnityUnscaledTime)
     .Start(destroyCancellationToken);
 ```
-
-### Specifying PlayerLoop
-
-You can specify the PlayerLoop timing for processing tasks.
-The following timing types are defined.
-
-| Timing                   | Description |
-|-------------------------|------|
-| `MewUnityEarlyUpdate`   | Called at the beginning of Unity's frame update. At this stage, initial event processing and input updates occur. |
-| `MewUnityFixedUpdate`   | The timing for physics updates. Corresponds to fixed-frame-rate processing in Unity Engine. |
-| `MewUnityPreUpdate`     | Processing executed before the Update method. Includes scene state updates and animation updates. |
-| `MewUnityUpdate`        | The normal Update method timing, mainly used for updating game logic. |
-| `MewUnityPreLateUpdate` | Processing executed before LateUpdate. Some post-processing for cameras and animations may occur. |
-| `MewUnityPostLateUpdate` | Processing at the end of the frame, including rendering preparation and final camera updates. |
-
-To specify PlayerLoop timing, specify the timing type for TaskInterval.
-For example, specifying MewUnityFixedUpdate can ensure stable game-time task execution even in case of frame skips, preventing delays.
-
-```csharp
-TaskInterval<MewUnityFixedUpdate>
-    .Create(1000 /* ms */, TestTaskAsync, IntervalTimerType.UnityUnscaledTime)
-    .Start(destroyCancellationToken);
-```
-
-
