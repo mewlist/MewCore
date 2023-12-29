@@ -132,7 +132,9 @@ Bye
 <h3 id="executing-priority-tasks">Executing Priority Tasks</h3>
 <p>You can execute priority tasks by specifying the priority as the second argument to Enqueue.
 The processing with a smaller <code>priority</code> value is prioritized. The default value is 0.</p>
-<pre><code class="lang-csharp">taskQueue.Enqueue(async ct =&gt; { ... }, priority: 1);
+<pre><code class="lang-csharp">taskQueue = new TaskQueue();
+taskQueue.Start();
+taskQueue.Enqueue(async ct =&gt; { ... }, priority: 1);
 taskQueue.Enqueue(async ct =&gt; { ... }, priority: 0); // This task is processed first
 </code></pre>
 <h3 id="setting-the-maximum-queue-size">Setting the Maximum Queue Size</h3>
@@ -141,6 +143,7 @@ taskQueue.Enqueue(async ct =&gt; { ... }, priority: 0); // This task is processe
 and exceed the maximum number, the last added task is discarded.
 If the priority of the task to be added is higher, the task with a lower priority is discarded and queued.</p>
 <pre><code class="lang-csharp">taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
+taskQueue.Start();
 taskQueue.Enqueue(async ct =&gt; { ... });
 taskQueue.Enqueue(async ct =&gt; { ... });
 taskQueue.Enqueue(async ct =&gt; { ... }); // This task is discarded
@@ -150,6 +153,7 @@ taskQueue.Enqueue(async ct =&gt; { ... }); // This task is discarded
 and exceed the maximum number, the last task is replaced.
 If the queue is made up of tasks that have a higher priority than the task to be added, no replacement will be made.</p>
 <pre><code class="lang-csharp">taskQueue = new TaskQueue(TaskQueueLimitType.SwapLast, maxSize: 2);
+taskQueue.Start();
 taskQueue.Enqueue(async ct =&gt; { ... });
 taskQueue.Enqueue(async ct =&gt; { ... }); // This task is discarded
 taskQueue.Enqueue(async ct =&gt; { ... }); 
