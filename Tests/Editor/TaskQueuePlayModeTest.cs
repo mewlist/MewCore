@@ -239,6 +239,47 @@ namespace Mew.Core.Tasks.Tests
             }
         }
 
+        [UnityTest]
+        public IEnumerator SwitchingTest()
+        {
+            var cts = new CancellationTokenSource();
+            var taskQueue = new TaskQueue(TaskQueueLimitType.SwapLast, maxSize: 1);
+            var result = new List<int>();
+            taskQueue.Start(cts.Token);
+
+            var firstTaskDone = false;
+            var secondaskDone = false;
+
+            taskQueue.Enqueue(async ct =>
+            {
+                await Task.Delay(TimeSpan.FromSeconds(0.5f), ct);
+                firstTaskDone = true;
+            });
+
+            yield return new WaitForSeconds(0.25f);
+
+            var task = taskQueue.EnqueueAsync(async ct =>
+            {
+                await Task.Delay(TimeSpan.FromSeconds(0.5f), ct);
+                secondaskDone = true;
+            });
+
+            var awaiter = task.GetAwaiter();
+            while (!awaiter.IsCompleted)
+                yield return null;
+
+            Assert.AreEqual(false, firstTaskDone);
+            Assert.AreEqual(true, secondaskDone);
+            taskQueue.Dispose();
+            yield break;
+
+            async Task WaitForAllTaskComplete(Task task)
+            {
+                try { await task; }
+                catch {  }
+            }
+        }
+
         private static TaskQueueAwaitable AddTestTask(TaskQueue taskQueue, ICollection<int> resultList, int result, int priority)
         {
             return taskQueue.EnqueueAsync(async ct =>

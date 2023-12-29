@@ -12,6 +12,7 @@ namespace Mew.Core.Tasks
         private readonly List<TaskQueueAwaitable> queue = new();
         private bool updateProcessing;
         private bool taskProcessing;
+        private int processingPriority;
         private CancellationTokenSource? cts;
         private CancellationToken? disposeCt;
         protected string loopId = string.Empty;
@@ -133,6 +134,12 @@ namespace Mew.Core.Tasks
                         {
                             var index = queue.FindLastIndex(x =>
                                 x.Priority >= priority && x != newTask);
+
+                            if (index < 0 && taskProcessing && processingPriority >= priority)
+                            {
+                                if (taskProcessing) CancelCurrent();
+                                break;
+                            }
                             index = index >= 0 ? index : queue.Count - 1;
                             var task = queue[index];
                             task.Cancel();
@@ -204,6 +211,7 @@ namespace Mew.Core.Tasks
                     task = queue.First();
                     queue.RemoveAt(0);
                     taskProcessing = true;
+                    processingPriority = task.Priority;
                 }
 
                 cts = disposeCt.HasValue
@@ -219,6 +227,7 @@ namespace Mew.Core.Tasks
             }
 
             taskProcessing = false;
+            processingPriority = int.MaxValue;
             updateProcessing = false;
         }
     }
