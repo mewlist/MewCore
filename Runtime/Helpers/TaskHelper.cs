@@ -8,8 +8,12 @@ namespace Mew.Core.TaskHelpers
         public static async Task NextFrame()
         {
             AwaitableCompletionSource awaitableCompletionSource = new();
-            MewLoop.Add<MewUnityUpdate>(() => awaitableCompletionSource.TrySetResult());
+            MewLoop.Add<MewUnityUpdate>(OnUpdate);
             await awaitableCompletionSource.Awaitable;
+            MewLoop.Remove<MewUnityUpdate>(OnUpdate);
+            return;
+
+            void OnUpdate() => awaitableCompletionSource.TrySetResult();
         }
     }
 }
