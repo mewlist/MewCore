@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using Assert = NUnit.Framework.Assert;
@@ -100,7 +101,7 @@ namespace Mew.Core.Tasks.Tests
         [UnityTest]
         public IEnumerator DisposeTest()
         {
-            var taskQueue = new TaskQueue();
+            var taskQueue = new TaskQueue<MewUnityUpdate>(TaskQueueLimitType.SwapLast, maxSize: 3);
             var result = new List<int>();
             taskQueue.Start();
             AddTestTask(taskQueue, result, result: 0, priority: 0);
@@ -113,6 +114,26 @@ namespace Mew.Core.Tasks.Tests
             yield return new WaitForSeconds(1f);
             Assert.IsTrue(result.SequenceEqual(new List<int>{ 0, 1 }));
             Assert.IsTrue(taskQueue.Disposed);
+            Assert.Throws<ObjectDisposedException>(() =>
+            {
+                taskQueue.Enqueue(async ct =>
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(0.5f), ct);
+                });
+            });
+        }
+
+        [Test]
+        public void NotStartedTest()
+        {
+            var taskQueue = new TaskQueue<MewUnityUpdate>();
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                taskQueue.Enqueue(async ct =>
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(0.5f), ct);
+                });
+            });
         }
 
         [UnityTest]
@@ -272,12 +293,6 @@ namespace Mew.Core.Tasks.Tests
             Assert.AreEqual(true, secondaskDone);
             taskQueue.Dispose();
             yield break;
-
-            async Task WaitForAllTaskComplete(Task task)
-            {
-                try { await task; }
-                catch {  }
-            }
         }
 
         private static TaskQueueAwaitable AddTestTask(TaskQueue taskQueue, ICollection<int> resultList, int result, int priority)

@@ -1,8 +1,9 @@
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
-namespace Mew.Core.TaskExtensions
+namespace Mew.Core.Extensions
 {
     public static class TaskExtensions
     {

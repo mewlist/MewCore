@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-namespace Mew.Core.SceneUtils
+namespace Mew.Core.SceneHelpers
 {
     public static class SceneManagerHelper
     {
