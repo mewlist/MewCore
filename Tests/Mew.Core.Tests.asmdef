@@ -1,5 +1,5 @@
 {
-    "name": "Mew.Core.Editor.Tests",
+    "name": "Mew.Core.Tests",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",

@@ -1,0 +1,26 @@
+{
+    "name": "Mew.Core.Assets.Editor",
+    "rootNamespace": "Mew.Core.Assets",
+    "references": [
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:adf0022e8cf2a164fb451e35e1458e78"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.addressables",
+            "expression": "",
+            "define": "USE_MEW_CORE_ASSETS"
+        }
+    ],
+    "noEngineReferences": false
+}
