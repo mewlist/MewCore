@@ -1,3 +1,14 @@
 {
-	"name": "Mew.Core"
+    "name": "Mew.Core",
+    "rootNamespace": "Mew.Core",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
