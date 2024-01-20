@@ -29,7 +29,7 @@ namespace Mew.Core.Assets
                 var h = Addressables.LoadSceneAsync(unifiedScene.SceneResourceLocation, parameters);
                 handle = new SceneInstanceHandle(h);
             }
-            else if (unifiedScene.SceneAssetReference is not null)
+            else if (unifiedScene.SceneAssetReference is not null && unifiedScene.SceneAssetReference.RuntimeKeyIsValid())
             {
                 var h = Addressables.LoadSceneAsync(unifiedScene.SceneAssetReference, parameters);
                 handle = new SceneInstanceHandle(h);

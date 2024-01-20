@@ -22,7 +22,7 @@ namespace Mew.Core.Assets
             get
             {
 #if USE_MEW_CORE_ASSETS
-                return SceneAssetReference != null;
+                return SceneAssetReference != null && SceneAssetReference.RuntimeKeyIsValid();
 #else
                 return false;
 #endif
@@ -40,5 +40,7 @@ namespace Mew.Core.Assets
 #endif
             }
         }
+
+        public bool IsValid => IsSceneReference || IsSceneAssetReference || IsSceneResourceLocation;
     }
 }
