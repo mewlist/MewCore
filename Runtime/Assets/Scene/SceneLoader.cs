@@ -20,7 +20,7 @@ namespace Mew.Core.Assets
 
         public async ValueTask<Scene> LoadAsync(UnifiedScene unifiedScene, CancellationToken cancellationToken = default)
         {
-            var parameters = new LoadSceneParameters(LoadSceneMode.Additive, LocalPhysicsMode.Physics3D);
+            var parameters = new LoadSceneParameters(LoadSceneMode.Additive, LocalPhysicsMode.None);
             ISceneHandle handle;
 
 #if USE_MEW_CORE_ASSETS
