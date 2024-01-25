@@ -17,7 +17,7 @@ namespace Mew.Core
     public static class MewLoopUnityInitializer
     {
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void Init()
         {
             Register<MewUnityEarlyUpdate, EarlyUpdate>();
