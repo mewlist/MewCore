@@ -15,6 +15,9 @@ namespace Mew.Core.Assets
 #endif
         [field: SerializeField] public SceneReference SceneReference { get; set; }
 
+#if UNITY_EDITOR
+        [field: SerializeField] public string EditorScenePath { get; set; }
+#endif
 
         public bool IsSceneReference => SceneReference?.IsValid ?? false;
         public bool IsSceneAssetReference
@@ -41,6 +44,11 @@ namespace Mew.Core.Assets
             }
         }
 
-        public bool IsValid => IsSceneReference || IsSceneAssetReference || IsSceneResourceLocation;
+        private bool IsValidInternal => IsSceneReference || IsSceneAssetReference || IsSceneResourceLocation;
+#if UNITY_EDITOR
+            public bool IsValid => IsValidInternal || !string.IsNullOrEmpty(EditorScenePath);
+#else
+        public bool IsValid => IsValidInternal;
+#endif
     }
 }
