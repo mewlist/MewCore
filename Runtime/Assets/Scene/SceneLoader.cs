@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Mew.Core.TaskHelpers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 #if USE_MEW_CORE_ASSETS
 using UnityEngine.AddressableAssets;
+#endif
+
+#if UNITY_EDITOR
+using UnityEditor.SceneManagement;
 #endif
 
 namespace Mew.Core.Assets
@@ -36,6 +39,7 @@ namespace Mew.Core.Assets
             }
             else
 #endif
+            if (unifiedScene.SceneReference is not null && unifiedScene.SceneReference.IsValid)
             {
 #if UNITY_2023_2_OR_NEWER
                 await SceneManager.LoadSceneAsync(unifiedScene.SceneReference, parameters);
@@ -46,6 +50,19 @@ namespace Mew.Core.Assets
 #endif
                 var loadedScene = SceneManager.GetSceneAt(SceneManager.loadedSceneCount - 1);
                 handle = new SceneHandle(loadedScene);
+            }
+#if UNITY_EDITOR
+            // for test use
+            else if (!string.IsNullOrEmpty(unifiedScene.EditorScenePath))
+            {
+                await EditorSceneManager.LoadSceneAsyncInPlayMode(unifiedScene.EditorScenePath , parameters ) ;
+                var loadedScene = SceneManager.GetSceneAt(SceneManager.loadedSceneCount - 1);
+                handle = new SceneHandle(loadedScene);
+            }
+#endif
+            else
+            {
+                throw new ArgumentException("SceneReference is not valid.");
             }
 
             var scene = await handle.GetScene();
