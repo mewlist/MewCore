@@ -16,7 +16,7 @@ namespace Mew.Core.Assets
         [field: SerializeField] public SceneReference SceneReference { get; set; }
 
 #if UNITY_EDITOR
-        [field: SerializeField] public string EditorScenePath { get; set; }
+        public string EditorScenePath { get; set; }
 #endif
 
         public bool IsSceneReference => SceneReference?.IsValid ?? false;
