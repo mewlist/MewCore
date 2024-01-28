@@ -1,7 +1,7 @@
 {
   "name": "st.mewli.core",
   "displayName": "MewCore",
-  "version": "0.0.5",
+  "version": "0.1.1",
   "unity": "2022.3",
   "description": "Core Game Library for Unity",
   "author": {
@@ -11,7 +11,8 @@
 
   "keywords": [
     "playerloop",
-    "task"
+    "task",
+    "addressables"
   ],
 
   "dependencies": {
