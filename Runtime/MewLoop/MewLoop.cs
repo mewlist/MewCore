@@ -11,9 +11,16 @@ namespace Mew.Core
 
         private static string? DefaultId { get; set; }
 
+        private static ConcurrentDictionary<Type, string> loopIdMap = new();
+
         public static string LoopId<T>()
         {
-            return typeof(T).Name;
+            var type = typeof(T);
+            if (loopIdMap.TryGetValue(type, out var id))
+                return id;
+            id = type.Name;
+            loopIdMap[type] = id;
+            return id;
         }
 
         /// <summary>

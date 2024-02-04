@@ -10,14 +10,15 @@ namespace Mew.Core.Tasks
     public class TaskQueue : IDisposable
     {
         private readonly List<TaskQueueAwaitable> queue = new();
+        private readonly ICollection queueAsCollection;
         private bool updateProcessing;
         private bool taskProcessing;
         private int processingPriority;
         private CancellationTokenSource? cts;
-        private CancellationToken? disposeCt;
+        private CancellationToken disposeCt;
         protected string loopId = string.Empty;
 
-        private object SyncRoot => ((ICollection)queue).SyncRoot;
+        private object SyncRoot => queueAsCollection.SyncRoot;
 
         public TaskQueueLimitType LimitType { get; }
         /// <summary>
@@ -61,6 +62,7 @@ namespace Mew.Core.Tasks
 
             LimitType = taskQueueLimitType;
             MaxSize = maxSize;
+            queueAsCollection = queue;
         }
 
         /// <summary>
@@ -68,7 +70,7 @@ namespace Mew.Core.Tasks
         /// </summary>
         /// <param name="ct">Dispose TaskQueue when ct is cancelled.</param>
         /// <exception cref="ObjectDisposedException"></exception>
-        public void Start(CancellationToken? ct = null)
+        public void Start(CancellationToken ct = default)
         {
             if (Disposed) throw new ObjectDisposedException($"TaskQueue[{loopId}] is disposed");
             if (Started) Stop();
@@ -168,7 +170,7 @@ namespace Mew.Core.Tasks
         {
             if (Disposed) return;
             Stop();
-            disposeCt = null;
+            disposeCt = CancellationToken.None;
             lock (SyncRoot)
             {
                 queue.Clear();
@@ -188,17 +190,23 @@ namespace Mew.Core.Tasks
             cts = null;
         }
 
-        private async void Update()
+        private void Update()
         {
-            if (disposeCt is { IsCancellationRequested: true })
+            if (disposeCt != CancellationToken.None && disposeCt.IsCancellationRequested)
             {
                 Dispose();
                 return;
             }
 
             if (updateProcessing) return;
-            lock (SyncRoot) if (!queue.Any()) return;
+            lock (SyncRoot)
+                if (queue.Count == 0) return;
 
+            UpdateInternal();
+        }
+
+        private async void UpdateInternal()
+        {
             updateProcessing = true;
 
             while (true)
@@ -214,8 +222,8 @@ namespace Mew.Core.Tasks
                     processingPriority = task.Priority;
                 }
 
-                cts = disposeCt.HasValue
-                    ? CancellationTokenSource.CreateLinkedTokenSource(taskCts.Token, disposeCt.Value)
+                cts = disposeCt != CancellationToken.None
+                    ? CancellationTokenSource.CreateLinkedTokenSource(taskCts.Token, disposeCt)
                     : taskCts;
 
                 await task.Invoke(cts.Token);
@@ -223,7 +231,7 @@ namespace Mew.Core.Tasks
                 cts?.Dispose();
                 cts = null;
 
-                lock (SyncRoot) if (!queue.Any()) break;
+                lock (SyncRoot) if (queue.Count == 0) break;
             }
 
             taskProcessing = false;
