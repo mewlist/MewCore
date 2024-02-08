@@ -32,6 +32,11 @@ namespace Mew.Core.Assets
                 var h = Addressables.LoadSceneAsync(unifiedScene.SceneAssetReference, parameters);
                 handle = new SceneInstanceHandle(h);
             }
+            else if (unifiedScene.IsAddressablesSceneKey)
+            {
+                var h = Addressables.LoadSceneAsync(unifiedScene.AddressablesSceneKey.RuntimeKey, parameters);
+                handle = new SceneInstanceHandle(h);
+            }
             else
 #endif
             if (unifiedScene.SceneReference is not null && unifiedScene.SceneReference.IsValid)
