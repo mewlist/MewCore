@@ -8,33 +8,53 @@ namespace Mew.Core.Assets
     {
         private const string SceneAssetReferenceKBackingField = "<SceneAssetReference>k__BackingField";
         private const string SceneReferenceKBackingField = "<SceneReference>k__BackingField";
+        private const string AddressableSceneKeyKBackingField = "<AddressablesSceneKey>k__BackingField";
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
+#if USE_MEW_CORE_ASSETS
             var sceneAssetReferenceProperty = property.FindPropertyRelative(SceneAssetReferenceKBackingField);
+            var addressableSceneKeyProperty = property.FindPropertyRelative(AddressableSceneKeyKBackingField);
+#endif
             var sceneReferenceProperty = property.FindPropertyRelative(SceneReferenceKBackingField);
+
+#if USE_MEW_CORE_ASSETS
             var sceneAssetReference = sceneAssetReferenceProperty.boxedValue as SceneAssetReference;
+            var addressableSceneKey = addressableSceneKeyProperty.boxedValue as AddressablesSceneKey;
+#endif
             var sceneReference = sceneReferenceProperty.boxedValue as SceneReference;
 
-            var drawer = new LayoutDrawer();
+#if USE_MEW_CORE_ASSETS
             var isAssetReference = !string.IsNullOrEmpty(sceneAssetReference.AssetGUID);
+            var isAddressableSceneKey = addressableSceneKey is not null;
+#else
+            const bool isAssetReference = false;
+            const bool isAddressableSceneKey = false;
+#endif
             var isSceneReference = sceneReference.IsValid;
 
-            var labelText = isAssetReference
+            var drawer = new LayoutDrawer();
+            var labelText = (isAssetReference || isAddressableSceneKey)
                 ? $"{label.text} (Addressables)"
                 : isSceneReference
                     ? $"{label.text} : (Build Settings)"
                     : $"{label.text} : Select scene";
             var customLabel = new GUIContent(labelText);
             var originalColor = GUI.color;
-            if (!isAssetReference && !isSceneReference)
+            if (!isAssetReference && !isSceneReference && !isAddressableSceneKey)
                 GUI.color = Color.yellow;
             drawer.DrawLabel(position, customLabel);
 
             EditorGUI.indentLevel++;
+
+#if USE_MEW_CORE_ASSETS
             if (isAssetReference)
             {
                 drawer.DrawProperty(position, sceneAssetReferenceProperty);
+            }
+            else if (isAddressableSceneKey)
+            {
+                drawer.DrawProperty(position, addressableSceneKeyProperty);
             }
             else if (isSceneReference)
             {
@@ -44,7 +64,12 @@ namespace Mew.Core.Assets
             {
                 drawer.DrawProperty(position, sceneAssetReferenceProperty);
                 drawer.DrawProperty(position, sceneReferenceProperty);
+                drawer.DrawProperty(position, addressableSceneKeyProperty);
             }
+#else
+            drawer.DrawProperty(position, sceneReferenceProperty);
+#endif
+
             EditorGUI.indentLevel--;
             if (!isAssetReference && !isSceneReference)
                 GUI.color = originalColor;
@@ -83,26 +108,43 @@ namespace Mew.Core.Assets
         {
             var sceneAssetReferenceProperty = property.FindPropertyRelative(SceneAssetReferenceKBackingField);
             var sceneReferenceProperty = property.FindPropertyRelative(SceneReferenceKBackingField);
+            var addressableSceneKeyProperty = property.FindPropertyRelative(AddressableSceneKeyKBackingField);
+#if USE_MEW_CORE_ASSETS
             var sceneAssetReference = sceneAssetReferenceProperty.boxedValue as SceneAssetReference;
+            var addressableSceneKey = addressableSceneKeyProperty.boxedValue as AddressablesSceneKey;
+#endif
             var sceneReference = sceneReferenceProperty.boxedValue as SceneReference;
 
             var fixedHeight = EditorGUI.GetPropertyHeight(SerializedPropertyType.String, label);
 
-            if (!string.IsNullOrEmpty(sceneAssetReference.AssetGUID))
+            if (sceneReference.IsValid)
+            {
+                return fixedHeight +
+                       EditorGUI.GetPropertyHeight(sceneReferenceProperty);
+            }
+#if USE_MEW_CORE_ASSETS
+            else if (!string.IsNullOrEmpty(sceneAssetReference.AssetGUID))
             {
                 return fixedHeight +
                        EditorGUI.GetPropertyHeight(sceneAssetReferenceProperty);
             }
-            else if (sceneReference.IsValid)
+            else if (addressableSceneKey is not null)
             {
                 return fixedHeight +
-                       EditorGUI.GetPropertyHeight(sceneReferenceProperty);
+                       EditorGUI.GetPropertyHeight(addressableSceneKeyProperty);
             }
+#endif
             else
             {
+#if USE_MEW_CORE_ASSETS
                 return fixedHeight +
                        EditorGUI.GetPropertyHeight(sceneAssetReferenceProperty) +
+                       EditorGUI.GetPropertyHeight(sceneReferenceProperty) +
+                       EditorGUI.GetPropertyHeight(addressableSceneKeyProperty);
+#else
+                return fixedHeight +
                        EditorGUI.GetPropertyHeight(sceneReferenceProperty);
+#endif
             }
         }
     }

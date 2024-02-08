@@ -11,6 +11,7 @@ namespace Mew.Core.Assets
     {
 #if USE_MEW_CORE_ASSETS
         [field: SerializeField] public SceneAssetReference SceneAssetReference { get; set; }
+        [field: SerializeField] public AddressablesSceneKey AddressablesSceneKey { get; set; }
         public IResourceLocation SceneResourceLocation { get; set; }
 #endif
         [field: SerializeField] public SceneReference SceneReference { get; set; }
@@ -32,6 +33,18 @@ namespace Mew.Core.Assets
             }
         }
 
+        public bool IsAddressablesSceneKey
+        {
+            get
+            {
+#if USE_MEW_CORE_ASSETS
+                return AddressablesSceneKey is not null;
+#else
+                return false;
+#endif
+            }
+        }
+
         public bool IsSceneResourceLocation
         {
             get
@@ -44,9 +57,9 @@ namespace Mew.Core.Assets
             }
         }
 
-        private bool IsValidInternal => IsSceneReference || IsSceneAssetReference || IsSceneResourceLocation;
+        private bool IsValidInternal => IsSceneReference || IsSceneAssetReference || IsSceneResourceLocation || IsAddressablesSceneKey;
 #if UNITY_EDITOR
-            public bool IsValid => IsValidInternal || !string.IsNullOrEmpty(EditorScenePath);
+        public bool IsValid => IsValidInternal || !string.IsNullOrEmpty(EditorScenePath);
 #else
         public bool IsValid => IsValidInternal;
 #endif
