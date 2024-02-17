@@ -48,10 +48,9 @@ namespace Mew.Core.Assets
 
         public async ValueTask UnloadAllAsync()
         {
-            var toRemove = SceneHandles.ToArray();
-            await Task.WhenAll(
-                toRemove.Select(x =>
-                    UnloadAsyncInternal(x).AsTask()));
+            await Task.WhenAll(SceneHandles.Select(x =>
+                    UnifiedSceneLoader.UnloadAsync(x).AsTask()));
+            SceneHandles.Clear();
         }
 
         public async ValueTask DisposeAsync()
