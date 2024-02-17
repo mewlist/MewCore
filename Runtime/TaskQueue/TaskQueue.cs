@@ -2,7 +2,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 
 namespace Mew.Core.Tasks
@@ -216,7 +215,7 @@ namespace Mew.Core.Tasks
 
                 lock (SyncRoot)
                 {
-                    task = queue.First();
+                    task = queue[0];
                     queue.RemoveAt(0);
                     taskProcessing = true;
                     processingPriority = task.Priority;
