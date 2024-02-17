@@ -22,10 +22,7 @@ namespace Mew.Core.UnityObjectHelpers
 
             var go = new GameObject(targetType.Name);
             var instance = go.AddComponent(targetType);
-
-            using var instanceIds = new NativeArray<int>( new [] { instance.gameObject.GetInstanceID() }, Allocator.Temp);
-            SceneManager.MoveGameObjectsToScene(instanceIds, scene);
-
+            SceneManager.MoveGameObjectToScene(instance.gameObject, scene);
             return instance;
         }
 
