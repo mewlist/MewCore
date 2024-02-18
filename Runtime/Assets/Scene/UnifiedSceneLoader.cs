@@ -2,7 +2,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Mew.Core.TaskHelpers;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 #if USE_MEW_CORE_ASSETS
@@ -42,15 +41,7 @@ namespace Mew.Core.Assets
 #endif
             if (unifiedScene.SceneReference is not null && unifiedScene.SceneReference.IsValid)
             {
-#if UNITY_2023_2_OR_NEWER
-                await SceneManager.LoadSceneAsync(unifiedScene.SceneReference, parameters);
-#else
-                var asyncOp = SceneManager.LoadSceneAsync(unifiedScene.SceneReference, parameters);
-                while (!asyncOp.isDone)
-                    await TaskHelper.NextFrame();
-#endif
-                var loadedScene = SceneManager.GetSceneAt(SceneManager.loadedSceneCount - 1);
-                handle = new SceneHandle(loadedScene);
+                handle = await CompatibleSceneLoader.LoadSceneAsync(unifiedScene, parameters);
             }
 #if UNITY_EDITOR
             // for test use
@@ -92,16 +83,7 @@ namespace Mew.Core.Assets
                 case SceneHandle sceneHandle:
                 {
                     if (sceneHandle.Scene.isLoaded)
-                    {
-#if UNITY_2023_2_OR_NEWER
-                        await SceneManager.UnloadSceneAsync(sceneHandle.Scene);
-#else
-                        var asyncOp = SceneManager.UnloadSceneAsync(sceneHandle.Scene);
-                        while (!asyncOp.isDone)
-                            await TaskHelper.NextFrame();
-#endif
-
-                    }
+                        await CompatibleSceneLoader.UnloadSceneAsync(sceneHandle);
                     break;
                 }
             }
