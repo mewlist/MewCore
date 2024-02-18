@@ -1,16 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 
 namespace Mew.Core.TaskHelpers
 {
     public static class TaskHelper
     {
-        public static async Task NextFrame()
+        public static async Task NextFrame(CancellationToken ct = default)
         {
-#if UNITY_2023_2_OR_NEWER
-            await TaskHelperInternal.NextFrame();
-#else
-            await TaskHelperLegacyInternal.NextFrame();
-#endif
+            await TaskHelperInternal.NextFrame(ct);
         }
     }
 }

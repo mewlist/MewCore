@@ -1,5 +1,5 @@
-﻿#if UNITY_2023_2_OR_NEWER
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -7,24 +7,28 @@ namespace Mew.Core.TaskHelpers
 {
     internal static class TaskHelperInternal
     {
-        private static readonly Stack<AwaitableCompletionSource> Pool = new();
-        private static readonly Queue<AwaitableCompletionSource> Queued = new();
-        private static readonly List<AwaitableCompletionSource> Running = new();
+        private static readonly Stack<MewCompletionSource> Pool = new();
+        private static readonly Queue<MewCompletionSource> Queued = new();
+        private static readonly List<MewCompletionSource> Running = new();
         private static bool registered;
 
-        public static async Task NextFrame()
+        public static async Task NextFrame(CancellationToken ct)
         {
             if (!registered)
             {
                 MewLoop.Add<MewUnityUpdate>(OnUpdate);
                 registered = true;
             }
-            if (Pool.Count == 0)
-                Pool.Push(new AwaitableCompletionSource());
+
+            if (Pool.Count == 0) Pool.Push(new MewCompletionSource());
+
             var awaitableCompletionSource = Pool.Pop();
             awaitableCompletionSource.Reset();
             Queued.Enqueue(awaitableCompletionSource);
+
             await awaitableCompletionSource.Awaitable;
+
+            ct.ThrowIfCancellationRequested();
             return;
 
             void OnUpdate()
@@ -42,4 +46,3 @@ namespace Mew.Core.TaskHelpers
         }
     }
 }
-#endif
