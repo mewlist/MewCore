@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Mew.Core.TaskHelpers;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 #if USE_MEW_CORE_ASSETS
@@ -47,11 +48,7 @@ namespace Mew.Core.Assets
             // for test use
             else if (!string.IsNullOrEmpty(unifiedScene.EditorScenePath))
             {
-                var asyncOp = EditorSceneManager.LoadSceneAsyncInPlayMode(unifiedScene.EditorScenePath , parameters ) ;
-                while (!asyncOp.isDone)
-                    await TaskHelper.NextFrame();
-                var loadedScene = SceneManager.GetSceneAt(SceneManager.loadedSceneCount - 1);
-                handle = new SceneHandle(loadedScene);
+                handle = await CompatibleSceneLoader.LoadEditorSceneAsync(unifiedScene, parameters);
             }
 #endif
             else

@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace Mew.Core.TaskHelpers
 {
-    internal static class TaskHelperInternal
+    public static class TaskHelperInternal
     {
         private static readonly Stack<MewCompletionSource> Pool = new();
         private static readonly Queue<MewCompletionSource> Queued = new();
         private static readonly List<MewCompletionSource> Running = new();
         private static bool registered;
 
-        public static async Task NextFrame(CancellationToken ct)
+        public static async Task NextFrame(CancellationToken ct = default)
         {
             if (!registered)
             {

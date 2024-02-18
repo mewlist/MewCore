@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Mew.Core.TaskHelpers;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
@@ -44,13 +44,18 @@ namespace Mew.Core.UnityObjectHelpers
             return instance;
         }
 
-        public static async ValueTask DestroyAsync(Object target)
+        public static async ValueTask DestroyAsync(Object target, CancellationToken ct = default)
         {
             Object.Destroy(target);
-            if (target is GameObject go)
-                while (go) await TaskHelper.NextFrame();
-            else if (target is Component component)
-                while (component) await TaskHelper.NextFrame();
+            switch (target)
+            {
+                case GameObject go:
+                    while (go) await TaskHelper.NextFrame(ct);
+                    break;
+                case Component component:
+                    while (component) await TaskHelper.NextFrame(ct);
+                    break;
+            }
         }
     }
 }
