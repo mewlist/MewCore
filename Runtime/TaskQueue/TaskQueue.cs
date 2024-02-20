@@ -170,6 +170,11 @@ namespace Mew.Core.Tasks
             Disposed = true;
         }
 
+        ~TaskQueue()
+        {
+            Dispose();
+        }
+
         public bool Any()
         {
             return Count > 0;

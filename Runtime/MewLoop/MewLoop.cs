@@ -92,9 +92,7 @@ namespace Mew.Core
         /// <exception cref="NullReferenceException"></exception>
         public static void Remove(MewLoopDelegateCollection.UpdateFunction updateFunction)
         {
-            if (string.IsNullOrEmpty(DefaultId))
-                throw new NullReferenceException("DefaultId is null or empty.");
-            Remove(DefaultId, updateFunction);
+            DefaultDelegateCollection.Remove(updateFunction);
         }
 
         /// <summary>
