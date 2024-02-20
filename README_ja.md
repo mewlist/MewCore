@@ -48,12 +48,13 @@ TaskQueue は Unity 開発における**非同期関数の直列処理**を行�
 ```csharp
 class Sample : Monobehaviour
 {
+    TaskQueue taskQueue = new();
+
     void Start()
     {
-        var taskQueue = new TaskQueue();
         // destroyCancellationToken を渡すことで
         // MonoBehaviour が破棄されたタイミングで自動的に処理を停止し Dispose されます。
-        taskQueue.Start(destroyCancellationToken);
+        taskQueue.DisposeWith(destroyCancellationToken);
 
         // TaskQueue に非同期関数を追加します。
         taskQueue.Enqueue(async cancellationToken =>

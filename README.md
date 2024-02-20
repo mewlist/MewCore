@@ -53,11 +53,12 @@ UI Event Handling: Used to prevent concurrent execution in response to asynchron
 ```csharp
 class Sample : Monobehaviour
 {
+    TaskQueue taskQueue = new();
+
     void Start()
     {
-        var taskQueue = new TaskQueue();
         // By passing the destroyCancellationToken, processing is automatically stoppped and disposed when MonoBehaviour is destroyed.
-        taskQueue.Start(destroyCancellationToken);
+        taskQueue.DisposeWith(destroyCancellationToken);
 
         // Add an asynchronous function to TaskQueue.
         taskQueue.Enqueue(async cancellationToken =>
