@@ -20,6 +20,7 @@ namespace Mew.Core
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void Init()
         {
+            MewLoop.SetDefaultCollection<MewUnityUpdate>();
             Register<MewUnityEarlyUpdate, EarlyUpdate>();
             Register<MewUnityFixedUpdate, FixedUpdate>();
             Register<MewUnityPreUpdate, PreUpdate>();
@@ -27,14 +28,11 @@ namespace Mew.Core
             Register<MewUnityPreLateUpdate, PreLateUpdate>();
             Register<MewUnityPostLateUpdate, PostLateUpdate>();
             Register<MewManualUpdate>();
-
-            MewLoop.SetDefaultCollection<MewUnityUpdate>();
         }
 
         private static void Register<T>()
         {
-            var delegateCollection = new MewLoopDelegateCollection();
-            MewLoop.Register<T>(delegateCollection);
+            MewLoop.Register<T>();
         }
 
         private static void Register<T,TPlayerLoop>()

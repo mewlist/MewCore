@@ -40,11 +40,6 @@ namespace Mew.Core.Tasks
         }
 
         /// <summary>
-        /// true if started.
-        /// </summary>
-        public bool Started { get; private set; }
-
-        /// <summary>
         /// true if disposed.
         /// </summary>
         public bool Disposed { get; private set; }
@@ -62,21 +57,21 @@ namespace Mew.Core.Tasks
             LimitType = taskQueueLimitType;
             MaxSize = maxSize;
             queueAsCollection = queue;
+            if (string.IsNullOrEmpty(loopId)) MewLoop.Add(Update);
+            else MewLoop.Add(loopId, Update);
         }
 
         /// <summary>
-        /// Start TaskQueue.
+        /// Set cancellation token to dispose TaskQueue.
         /// </summary>
         /// <param name="ct">Dispose TaskQueue when ct is cancelled.</param>
         /// <exception cref="ObjectDisposedException"></exception>
-        public void Start(CancellationToken ct = default)
+        public void DisposeWith(CancellationToken ct)
         {
             if (Disposed) throw new ObjectDisposedException($"TaskQueue[{loopId}] is disposed");
-            if (Started) Stop();
             disposeCt = ct;
-            if (string.IsNullOrEmpty(loopId)) MewLoop.Add(Update);
-            else MewLoop.Add(loopId, Update);
-            Started = true;
+            if (ct.IsCancellationRequested)
+                Dispose();
         }
 
         private void Stop()
@@ -89,7 +84,6 @@ namespace Mew.Core.Tasks
             }
             if (string.IsNullOrEmpty(loopId)) MewLoop.Remove(Update);
             else MewLoop.Remove(loopId, Update);
-            Started = false;
         }
 
         /// <summary>
@@ -117,7 +111,6 @@ namespace Mew.Core.Tasks
         public TaskQueueAwaitable EnqueueAsync(TaskAction func, int priority = 0)
         {
             if (Disposed) throw new ObjectDisposedException("TaskQueue is disposed");
-            if (!Started) throw new InvalidOperationException("TaskQueue is not started. Call Start() before enqueue.");
             var newTask = new TaskQueueAwaitable(func, priority);
             var flood = Count >= MaxSize;
 
@@ -175,6 +168,11 @@ namespace Mew.Core.Tasks
                 queue.Clear();
             }
             Disposed = true;
+        }
+
+        ~TaskQueue()
+        {
+            Dispose();
         }
 
         public bool Any()

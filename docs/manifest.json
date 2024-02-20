@@ -12,6 +12,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Extensions.TaskExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Extensions.TaskExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.Extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.MewCompletionSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.MewCompletionSource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mew.Core.MewLoop.yml",
       "output": {
         ".html": {
@@ -122,6 +152,56 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.SceneHelpers.SceneManagerHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.SceneHelpers.SceneManagerHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.SceneHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.SceneHelpers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.TaskHelpers.TaskHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.TaskHelpers.TaskHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.TaskHelpers.TaskHelperInternal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.TaskHelpers.TaskHelperInternal.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.TaskHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.TaskHelpers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mew.Core.Tasks.IntervalTimerType.yml",
       "output": {
         ".html": {
@@ -216,6 +296,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Mew.Core.Tasks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mew.Core.UnityObjectHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mew.Core.UnityObjectHelpers.html"
         }
       },
       "version": ""
@@ -337,9 +437,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {

@@ -7,6 +7,147 @@ references:
   commentId: N:Mew.Core
   fullName: Mew.Core
   nameWithType: Mew.Core
+- uid: Mew.Core.Extensions
+  name: Mew.Core.Extensions
+  href: api/Mew.Core.Extensions.html
+  commentId: N:Mew.Core.Extensions
+  fullName: Mew.Core.Extensions
+  nameWithType: Mew.Core.Extensions
+- uid: Mew.Core.Extensions.TaskExtensions
+  name: TaskExtensions
+  href: api/Mew.Core.Extensions.TaskExtensions.html
+  commentId: T:Mew.Core.Extensions.TaskExtensions
+  fullName: Mew.Core.Extensions.TaskExtensions
+  nameWithType: TaskExtensions
+- uid: Mew.Core.Extensions.TaskExtensions.Forget(System.Threading.Tasks.Task)
+  name: Forget(Task)
+  href: api/Mew.Core.Extensions.TaskExtensions.html#Mew_Core_Extensions_TaskExtensions_Forget_System_Threading_Tasks_Task_
+  commentId: M:Mew.Core.Extensions.TaskExtensions.Forget(System.Threading.Tasks.Task)
+  fullName: Mew.Core.Extensions.TaskExtensions.Forget(System.Threading.Tasks.Task)
+  nameWithType: TaskExtensions.Forget(Task)
+- uid: Mew.Core.Extensions.TaskExtensions.Forget(System.Threading.Tasks.ValueTask)
+  name: Forget(ValueTask)
+  href: api/Mew.Core.Extensions.TaskExtensions.html#Mew_Core_Extensions_TaskExtensions_Forget_System_Threading_Tasks_ValueTask_
+  commentId: M:Mew.Core.Extensions.TaskExtensions.Forget(System.Threading.Tasks.ValueTask)
+  fullName: Mew.Core.Extensions.TaskExtensions.Forget(System.Threading.Tasks.ValueTask)
+  nameWithType: TaskExtensions.Forget(ValueTask)
+- uid: Mew.Core.Extensions.TaskExtensions.Forget*
+  name: Forget
+  href: api/Mew.Core.Extensions.TaskExtensions.html#Mew_Core_Extensions_TaskExtensions_Forget_
+  commentId: Overload:Mew.Core.Extensions.TaskExtensions.Forget
+  isSpec: "True"
+  fullName: Mew.Core.Extensions.TaskExtensions.Forget
+  nameWithType: TaskExtensions.Forget
+- uid: Mew.Core.MewCompletionSource
+  name: MewCompletionSource
+  href: api/Mew.Core.MewCompletionSource.html
+  commentId: T:Mew.Core.MewCompletionSource
+  fullName: Mew.Core.MewCompletionSource
+  nameWithType: MewCompletionSource
+- uid: Mew.Core.MewCompletionSource.Awaitable
+  name: Awaitable
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_Awaitable
+  commentId: P:Mew.Core.MewCompletionSource.Awaitable
+  fullName: Mew.Core.MewCompletionSource.Awaitable
+  nameWithType: MewCompletionSource.Awaitable
+- uid: Mew.Core.MewCompletionSource.Awaitable*
+  name: Awaitable
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_Awaitable_
+  commentId: Overload:Mew.Core.MewCompletionSource.Awaitable
+  isSpec: "True"
+  fullName: Mew.Core.MewCompletionSource.Awaitable
+  nameWithType: MewCompletionSource.Awaitable
+- uid: Mew.Core.MewCompletionSource.Reset
+  name: Reset()
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_Reset
+  commentId: M:Mew.Core.MewCompletionSource.Reset
+  fullName: Mew.Core.MewCompletionSource.Reset()
+  nameWithType: MewCompletionSource.Reset()
+- uid: Mew.Core.MewCompletionSource.Reset*
+  name: Reset
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_Reset_
+  commentId: Overload:Mew.Core.MewCompletionSource.Reset
+  isSpec: "True"
+  fullName: Mew.Core.MewCompletionSource.Reset
+  nameWithType: MewCompletionSource.Reset
+- uid: Mew.Core.MewCompletionSource.SetCanceled
+  name: SetCanceled()
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_SetCanceled
+  commentId: M:Mew.Core.MewCompletionSource.SetCanceled
+  fullName: Mew.Core.MewCompletionSource.SetCanceled()
+  nameWithType: MewCompletionSource.SetCanceled()
+- uid: Mew.Core.MewCompletionSource.SetCanceled*
+  name: SetCanceled
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_SetCanceled_
+  commentId: Overload:Mew.Core.MewCompletionSource.SetCanceled
+  isSpec: "True"
+  fullName: Mew.Core.MewCompletionSource.SetCanceled
+  nameWithType: MewCompletionSource.SetCanceled
+- uid: Mew.Core.MewCompletionSource.SetException(System.Exception)
+  name: SetException(Exception)
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_SetException_System_Exception_
+  commentId: M:Mew.Core.MewCompletionSource.SetException(System.Exception)
+  fullName: Mew.Core.MewCompletionSource.SetException(System.Exception)
+  nameWithType: MewCompletionSource.SetException(Exception)
+- uid: Mew.Core.MewCompletionSource.SetException*
+  name: SetException
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_SetException_
+  commentId: Overload:Mew.Core.MewCompletionSource.SetException
+  isSpec: "True"
+  fullName: Mew.Core.MewCompletionSource.SetException
+  nameWithType: MewCompletionSource.SetException
+- uid: Mew.Core.MewCompletionSource.SetResult
+  name: SetResult()
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_SetResult
+  commentId: M:Mew.Core.MewCompletionSource.SetResult
+  fullName: Mew.Core.MewCompletionSource.SetResult()
+  nameWithType: MewCompletionSource.SetResult()
+- uid: Mew.Core.MewCompletionSource.SetResult*
+  name: SetResult
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_SetResult_
+  commentId: Overload:Mew.Core.MewCompletionSource.SetResult
+  isSpec: "True"
+  fullName: Mew.Core.MewCompletionSource.SetResult
+  nameWithType: MewCompletionSource.SetResult
+- uid: Mew.Core.MewCompletionSource.TrySetCanceled
+  name: TrySetCanceled()
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_TrySetCanceled
+  commentId: M:Mew.Core.MewCompletionSource.TrySetCanceled
+  fullName: Mew.Core.MewCompletionSource.TrySetCanceled()
+  nameWithType: MewCompletionSource.TrySetCanceled()
+- uid: Mew.Core.MewCompletionSource.TrySetCanceled*
+  name: TrySetCanceled
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_TrySetCanceled_
+  commentId: Overload:Mew.Core.MewCompletionSource.TrySetCanceled
+  isSpec: "True"
+  fullName: Mew.Core.MewCompletionSource.TrySetCanceled
+  nameWithType: MewCompletionSource.TrySetCanceled
+- uid: Mew.Core.MewCompletionSource.TrySetException(System.Exception)
+  name: TrySetException(Exception)
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_TrySetException_System_Exception_
+  commentId: M:Mew.Core.MewCompletionSource.TrySetException(System.Exception)
+  fullName: Mew.Core.MewCompletionSource.TrySetException(System.Exception)
+  nameWithType: MewCompletionSource.TrySetException(Exception)
+- uid: Mew.Core.MewCompletionSource.TrySetException*
+  name: TrySetException
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_TrySetException_
+  commentId: Overload:Mew.Core.MewCompletionSource.TrySetException
+  isSpec: "True"
+  fullName: Mew.Core.MewCompletionSource.TrySetException
+  nameWithType: MewCompletionSource.TrySetException
+- uid: Mew.Core.MewCompletionSource.TrySetResult
+  name: TrySetResult()
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_TrySetResult
+  commentId: M:Mew.Core.MewCompletionSource.TrySetResult
+  fullName: Mew.Core.MewCompletionSource.TrySetResult()
+  nameWithType: MewCompletionSource.TrySetResult()
+- uid: Mew.Core.MewCompletionSource.TrySetResult*
+  name: TrySetResult
+  href: api/Mew.Core.MewCompletionSource.html#Mew_Core_MewCompletionSource_TrySetResult_
+  commentId: Overload:Mew.Core.MewCompletionSource.TrySetResult
+  isSpec: "True"
+  fullName: Mew.Core.MewCompletionSource.TrySetResult
+  nameWithType: MewCompletionSource.TrySetResult
 - uid: Mew.Core.MewLoop
   name: MewLoop
   href: api/Mew.Core.MewLoop.html
@@ -76,15 +217,15 @@ references:
   isSpec: "True"
   fullName: Mew.Core.MewLoop.Register
   nameWithType: MewLoop.Register
-- uid: Mew.Core.MewLoop.Register``1(Mew.Core.MewLoopDelegateCollection)
-  name: Register<T>(MewLoopDelegateCollection)
-  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Register__1_Mew_Core_MewLoopDelegateCollection_
-  commentId: M:Mew.Core.MewLoop.Register``1(Mew.Core.MewLoopDelegateCollection)
-  name.vb: Register(Of T)(MewLoopDelegateCollection)
-  fullName: Mew.Core.MewLoop.Register<T>(Mew.Core.MewLoopDelegateCollection)
-  fullName.vb: Mew.Core.MewLoop.Register(Of T)(Mew.Core.MewLoopDelegateCollection)
-  nameWithType: MewLoop.Register<T>(MewLoopDelegateCollection)
-  nameWithType.vb: MewLoop.Register(Of T)(MewLoopDelegateCollection)
+- uid: Mew.Core.MewLoop.Register``1
+  name: Register<T>()
+  href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Register__1
+  commentId: M:Mew.Core.MewLoop.Register``1
+  name.vb: Register(Of T)()
+  fullName: Mew.Core.MewLoop.Register<T>()
+  fullName.vb: Mew.Core.MewLoop.Register(Of T)()
+  nameWithType: MewLoop.Register<T>()
+  nameWithType.vb: MewLoop.Register(Of T)()
 - uid: Mew.Core.MewLoop.Remove(Mew.Core.MewLoopDelegateCollection.UpdateFunction)
   name: Remove(UpdateFunction)
   href: api/Mew.Core.MewLoop.html#Mew_Core_MewLoop_Remove_Mew_Core_MewLoopDelegateCollection_UpdateFunction_
@@ -309,6 +450,75 @@ references:
   commentId: T:Mew.Core.MewUnityUpdate
   fullName: Mew.Core.MewUnityUpdate
   nameWithType: MewUnityUpdate
+- uid: Mew.Core.SceneHelpers
+  name: Mew.Core.SceneHelpers
+  href: api/Mew.Core.SceneHelpers.html
+  commentId: N:Mew.Core.SceneHelpers
+  fullName: Mew.Core.SceneHelpers
+  nameWithType: Mew.Core.SceneHelpers
+- uid: Mew.Core.SceneHelpers.SceneManagerHelper
+  name: SceneManagerHelper
+  href: api/Mew.Core.SceneHelpers.SceneManagerHelper.html
+  commentId: T:Mew.Core.SceneHelpers.SceneManagerHelper
+  fullName: Mew.Core.SceneHelpers.SceneManagerHelper
+  nameWithType: SceneManagerHelper
+- uid: Mew.Core.SceneHelpers.SceneManagerHelper.GetLoadedScenes
+  name: GetLoadedScenes()
+  href: api/Mew.Core.SceneHelpers.SceneManagerHelper.html#Mew_Core_SceneHelpers_SceneManagerHelper_GetLoadedScenes
+  commentId: M:Mew.Core.SceneHelpers.SceneManagerHelper.GetLoadedScenes
+  fullName: Mew.Core.SceneHelpers.SceneManagerHelper.GetLoadedScenes()
+  nameWithType: SceneManagerHelper.GetLoadedScenes()
+- uid: Mew.Core.SceneHelpers.SceneManagerHelper.GetLoadedScenes*
+  name: GetLoadedScenes
+  href: api/Mew.Core.SceneHelpers.SceneManagerHelper.html#Mew_Core_SceneHelpers_SceneManagerHelper_GetLoadedScenes_
+  commentId: Overload:Mew.Core.SceneHelpers.SceneManagerHelper.GetLoadedScenes
+  isSpec: "True"
+  fullName: Mew.Core.SceneHelpers.SceneManagerHelper.GetLoadedScenes
+  nameWithType: SceneManagerHelper.GetLoadedScenes
+- uid: Mew.Core.TaskHelpers
+  name: Mew.Core.TaskHelpers
+  href: api/Mew.Core.TaskHelpers.html
+  commentId: N:Mew.Core.TaskHelpers
+  fullName: Mew.Core.TaskHelpers
+  nameWithType: Mew.Core.TaskHelpers
+- uid: Mew.Core.TaskHelpers.TaskHelper
+  name: TaskHelper
+  href: api/Mew.Core.TaskHelpers.TaskHelper.html
+  commentId: T:Mew.Core.TaskHelpers.TaskHelper
+  fullName: Mew.Core.TaskHelpers.TaskHelper
+  nameWithType: TaskHelper
+- uid: Mew.Core.TaskHelpers.TaskHelper.NextFrame(System.Threading.CancellationToken)
+  name: NextFrame(CancellationToken)
+  href: api/Mew.Core.TaskHelpers.TaskHelper.html#Mew_Core_TaskHelpers_TaskHelper_NextFrame_System_Threading_CancellationToken_
+  commentId: M:Mew.Core.TaskHelpers.TaskHelper.NextFrame(System.Threading.CancellationToken)
+  fullName: Mew.Core.TaskHelpers.TaskHelper.NextFrame(System.Threading.CancellationToken)
+  nameWithType: TaskHelper.NextFrame(CancellationToken)
+- uid: Mew.Core.TaskHelpers.TaskHelper.NextFrame*
+  name: NextFrame
+  href: api/Mew.Core.TaskHelpers.TaskHelper.html#Mew_Core_TaskHelpers_TaskHelper_NextFrame_
+  commentId: Overload:Mew.Core.TaskHelpers.TaskHelper.NextFrame
+  isSpec: "True"
+  fullName: Mew.Core.TaskHelpers.TaskHelper.NextFrame
+  nameWithType: TaskHelper.NextFrame
+- uid: Mew.Core.TaskHelpers.TaskHelperInternal
+  name: TaskHelperInternal
+  href: api/Mew.Core.TaskHelpers.TaskHelperInternal.html
+  commentId: T:Mew.Core.TaskHelpers.TaskHelperInternal
+  fullName: Mew.Core.TaskHelpers.TaskHelperInternal
+  nameWithType: TaskHelperInternal
+- uid: Mew.Core.TaskHelpers.TaskHelperInternal.NextFrame(System.Threading.CancellationToken)
+  name: NextFrame(CancellationToken)
+  href: api/Mew.Core.TaskHelpers.TaskHelperInternal.html#Mew_Core_TaskHelpers_TaskHelperInternal_NextFrame_System_Threading_CancellationToken_
+  commentId: M:Mew.Core.TaskHelpers.TaskHelperInternal.NextFrame(System.Threading.CancellationToken)
+  fullName: Mew.Core.TaskHelpers.TaskHelperInternal.NextFrame(System.Threading.CancellationToken)
+  nameWithType: TaskHelperInternal.NextFrame(CancellationToken)
+- uid: Mew.Core.TaskHelpers.TaskHelperInternal.NextFrame*
+  name: NextFrame
+  href: api/Mew.Core.TaskHelpers.TaskHelperInternal.html#Mew_Core_TaskHelpers_TaskHelperInternal_NextFrame_
+  commentId: Overload:Mew.Core.TaskHelpers.TaskHelperInternal.NextFrame
+  isSpec: "True"
+  fullName: Mew.Core.TaskHelpers.TaskHelperInternal.NextFrame
+  nameWithType: TaskHelperInternal.NextFrame
 - uid: Mew.Core.Tasks
   name: Mew.Core.Tasks
   href: api/Mew.Core.Tasks.html
@@ -666,6 +876,19 @@ references:
   isSpec: "True"
   fullName: Mew.Core.Tasks.TaskQueue.Dispose
   nameWithType: TaskQueue.Dispose
+- uid: Mew.Core.Tasks.TaskQueue.DisposeWith(System.Threading.CancellationToken)
+  name: DisposeWith(CancellationToken)
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_DisposeWith_System_Threading_CancellationToken_
+  commentId: M:Mew.Core.Tasks.TaskQueue.DisposeWith(System.Threading.CancellationToken)
+  fullName: Mew.Core.Tasks.TaskQueue.DisposeWith(System.Threading.CancellationToken)
+  nameWithType: TaskQueue.DisposeWith(CancellationToken)
+- uid: Mew.Core.Tasks.TaskQueue.DisposeWith*
+  name: DisposeWith
+  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_DisposeWith_
+  commentId: Overload:Mew.Core.Tasks.TaskQueue.DisposeWith
+  isSpec: "True"
+  fullName: Mew.Core.Tasks.TaskQueue.DisposeWith
+  nameWithType: TaskQueue.DisposeWith
 - uid: Mew.Core.Tasks.TaskQueue.Disposed
   name: Disposed
   href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Disposed
@@ -737,32 +960,6 @@ references:
   isSpec: "True"
   fullName: Mew.Core.Tasks.TaskQueue.MaxSize
   nameWithType: TaskQueue.MaxSize
-- uid: Mew.Core.Tasks.TaskQueue.Start(System.Nullable{System.Threading.CancellationToken})
-  name: Start(CancellationToken?)
-  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Start_System_Nullable_System_Threading_CancellationToken__
-  commentId: M:Mew.Core.Tasks.TaskQueue.Start(System.Nullable{System.Threading.CancellationToken})
-  fullName: Mew.Core.Tasks.TaskQueue.Start(System.Threading.CancellationToken?)
-  nameWithType: TaskQueue.Start(CancellationToken?)
-- uid: Mew.Core.Tasks.TaskQueue.Start*
-  name: Start
-  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Start_
-  commentId: Overload:Mew.Core.Tasks.TaskQueue.Start
-  isSpec: "True"
-  fullName: Mew.Core.Tasks.TaskQueue.Start
-  nameWithType: TaskQueue.Start
-- uid: Mew.Core.Tasks.TaskQueue.Started
-  name: Started
-  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Started
-  commentId: P:Mew.Core.Tasks.TaskQueue.Started
-  fullName: Mew.Core.Tasks.TaskQueue.Started
-  nameWithType: TaskQueue.Started
-- uid: Mew.Core.Tasks.TaskQueue.Started*
-  name: Started
-  href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_Started_
-  commentId: Overload:Mew.Core.Tasks.TaskQueue.Started
-  isSpec: "True"
-  fullName: Mew.Core.Tasks.TaskQueue.Started
-  nameWithType: TaskQueue.Started
 - uid: Mew.Core.Tasks.TaskQueue.loopId
   name: loopId
   href: api/Mew.Core.Tasks.TaskQueue.html#Mew_Core_Tasks_TaskQueue_loopId
@@ -955,3 +1152,79 @@ references:
   fullName.vb: Mew.Core.Tasks.TaskQueue(Of T).New
   nameWithType: TaskQueue<T>.TaskQueue
   nameWithType.vb: TaskQueue(Of T).New
+- uid: Mew.Core.UnityObjectHelpers
+  name: Mew.Core.UnityObjectHelpers
+  href: api/Mew.Core.UnityObjectHelpers.html
+  commentId: N:Mew.Core.UnityObjectHelpers
+  fullName: Mew.Core.UnityObjectHelpers
+  nameWithType: Mew.Core.UnityObjectHelpers
+- uid: Mew.Core.UnityObjectHelpers.UnityObjectHelper
+  name: UnityObjectHelper
+  href: api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.html
+  commentId: T:Mew.Core.UnityObjectHelpers.UnityObjectHelper
+  fullName: Mew.Core.UnityObjectHelpers.UnityObjectHelper
+  nameWithType: UnityObjectHelper
+- uid: Mew.Core.UnityObjectHelpers.UnityObjectHelper.DestroyAsync(UnityEngine.Object,System.Threading.CancellationToken)
+  name: DestroyAsync(Object, CancellationToken)
+  href: api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.html#Mew_Core_UnityObjectHelpers_UnityObjectHelper_DestroyAsync_UnityEngine_Object_System_Threading_CancellationToken_
+  commentId: M:Mew.Core.UnityObjectHelpers.UnityObjectHelper.DestroyAsync(UnityEngine.Object,System.Threading.CancellationToken)
+  fullName: Mew.Core.UnityObjectHelpers.UnityObjectHelper.DestroyAsync(UnityEngine.Object, System.Threading.CancellationToken)
+  nameWithType: UnityObjectHelper.DestroyAsync(Object, CancellationToken)
+- uid: Mew.Core.UnityObjectHelpers.UnityObjectHelper.DestroyAsync*
+  name: DestroyAsync
+  href: api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.html#Mew_Core_UnityObjectHelpers_UnityObjectHelper_DestroyAsync_
+  commentId: Overload:Mew.Core.UnityObjectHelpers.UnityObjectHelper.DestroyAsync
+  isSpec: "True"
+  fullName: Mew.Core.UnityObjectHelpers.UnityObjectHelper.DestroyAsync
+  nameWithType: UnityObjectHelper.DestroyAsync
+- uid: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentInSceneRoot(System.Type,UnityEngine.SceneManagement.Scene)
+  name: InstantiateComponentInSceneRoot(Type, Scene)
+  href: api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.html#Mew_Core_UnityObjectHelpers_UnityObjectHelper_InstantiateComponentInSceneRoot_System_Type_UnityEngine_SceneManagement_Scene_
+  commentId: M:Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentInSceneRoot(System.Type,UnityEngine.SceneManagement.Scene)
+  fullName: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentInSceneRoot(System.Type, UnityEngine.SceneManagement.Scene)
+  nameWithType: UnityObjectHelper.InstantiateComponentInSceneRoot(Type, Scene)
+- uid: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentInSceneRoot*
+  name: InstantiateComponentInSceneRoot
+  href: api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.html#Mew_Core_UnityObjectHelpers_UnityObjectHelper_InstantiateComponentInSceneRoot_
+  commentId: Overload:Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentInSceneRoot
+  isSpec: "True"
+  fullName: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentInSceneRoot
+  nameWithType: UnityObjectHelper.InstantiateComponentInSceneRoot
+- uid: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentInSceneRoot``1(UnityEngine.SceneManagement.Scene)
+  name: InstantiateComponentInSceneRoot<T>(Scene)
+  href: api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.html#Mew_Core_UnityObjectHelpers_UnityObjectHelper_InstantiateComponentInSceneRoot__1_UnityEngine_SceneManagement_Scene_
+  commentId: M:Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentInSceneRoot``1(UnityEngine.SceneManagement.Scene)
+  name.vb: InstantiateComponentInSceneRoot(Of T)(Scene)
+  fullName: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentInSceneRoot<T>(UnityEngine.SceneManagement.Scene)
+  fullName.vb: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentInSceneRoot(Of T)(UnityEngine.SceneManagement.Scene)
+  nameWithType: UnityObjectHelper.InstantiateComponentInSceneRoot<T>(Scene)
+  nameWithType.vb: UnityObjectHelper.InstantiateComponentInSceneRoot(Of T)(Scene)
+- uid: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentOnGameObject(System.Type,UnityEngine.GameObject)
+  name: InstantiateComponentOnGameObject(Type, GameObject)
+  href: api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.html#Mew_Core_UnityObjectHelpers_UnityObjectHelper_InstantiateComponentOnGameObject_System_Type_UnityEngine_GameObject_
+  commentId: M:Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentOnGameObject(System.Type,UnityEngine.GameObject)
+  fullName: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentOnGameObject(System.Type, UnityEngine.GameObject)
+  nameWithType: UnityObjectHelper.InstantiateComponentOnGameObject(Type, GameObject)
+- uid: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentOnGameObject*
+  name: InstantiateComponentOnGameObject
+  href: api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.html#Mew_Core_UnityObjectHelpers_UnityObjectHelper_InstantiateComponentOnGameObject_
+  commentId: Overload:Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentOnGameObject
+  isSpec: "True"
+  fullName: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentOnGameObject
+  nameWithType: UnityObjectHelper.InstantiateComponentOnGameObject
+- uid: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentUnderTransform(System.Type,UnityEngine.Transform,System.Boolean)
+  name: InstantiateComponentUnderTransform(Type, Transform, bool)
+  href: api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.html#Mew_Core_UnityObjectHelpers_UnityObjectHelper_InstantiateComponentUnderTransform_System_Type_UnityEngine_Transform_System_Boolean_
+  commentId: M:Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentUnderTransform(System.Type,UnityEngine.Transform,System.Boolean)
+  name.vb: InstantiateComponentUnderTransform(Type, Transform, Boolean)
+  fullName: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentUnderTransform(System.Type, UnityEngine.Transform, bool)
+  fullName.vb: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentUnderTransform(System.Type, UnityEngine.Transform, Boolean)
+  nameWithType: UnityObjectHelper.InstantiateComponentUnderTransform(Type, Transform, bool)
+  nameWithType.vb: UnityObjectHelper.InstantiateComponentUnderTransform(Type, Transform, Boolean)
+- uid: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentUnderTransform*
+  name: InstantiateComponentUnderTransform
+  href: api/Mew.Core.UnityObjectHelpers.UnityObjectHelper.html#Mew_Core_UnityObjectHelpers_UnityObjectHelper_InstantiateComponentUnderTransform_
+  commentId: Overload:Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentUnderTransform
+  isSpec: "True"
+  fullName: Mew.Core.UnityObjectHelpers.UnityObjectHelper.InstantiateComponentUnderTransform
+  nameWithType: UnityObjectHelper.InstantiateComponentUnderTransform

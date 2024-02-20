@@ -2,9 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>TaskQueue | MewCore </title>
+      <title> | MewCore </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="TaskQueue | MewCore ">
+      <meta name="title" content=" | MewCore ">
+      
       
       <link rel="icon" href="../../favicon.ico">
       <link rel="stylesheet" href="../../public/docfx.min.css">
@@ -15,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mewlist/MewDev/blob/main/Documents\ja\TaskQueue\index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/mewlist/MewDev/blob/main/Documents/ja/TaskQueue/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,8 +85,8 @@
         </div>
 
         <article data-uid="">
-<h2 id="taskqueue">TaskQueue</h2>
 
+<h2 id="taskqueue">TaskQueue</h2>
 <p>TaskQueue は Unity 開発における<strong>非同期関数の直列処理</strong>を行うためのライブラリです。
 キューに入力した順で非同期関数が実行されます。
 また、優先度付きキューの機能も備えており、重要なタスクを優先的に実行することができます。</p>
@@ -108,12 +109,13 @@ TaskQueue を使用することで、Unity 開発における非同期処理の�
 <h3 id="サンプルコード">サンプルコード</h3>
 <pre><code class="lang-csharp">class Sample : Monobehaviour
 {
+    TaskQueue taskQueue = new();
+
     void Start()
     {
-        var taskQueue = new TaskQueue();
         // destroyCancellationToken を渡すことで
         // MonoBehaviour が破棄されたタイミングで自動的に処理を停止し Dispose されます。
-        taskQueue.Start(destroyCancellationToken);
+        taskQueue.DisposeWith(destroyCancellationToken);
 
         // TaskQueue に非同期関数を追加します。
         taskQueue.Enqueue(async cancellationToken =&gt;
@@ -138,7 +140,6 @@ Bye
 <p>Enqueue の第二引数に優先度を指定することで、優先度付きタスクを実行することができます。
 <code>priotiry</code>値が小さい処理が優先されます。既定値は 0 です。</p>
 <pre><code class="lang-csharp">taskQueue = new TaskQueue();
-taskQueue.Start();
 taskQueue.Enqueue(async ct =&gt; { ... }, priority: 1);
 taskQueue.Enqueue(async ct =&gt; { ... }, priority: 0); // このタスクが優先して処理される
 </code></pre>
@@ -147,7 +148,6 @@ taskQueue.Enqueue(async ct =&gt; { ... }, priority: 0); // このタスクが優
 <p>最大サイズ 2 のキューに対して以下のようにタスクを追加し、最大数を超えた場合、最後に追加されたタスクが破棄されます。
 追加されるタスクの優先度が高い場合は、より低い優先度のタスクが破棄されキューイングが行われます。</p>
 <pre><code class="lang-csharp">taskQueue = new TaskQueue(TaskQueueLimitType.Discard, maxSize: 2);
-taskQueue.Start();
 taskQueue.Enqueue(async ct =&gt; { ... });
 taskQueue.Enqueue(async ct =&gt; { ... });
 taskQueue.Enqueue(async ct =&gt; { ... });　// このタスクが破棄される
@@ -156,7 +156,6 @@ taskQueue.Enqueue(async ct =&gt; { ... });　// このタスクが破棄され�
 <p>最大サイズ 2 のキューに対して以下のようにタスクを追加し、最大数を超えた場合、最後のタスクを入れ替えます。
 追加されるタスクより優先度が高いタスクでキューが構成される場合は、入れ替えは行われません。</p>
 <pre><code class="lang-csharp">taskQueue = new TaskQueue(TaskQueueLimitType.SwapLast, maxSize: 2);
-taskQueue.Start();
 taskQueue.Enqueue(async ct =&gt; { ... });
 taskQueue.Enqueue(async ct =&gt; { ... });　// このタスクが破棄される
 taskQueue.Enqueue(async ct =&gt; { ... });　
@@ -165,7 +164,7 @@ taskQueue.Enqueue(async ct =&gt; { ... });　
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/mewlist/MewDev/blob/main/Documents\ja\TaskQueue\index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/mewlist/MewDev/blob/main/Documents/ja/TaskQueue/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

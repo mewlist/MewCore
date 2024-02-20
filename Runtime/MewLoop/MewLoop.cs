@@ -8,6 +8,7 @@ namespace Mew.Core
     public class MewLoop
     {
         private static readonly ConcurrentDictionary<string, MewLoopDelegateCollection> DelegateCollections = new();
+        private static readonly MewLoopDelegateCollection DefaultDelegateCollection = new();
 
         private static string? DefaultId { get; set; }
 
@@ -38,10 +39,16 @@ namespace Mew.Core
         /// </summary>
         /// <param name="delegateCollection"></param>
         /// <typeparam name="T"></typeparam>
-        public static void Register<T>(MewLoopDelegateCollection delegateCollection)
+        public static void Register<T>()
         {
             var id = LoopId<T>();
-            DelegateCollections[id] = delegateCollection;
+            if (DelegateCollections.ContainsKey(id))
+                throw new Exception($"DelegateCollection with id {id} is already registered.");
+
+            if (DefaultId == id)
+                DelegateCollections[id] = DefaultDelegateCollection;
+            else
+                DelegateCollections[id] = new MewLoopDelegateCollection();
         }
 
         /// <summary>
@@ -52,9 +59,7 @@ namespace Mew.Core
         /// <exception cref="NullReferenceException"></exception>
         public static void Add(MewLoopDelegateCollection.UpdateFunction updateFunction)
         {
-            if (string.IsNullOrEmpty(DefaultId))
-                throw new NullReferenceException("DefaultId is null or empty.");
-            Add(DefaultId, updateFunction);
+            DefaultDelegateCollection.Add(updateFunction);
         }
 
         /// <summary>
@@ -87,9 +92,7 @@ namespace Mew.Core
         /// <exception cref="NullReferenceException"></exception>
         public static void Remove(MewLoopDelegateCollection.UpdateFunction updateFunction)
         {
-            if (string.IsNullOrEmpty(DefaultId))
-                throw new NullReferenceException("DefaultId is null or empty.");
-            Remove(DefaultId, updateFunction);
+            DefaultDelegateCollection.Remove(updateFunction);
         }
 
         /// <summary>
