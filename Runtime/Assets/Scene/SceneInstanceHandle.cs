@@ -1,4 +1,5 @@
 ﻿#if USE_MEW_CORE_ASSETS
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.Exceptions;
@@ -10,17 +11,25 @@ namespace Mew.Core.Assets
     public class SceneInstanceHandle : ISceneHandle
     {
         public AsyncOperationHandle<SceneInstance> Handle { get; }
-        private bool Comeleted => Handle.IsDone;
+        public float Progress => Handle.PercentComplete;
+        public bool Completed => Handle.IsDone;
 
         public SceneInstanceHandle(AsyncOperationHandle<SceneInstance> asyncOperationHandle)
         {
             Handle = asyncOperationHandle;
         }
 
-        public async ValueTask<Scene> GetScene()
+        public async ValueTask<Scene> GetScene(CancellationToken ct)
         {
             if (!Handle.IsDone)
                 await Handle.Task;
+
+            if (ct.IsCancellationRequested)
+            {
+                await UnifiedSceneLoader.UnloadAsync(this);
+                ct.ThrowIfCancellationRequested();
+            }
+
             return Handle.Result.Scene;
         }
 
