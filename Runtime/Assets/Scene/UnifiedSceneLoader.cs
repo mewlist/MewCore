@@ -17,7 +17,7 @@ namespace Mew.Core.Assets
 {
     public static class UnifiedSceneLoader
     {
-        public static async Task<ISceneHandle> LoadAsync(UnifiedScene unifiedScene, CancellationToken cancellationToken)
+        public static ISceneHandle LoadAsync(UnifiedScene unifiedScene)
         {
             var parameters = new LoadSceneParameters(LoadSceneMode.Additive, LocalPhysicsMode.None);
             ISceneHandle handle;
@@ -42,13 +42,15 @@ namespace Mew.Core.Assets
 #endif
             if (unifiedScene.SceneReference is not null && unifiedScene.SceneReference.IsValid)
             {
-                handle = await CompatibleSceneLoader.LoadSceneAsync(unifiedScene, parameters);
+                var asyncOp = SceneManager.LoadSceneAsync(unifiedScene.SceneReference, parameters);
+                handle = new SceneHandle(asyncOp);
             }
 #if UNITY_EDITOR
             // for test use
             else if (!string.IsNullOrEmpty(unifiedScene.EditorScenePath))
             {
-                handle = await CompatibleSceneLoader.LoadEditorSceneAsync(unifiedScene, parameters);
+                var asyncOp = EditorSceneManager.LoadSceneAsyncInPlayMode(unifiedScene.EditorScenePath , parameters ) ;
+                handle = new SceneHandle(asyncOp);
             }
 #endif
             else
