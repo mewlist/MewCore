@@ -34,13 +34,21 @@ namespace Mew.Core.Assets
         {
             if (!AsyncOp.isDone)
             {
-#if UNITY_2023_2_OR_NEWER || USE_UNITASK
+#if UNITY_2023_2_OR_NEWER
                 await AsyncOp;
 #else
-                while (!asyncOp.isDone) await TaskHelper.NextFrame(destroyCancellationToken);
+                while (!AsyncOp.isDone) await TaskHelper.NextFrame(ct);
 #endif
             }
-            if (!Scene.IsValid()) await TaskHelper.NextFrame(ct);
+
+            // not pass cancellation token to SceneManager.UnloadSceneAsync
+            if (!Scene.IsValid()) await TaskHelper.NextFrame();
+
+            if (ct.IsCancellationRequested)
+            {
+                SceneManager.UnloadSceneAsync(Scene);
+                ct.ThrowIfCancellationRequested();
+            }
             return Scene;
         }
 

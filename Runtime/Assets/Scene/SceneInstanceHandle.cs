@@ -23,7 +23,13 @@ namespace Mew.Core.Assets
         {
             if (!Handle.IsDone)
                 await Handle.Task;
-            ct.ThrowIfCancellationRequested();
+
+            if (ct.IsCancellationRequested)
+            {
+                await UnifiedSceneLoader.UnloadAsync(this);
+                ct.ThrowIfCancellationRequested();
+            }
+
             return Handle.Result.Scene;
         }
 
