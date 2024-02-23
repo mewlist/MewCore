@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 #if USE_MEW_CORE_ASSETS
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.ResourceProviders;
 #endif
 
 #if UNITY_EDITOR
@@ -71,8 +72,19 @@ namespace Mew.Core.Assets
 #if USE_MEW_CORE_ASSETS
                 case SceneInstanceHandle sceneInstanceHandle:
                 {
+                    SceneInstance sceneInstance;
+                    try
+                    {
+                        sceneInstance = sceneInstanceHandle.Handle.Result;
+                    }
+                    catch (Exception)
+                    {
+                        // Scene is already unloaded
+                        return;
+                    }
+
                     var handle = Addressables.UnloadSceneAsync(
-                        sceneInstanceHandle.Handle.Result,
+                        sceneInstance,
                         UnloadSceneOptions.UnloadAllEmbeddedSceneObjects,
                         true);
                     await handle.Task;
