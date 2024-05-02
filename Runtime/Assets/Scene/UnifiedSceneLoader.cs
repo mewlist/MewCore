@@ -93,8 +93,17 @@ namespace Mew.Core.Assets
 #endif
                 case SceneHandle sceneHandle:
                 {
+                    if (SceneManager.loadedSceneCount <= 1)
+                    {
+                        Debug.Log("There is only one scene loaded. Cannot unload.");
+                        break;
+                    }
+
                     if (sceneHandle.Scene.isLoaded)
+                    {
                         await CompatibleSceneLoader.UnloadSceneAsync(sceneHandle);
+                    }
+
                     break;
                 }
             }
