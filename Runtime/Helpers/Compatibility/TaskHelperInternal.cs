@@ -31,7 +31,7 @@ namespace Mew.Core.TaskHelpers
             ct.ThrowIfCancellationRequested();
             return;
 
-            void OnUpdate()
+            static void OnUpdate()
             {
                 while (Queued.Count > 0)
                     Running.Add(Queued.Dequeue());
