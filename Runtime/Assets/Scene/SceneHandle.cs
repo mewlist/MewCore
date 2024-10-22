@@ -46,7 +46,7 @@ namespace Mew.Core.Assets
 
             if (ct.IsCancellationRequested)
             {
-                SceneManager.UnloadSceneAsync(Scene);
+                await SceneManager.UnloadSceneAsync(Scene);
                 ct.ThrowIfCancellationRequested();
             }
             return Scene;
