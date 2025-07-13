@@ -4,5 +4,5 @@ using System.Threading.Tasks;
 
 namespace Mew.Core.Tasks
 {
-    public delegate Task TaskAction(CancellationToken ct);
+    public delegate ValueTask TaskAction(CancellationToken ct);
 }

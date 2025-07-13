@@ -11,7 +11,7 @@ namespace Mew.Core.Tasks
     {
         private float lastTime;
         private float elapsed;
-        private TaskAwaiter? awaiter;
+        private ValueTaskAwaiter? awaiter;
         private CancellationTokenSource? cts;
         private CancellationToken? disposeCt;
         private Action<Exception>? onException;
